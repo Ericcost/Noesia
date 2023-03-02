@@ -1,4 +1,5 @@
 import React from 'react'
+import{ Link } from 'react-router-dom'
 import './PreHome.scss'
 
 export default function PreHome() {
@@ -8,7 +9,9 @@ export default function PreHome() {
         <div className="prehome-content">
           <h1>Welcome to Noesia</h1>
           <p>Blabla présentation du projet/univers by Ericu.</p>
-          <button>Découvrir Noesia</button>
+          <Link to='/'>
+            <button>Découvrir Noesia</button>
+          </Link>
         </div>
       </div>
     </div>
