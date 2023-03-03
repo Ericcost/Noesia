@@ -7,7 +7,7 @@ export default function PreHome() {
     <div className='prehome-background'>
       <div className='prehome'>
         <div className="prehome-content">
-          <h1>Welcome to Noesia</h1>
+          <h1>Bienvenue à Noesia</h1>
           <p>Blabla présentation du projet/univers by Ericu.</p>
           <Link to='/'>
             <button>Découvrir Noesia</button>
