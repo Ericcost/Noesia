@@ -1,7 +1,24 @@
-import React from 'react'
+import React from "react";
+import "./Home.scss";
+import Banner from "../../components/Banner/Banner";
 
-export default function Home() {
+const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <div className="home">
+      <Banner />
+      <div className="home-content">
+        <div className="home-title">
+          <h1>Jeux</h1>
+        </div>
+        <div className="home-game">
+          <img src="src/assets/images/test-game.png" alt="image du jeu" />
+          <a href="#" className="home-btn">
+            ALLER AU JEU
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Home;
