@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import{ Link } from 'react-router-dom'
+import { TypeAnimation } from 'react-type-animation';
 import './PreHome.scss'
 
 export default function PreHome() {
@@ -18,13 +19,26 @@ export default function PreHome() {
       { story ? 
         <div className="story-overlay">
           <div className="story-content">
-            <div>
+            <div className='story-title'>
               <h1>NOESIA</h1>
             </div>
-            <div>
-              <p>Intrigue</p>
+            <div className='story-plot'>
+              <p><TypeAnimation
+                sequence={[
+                  1000,
+                  'Intrigue Intrigue Intrigue Intrigue Intrigue Intrigue Intrigue Intrigue Intrigue Intrigue Intrigue Intrigue Intrigue Intrigue Intrigue Intrigue Intrigue Intrigue Intrigue Intrigue Intrigue Intrigue Intrigue Intrigue Intrigue', // Types 'One'
+                  1000, 
+                  'Plot Plot Plot Plot Plot Plot Plot Plot Plot Plot Plot Plot Plot Plot Plot Plot Plot Plot Plot Plot Plot',
+                  1000,
+              
+                ]}
+                wrapper="strong"
+                cursor={true}
+                repeat={Infinity}
+                style={{ fontSize: '1em', paddingLeft: '5px' }}
+              /></p>
             </div>
-            <div>
+            <div className='story-btn'>
               <button onClick={handleStory}>Close</button>
             </div>
           </div>
