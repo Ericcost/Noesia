@@ -1,4 +1,7 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom'
+
+//SCSS
+import './App.scss'
 
 //Pages
 import Home from "./pages/Home/Home";
@@ -13,26 +16,24 @@ import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
+      <div className='App'>
         <header>
           <Navbar />
         </header>
         <main>
-          <Routes>
-            <Route path="/" element={<PreHome />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/profile/:id" element={<Profile />} />
-          </Routes>
+            <Routes>
+              <Route path='/' element={<PreHome />}/>
+              <Route path="/accueil" element={<Home />} />
+              <Route path="/connexion" element={<Login />} />
+              <Route path="/inscription" element={<Register />} />
+              <Route path="/profil/:id" element={<Profile />} />
+            </Routes>
         </main>
         <footer>
           <Footer />
         </footer>
-      </BrowserRouter>
-    </>
-  );
+      </div>
+  )
 }
 
 export default App;
