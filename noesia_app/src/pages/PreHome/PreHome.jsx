@@ -49,7 +49,7 @@ export default function PreHome() {
         :
         <div className='prehome'>
           <div className="prehome-content">
-            <Link> 
+            <Link to="/accueil"> 
               <Button content="Découvrir Noesia"/>
             </Link>
           </div>

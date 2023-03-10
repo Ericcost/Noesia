@@ -22,11 +22,11 @@ function App() {
         </header>
         <main>
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path='/' element={<PreHome />}/>
+              <Route path="/accueil" element={<Home />} />
               <Route path="/connexion" element={<Login />} />
               <Route path="/inscription" element={<Register />} />
               <Route path="/profil/:id" element={<Profile />} />
-              <Route path='/prehome' element={<PreHome />}/>
             </Routes>
         </main>
         <footer>

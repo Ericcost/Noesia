@@ -19,7 +19,7 @@ const Navbar = () => {
   const handleLogout = (e) => {
     localStorage.removeItem('Authorization_token');
     deleteUser(auth_token);
-    navigate('/');
+    navigate('/accueil');
   }
 
   return (

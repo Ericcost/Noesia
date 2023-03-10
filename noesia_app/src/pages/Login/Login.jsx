@@ -26,7 +26,7 @@ const Login = () => {
     e.preventDefault();
     const formDataToSend = { "user": formData }
     mutate(formDataToSend)
-    navigate("/")
+    navigate("/accueil")
   }
 
   return (
