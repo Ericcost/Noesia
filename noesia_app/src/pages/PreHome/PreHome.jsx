@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import{ Link } from 'react-router-dom'
 import { TypeAnimation } from 'react-type-animation';
 import preHomeBackground from '../../assets/images/prehome_background.png'
+import Button from '../../components/Button/Button'
 import './PreHome.scss'
 
 export default function PreHome() {
@@ -48,11 +49,7 @@ export default function PreHome() {
         :
         <div className='prehome'>
           <div className="prehome-content">
-            {/* <h2>Bienvenue à Noesia</h2>
-            <p>Blabla présentation du projet/univers by Ericu.</p> */}
-            <Link to='/home'>
-              <button>Découvrir Noesia</button>
-            </Link>
+            <Button content="Découvrir Noesia"/>
           </div>
         </div>
       }
