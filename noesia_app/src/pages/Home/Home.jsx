@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 import "./Home.scss";
 import Button from "../../components/Button/Button"
 import Banner from "../../components/Banner/Banner";
@@ -14,7 +15,9 @@ const Home = () => {
         </div>
         <div className="home-game">
           <img src={gamesImg} alt="image du jeu" />
-          <Button content="Aller au jeu"/>
+          <Link to='#'>
+            <Button content="Aller au jeu"/>
+          </Link>
         </div>
       </div>
     </div>
