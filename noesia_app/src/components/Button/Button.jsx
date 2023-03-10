@@ -5,7 +5,11 @@ import './Button.scss'
 export default function Button({content}) {
   return (
     <div>
-        <button>{content}</button>
+        <button>
+          <span>
+            {content}
+          </span>
+        </button>
     </div>
   )
 }
