@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import{ Link } from 'react-router-dom'
 import { TypeAnimation } from 'react-type-animation';
+import preHomeBackground from '../../assets/images/prehome_background.png'
 import './PreHome.scss'
 
 export default function PreHome() {
@@ -16,6 +17,7 @@ export default function PreHome() {
   
   return (
     <div className='prehome-background'>
+      <img src={preHomeBackground} alt="" className='prehome-background-img'/>
       { story ? 
         <div className="story-overlay">
           <div className="story-content">
