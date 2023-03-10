@@ -1,5 +1,6 @@
 import React from "react";
 import "./Home.scss";
+import Button from "../../components/Button/Button"
 import Banner from "../../components/Banner/Banner";
 import gamesImg from "../../assets/images/test-game.png";
 
@@ -13,9 +14,7 @@ const Home = () => {
         </div>
         <div className="home-game">
           <img src={gamesImg} alt="image du jeu" />
-          <a href="#" className="home-btn">
-            ALLER AU JEU
-          </a>
+          <Button content="Aller au jeu"/>
         </div>
       </div>
     </div>
