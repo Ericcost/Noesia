@@ -55,22 +55,13 @@
       }
     }
 
-    
-    button {
-      background-color: rgb(60,51,154);
-      border: none;
-      border-radius: 5px;
-      color: rgb(238,238,238);
-      font-size: 1.2rem;
-      padding: 10px 20px;
-      transition: background-color 0.3s ease;
-      cursor: pointer;
-    
-  
-      &:hover {
-        background-color: #f44336;
+    .story-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      button {
+        
       }
-      
     }
   }
 }
@@ -88,7 +79,7 @@
   .prehome-content {
     text-align: center;
     color: #fff;
-    margin-top: 36rem;
+    margin-top: 40%;
   }
 }
 
