@@ -50,7 +50,7 @@ export default function PreHome() {
           <div className="prehome-content">
             {/* <h2>Bienvenue à Noesia</h2>
             <p>Blabla présentation du projet/univers by Ericu.</p> */}
-            <Link to='/'>
+            <Link to='/home'>
               <button>Découvrir Noesia</button>
             </Link>
           </div>
