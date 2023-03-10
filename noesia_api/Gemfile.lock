@@ -85,6 +85,8 @@ GEM
     devise-jwt (0.10.0)
       devise (~> 4.0)
       warden-jwt_auth (~> 0.6)
+    dockerfile-rails (1.2.3)
+      rails
     dry-auto_inject (1.0.1)
       dry-core (~> 1.0)
       zeitwerk (~> 2.6)
@@ -198,6 +200,7 @@ DEPENDENCIES
   debug
   devise (~> 4.9)
   devise-jwt (~> 0.10.0)
+  dockerfile-rails (>= 1.2)
   pg (~> 1.1)
   puma (~> 5.0)
   rack-cors (~> 2.0)

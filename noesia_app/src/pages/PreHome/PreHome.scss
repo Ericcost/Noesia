@@ -1,55 +1,91 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700%22");
 
-html {
+
+.prehome-background-img {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.story-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  
+  .story-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 20px;
+    
+    .story-title {
+      display: flex;
+      justify-content: center;
+      
+
+      h1 {
+        font-family: "Roboto", sans-serif;
+        font-size: 3rem;
+        color: rgb(174,228,237);
+        
+      }
+    }
+
+    .story-plot {
+      p {
+        font-family: "Roboto", sans-serif;
+        font-size: 1.2rem;
+        color: rgb(174,228,237);
+      }
+    }
+
+    .story-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      button {
+        
+      }
+    }
+  }
+}
+
+.prehome {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   width: 100%;
   height: 100%;
-  background-image: url("src/assets/images/prehome_background_neosia2.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  
-  .prehome-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  .prehome-content {
     text-align: center;
-
-    .prehome {
-      max-width: 800px;
-      text-align: center;
-      color: #fff;
-      margin: 8rem;
-    }
-    
-    h1 {
-      font-size: 48px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 20px;
-      font-weight: 400;
-      margin-bottom: 40px;
-    }
-
-    button {
-      background-color: #00bcd4;
-      color: #fff;
-      font-size: 18px;
-      font-weight: 400;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease-in-out;
-
-      &:hover {
-          background-color: #0097a7;
-      }
-    }
-    
+    color: #fff;
+    margin-top: 40%;
   }
-
 }
+
+
+
+
+  
+  
+  

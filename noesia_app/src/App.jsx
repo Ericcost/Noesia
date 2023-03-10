@@ -12,13 +12,13 @@ import PreHome from "./pages/PreHome/PreHome";
 
 //Components
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 
 function App() {
-
   return (
       <div className='App'>
         <header>
-            <Navbar />
+          <Navbar />
         </header>
         <main>
             <Routes>
@@ -30,10 +30,10 @@ function App() {
             </Routes>
         </main>
         <footer>
-
+          <Footer />
         </footer>
       </div>
   )
 }
 
-export default App
+export default App;
