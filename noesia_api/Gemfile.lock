@@ -87,6 +87,10 @@ GEM
       warden-jwt_auth (~> 0.6)
     dockerfile-rails (1.2.3)
       rails
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     dry-auto_inject (1.0.1)
       dry-core (~> 1.0)
       zeitwerk (~> 2.6)
@@ -201,6 +205,7 @@ DEPENDENCIES
   devise (~> 4.9)
   devise-jwt (~> 0.10.0)
   dockerfile-rails (>= 1.2)
+  dotenv-rails (~> 2.8)
   pg (~> 1.1)
   puma (~> 5.0)
   rack-cors (~> 2.0)

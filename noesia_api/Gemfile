@@ -54,3 +54,5 @@ gem "rack-cors", "~> 2.0"
 gem "table_print", "~> 1.5"
 
 gem "dockerfile-rails", ">= 1.2", :group => :development
+
+gem "dotenv-rails", "~> 2.8"
