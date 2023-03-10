@@ -6,9 +6,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
   
   .story-content {
@@ -18,26 +15,32 @@
     transform: translate(-50%, -50%);
     width: 40%;
     height: 100%;
-    padding: 20px;
-    font-family: "Roboto", sans-serif;
-    font-size: 1.2rem;
-    color: rgb(174,228,237);
-
-    
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 20px;
+    
     .story-title {
+      display: flex;
+      justify-content: center;
+      
+
       h1 {
-        
+        font-family: "Roboto", sans-serif;
+        font-size: 3rem;
+        color: rgb(174,228,237);
         
       }
     }
 
     .story-plot {
       p {
-
+        font-family: "Roboto", sans-serif;
+        font-size: 1.2rem;
+        color: rgb(174,228,237);
       }
     }
 
@@ -70,6 +73,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 1;
 
   .prehome {
     font-family: "Open Sans", sans-serif;
