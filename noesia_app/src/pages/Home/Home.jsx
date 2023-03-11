@@ -1,24 +1,38 @@
-import React from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom"
+
 import "./Home.scss";
-import Button from "../../components/Button/Button"
-import Banner from "../../components/Banner/Banner";
-import gamesImg from "../../assets/images/test-game.png";
+
 
 const Home = () => {
+  
+  Array.from(document.getElementsByClassName("home-item"))
+  .forEach((item, index) => {
+    item.addEventListener("mouseover", () => {
+      item.classList.add("active");
+      document.querySelector(".home").setAttribute("data-active-index", index);
+    });
+    item.addEventListener("mouseout", () => {
+      item.classList.remove("active");
+    });
+  });
+
+
   return (
-    <div className="home">
-      <Banner />
-      <div className="home-content">
-        <div className="home-title">
-          <h1>Jeux</h1>
+    <div className="home-background">
+      <div className="home">
+        <div className="home-items" >
+          <div className="home-item">
+            Play
+          </div>
+          <div className="home-item">
+            Settings
+          </div>
+          <div className="home-item">
+              Quit
+          </div>
         </div>
-        <div className="home-game">
-          <img src={gamesImg} alt="image du jeu" />
-          <Link to='#'>
-            <Button content="Aller au jeu"/>
-          </Link>
-        </div>
+        <div className="home-background-pattern"></div>
       </div>
     </div>
   );
