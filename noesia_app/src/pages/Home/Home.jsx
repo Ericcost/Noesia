@@ -2,6 +2,7 @@ import React, { useState} from "react";
 import { Link } from "react-router-dom"
 
 import Cursor from "../../components/Cursor/Cursor"
+import AvailableSoon from "../../components/AvailableSoon/AvailableSoon"
 
 import "./Home.scss";
 
@@ -30,7 +31,8 @@ const Home = () => {
             <div className="home-item no-cursor" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
               Play
             </div>
-            <div className="home-item no-cursor" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
+            <div className="home-item no-cursor"  onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
+              <AvailableSoon />
               Settings
             </div>
             <div className="home-item no-cursor" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>

@@ -25,26 +25,26 @@
         opacity: 0.5;
       }
 
-      .home-item {
+      .home-item.no-cursor {
         color: white;
         font-size: clamp(3rem, 8vw, 8rem);
         font-family: "Ibarra Real Nova", serif;
-        display: block;
+        display: flex;
         text-decoration: none;
         padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
         transition: opacity 400ms ease,
         transform 400ms ease;
-        
+        margin: 0.5rem;
+        padding: 0.5rem;
+        position: relative;
+        cursor: cell;
+
         &:hover {
           opacity: 1;
           transform: scale(1.05);
           
         }
         
-      }
-
-      .home-item.no-cursor {
-        cursor: cell;
       }
     }
      
