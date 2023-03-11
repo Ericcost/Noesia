@@ -3,7 +3,7 @@ import{ Link } from 'react-router-dom'
 import { TypeAnimation } from 'react-type-animation';
 import preHomeBackground from '../../assets/images/prehome_background.png'
 import Cursor from '../../components/Cursor/Cursor'
-import Button from '../../components/Button/Button'
+import ButtonLink from '../../components/ButtonLink/ButtonLink'
 import './PreHome.scss'
 
 export default function PreHome() {
@@ -45,16 +45,14 @@ export default function PreHome() {
                   /></p>
               </div>
               <div className='story-btn'>
-                <button onClick={handleStory}>Close</button>
+                <button onClick={handleStory}>Skip</button>
               </div>
             </div>
           </div>
           :
           <div className='prehome'>
-            <div className="prehome-content">
-              <Link to="/accueil"> 
-                <Button content="Découvrir Noesia"/>
-              </Link>
+            <div className="prehome-content"> 
+                <ButtonLink content="Découvrir Noesia" path="/accueil"/>
             </div>
           </div>
         }
