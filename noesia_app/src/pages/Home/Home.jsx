@@ -1,8 +1,9 @@
 import React, { useState} from "react";
-import { Link } from "react-router-dom"
 
-import Cursor from "../../components/Cursor/Cursor"
-import AvailableSoon from "../../components/AvailableSoon/AvailableSoon"
+import Cursor from "../../components/Cursor/Cursor";
+import AvailableSoon from "../../components/AvailableSoon/AvailableSoon";
+
+import Background from '../../assets/images/prehome_background.png';
 
 import "./Home.scss";
 
@@ -36,10 +37,12 @@ const Home = () => {
               Settings
             </div>
             <div className="home-item" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
-                Quit
+              <AvailableSoon />
+              Quit
             </div>
           </div>
           <div className="home-background-pattern"></div>
+          <img className="home-background-image" src={Background} alt=''></img>
         </div>
       </div>
     </>
