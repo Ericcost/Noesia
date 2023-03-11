@@ -34,12 +34,17 @@
         padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
         transition: opacity 400ms ease,
         transform 400ms ease;
+        
         &:hover {
           opacity: 1;
           transform: scale(1.05);
-          cursor: crosshair;
+          
         }
         
+      }
+
+      .home-item.no-cursor {
+        cursor: cell;
       }
     }
      

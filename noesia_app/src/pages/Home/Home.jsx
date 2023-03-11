@@ -1,10 +1,13 @@
-import { useRef, useState } from "react";
+import React, { useState} from "react";
 import { Link } from "react-router-dom"
+
+import Cursor from "../../components/Cursor/Cursor"
 
 import "./Home.scss";
 
 
 const Home = () => {
+  const [showCursor, setShowCursor] = useState(true);
   
   Array.from(document.getElementsByClassName("home-item"))
   .forEach((item, index) => {
@@ -19,22 +22,25 @@ const Home = () => {
 
 
   return (
-    <div className="home-background">
-      <div className="home">
-        <div className="home-items" >
-          <div className="home-item">
-            Play
+    <>
+      {showCursor && <Cursor />}
+      <div className="home-background">
+        <div className="home">
+          <div className="home-items" >
+            <div className="home-item no-cursor" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
+              Play
+            </div>
+            <div className="home-item no-cursor" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
+              Settings
+            </div>
+            <div className="home-item no-cursor" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
+                Quit
+            </div>
           </div>
-          <div className="home-item">
-            Settings
-          </div>
-          <div className="home-item">
-              Quit
-          </div>
+          <div className="home-background-pattern"></div>
         </div>
-        <div className="home-background-pattern"></div>
       </div>
-    </div>
+    </>
   );
 };
 
