@@ -11,15 +11,11 @@ import Profile from "./pages/Profile/Profile";
 import PreHome from "./pages/PreHome/PreHome";
 
 //Components
-import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
       <div className='App'>
-        <header>
-          <Navbar />
-        </header>
         <main>
             <Routes>
               <Route path='/' element={<PreHome />}/>
