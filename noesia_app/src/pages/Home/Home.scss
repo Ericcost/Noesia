@@ -25,10 +25,11 @@
         opacity: 0.5;
       }
 
-      .home-item.no-cursor {
+      .home-item {
         color: white;
-        font-size: clamp(3rem, 8vw, 8rem);
+        font-size: clamp(3rem, 6vw, 8rem);
         font-family: "Ibarra Real Nova", serif;
+        font-weight: bold;
         display: flex;
         text-decoration: none;
         padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
@@ -37,7 +38,7 @@
         margin: 0.5rem;
         padding: 0.5rem;
         position: relative;
-        cursor: cell;
+        
 
         &:hover {
           opacity: 1;

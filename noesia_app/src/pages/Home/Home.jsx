@@ -24,18 +24,18 @@ const Home = () => {
 
   return (
     <>
-      {showCursor && <Cursor />}
+      <Cursor />
       <div className="home-background">
         <div className="home">
           <div className="home-items" >
-            <div className="home-item no-cursor" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
+            <div className="home-item" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
               Play
             </div>
-            <div className="home-item no-cursor"  onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
+            <div className="home-item"  onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
               <AvailableSoon />
               Settings
             </div>
-            <div className="home-item no-cursor" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
+            <div className="home-item" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
                 Quit
             </div>
           </div>
