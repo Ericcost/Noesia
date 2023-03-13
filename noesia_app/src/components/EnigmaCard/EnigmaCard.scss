@@ -1,0 +1,16 @@
+@import 'src/styles/variables';
+
+.enigma-card {
+  border-radius: 1vmax;
+  position: absolute;
+  transition: transform 800ms ease;
+
+}
+
+@each $card, $properties in $card-properties {
+  .enigma-card:nth-child(#{$card}) {
+    @each $property, $value in $properties {
+      #{$property}: $value;
+    }
+  }
+}
