@@ -6,6 +6,6 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-20.times do |i|
+25.times do |i|
     Enigma.create!(title: Faker::Movie.title, description: Faker::Lorem.sentence(word_count:25))
 end
