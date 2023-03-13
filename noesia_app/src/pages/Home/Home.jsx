@@ -21,7 +21,7 @@ const Home = () => {
   function handleStory() {
     setStory(!story);
   }
-  
+
   Array.from(document.getElementsByClassName("home-item"))
   .forEach((item, index) => {
     item.addEventListener("mouseover", () => {
@@ -72,9 +72,9 @@ const Home = () => {
               <div className="home-item" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
                 Jouer
               </div>
-              <div className="home-item"  onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
+              <div className="home-item" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
                 <AvailableSoon />
-                Plein écran
+                Paramètre
               </div>
               <div className="home-item" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
                 <Link to="/connexion">
