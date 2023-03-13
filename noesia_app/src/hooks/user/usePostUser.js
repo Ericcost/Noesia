@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useMutation, useQueryClient } from 'react-query';
-import { API_URL } from '../../services/API_URL';
+import { API_URL } from '../services/API_URL';
 
 export function usePostUser(endpoint) {
   const queryClient = useQueryClient();
