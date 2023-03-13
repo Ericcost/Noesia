@@ -1,4 +1,4 @@
-import { usePostUser } from "../../hooks/usePostUser";
+import { usePostUser } from "../../hooks/user/usePostUser";
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 
