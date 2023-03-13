@@ -70,7 +70,9 @@ const Home = () => {
           <div className="home">
             <div className="home-items" >
               <div className="home-item" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
-                Jouer
+                <Link to='/tutoriel'>
+                  Jouer
+                </Link>
               </div>
               <div className="home-item"  onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
                 <AvailableSoon />
