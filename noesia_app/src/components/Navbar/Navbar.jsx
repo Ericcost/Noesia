@@ -1,8 +1,8 @@
 import "./Navbar.scss";
 import { Link } from "react-router-dom";
-import { useDeleteUser } from "../../hooks/useDeleteUser";
+import { useDeleteUser } from "../../hooks/user/useDeleteUser";
 import { useNavigate } from "react-router-dom";
-import { useGetUser } from "../../hooks/useGetUser";
+import { useGetUser } from "../../hooks/user/useGetUser";
 
 const Navbar = () => {
 
