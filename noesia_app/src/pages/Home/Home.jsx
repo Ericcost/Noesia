@@ -1,4 +1,5 @@
 import React, { useState} from "react";
+import { Link } from "react-router-dom";
 
 import Cursor from "../../components/Cursor/Cursor";
 import AvailableSoon from "../../components/AvailableSoon/AvailableSoon";
@@ -30,15 +31,16 @@ const Home = () => {
         <div className="home">
           <div className="home-items" >
             <div className="home-item" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
-              Play
+              Jouer
             </div>
             <div className="home-item"  onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
               <AvailableSoon />
-              Settings
+              Plein écran
             </div>
             <div className="home-item" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
-              <AvailableSoon />
-              Quit
+              <Link to="/connexion">
+                Se connecter 
+              </Link>
             </div>
           </div>
           <div className="home-background-pattern"></div>
