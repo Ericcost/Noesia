@@ -4,7 +4,15 @@
   border-radius: 1vmax;
   position: absolute;
   transition: transform 800ms ease;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    transform: scale(1.1);
+    p {
+      color: black;
+    }
+  }
 }
 
 @each $card, $properties in $card-properties {
