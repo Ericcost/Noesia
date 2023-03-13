@@ -4,9 +4,9 @@ import { useGetEnigmas } from "../../hooks/enigma/useGetEnigmas";
 
 import './Map.scss';
 
+import Sidebar from '../../components/Sidebar/Sidebar'
 import EnigmaCard from '../../components/EnigmaCard/EnigmaCard'
 import Cursor from '../../components/Cursor/Cursor';
-import ButtonLink from '../../components/ButtonLink/ButtonLink';
 
 export default function Map() {
   const [mousePosition, setMousePosition] = useState({x: 0, y: 0});
@@ -45,7 +45,7 @@ export default function Map() {
           )
           }
         </div>
-        <ButtonLink content='Get back to the menu' path='/'/>
+        <Sidebar />
       </div>
     </>
   )
