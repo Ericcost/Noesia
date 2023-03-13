@@ -1,0 +1,18 @@
+.soon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ef4444;
+    width: 5rem;
+    height: 1.5rem;
+    border-radius: 0.5rem;
+    position: absolute;
+    
+    color: #ffffff;
+    top: 1rem;
+    left: -2rem;
+    
+    small {
+      font-size: small;
+    }
+  }
