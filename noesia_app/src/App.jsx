@@ -8,7 +8,6 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Profile from "./pages/Profile/Profile";
-import PreHome from "./pages/PreHome/PreHome";
 
 //Components
 import Footer from "./components/Footer/Footer";
@@ -18,8 +17,7 @@ function App() {
       <div className='App'>
         <main>
             <Routes>
-              <Route path='/' element={<PreHome />}/>
-              <Route path="/accueil" element={<Home />} />
+              <Route path="/" element={<Home />} />
               <Route path="/connexion" element={<Login />} />
               <Route path="/inscription" element={<Register />} />
               <Route path="/profil/:id" element={<Profile />} />
