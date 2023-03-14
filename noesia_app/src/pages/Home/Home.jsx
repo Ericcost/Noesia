@@ -26,13 +26,15 @@ const Home = () => {
   .forEach((item, index) => {
     item.addEventListener("mouseover", () => {
       item.classList.add("active");
-      document.querySelector(".home").setAttribute("data-active-index", index);
+      const home = document.querySelector(".home")
+      if (home) {
+        home.setAttribute("data-active-index", index);
+      }
     });
     item.addEventListener("mouseout", () => {
       item.classList.remove("active");
     });
   });
-
 
   return (
     <>
