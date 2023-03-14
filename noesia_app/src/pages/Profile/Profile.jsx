@@ -1,5 +1,8 @@
 import React from 'react'
+
+import Cursor from '../../components/Cursor/Cursor'
 import Button from '../../components/ButtonLink/ButtonLink';
+
 import { useGetUser } from '../../hooks/user/useGetUser';
 
 import './Profile.scss'
@@ -13,6 +16,7 @@ export default function Profile() {
 
   return (
     <>
+      <Cursor />
       <div className='profile-wrapper'>
         <div className='profile-left'>
           <div className='profile-left-top'>
