@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 import { GiExitDoor, GiReturnArrow } from "react-icons/gi";
 import { FaConnectdevelop } from "react-icons/fa";
@@ -44,7 +44,7 @@ export default function Sidebar() {
           {logged ? (
             <>
               <div className='sidebar-item' onMouseEnter={() => setIsProfileHovering(true)} onMouseLeave={() => setIsProfileHovering(false)}>
-                <CgProfile />
+                <Link to={`/profil/${current_user?.id}`}><CgProfile /></Link>
                 {isProfileHovering ? (
                   <ButtonLink content="Profil" path={`/profil/${current_user?.id}`}/>
                 ) : 
@@ -52,7 +52,7 @@ export default function Sidebar() {
                 }
               </div>
               <div className='sidebar-item' onMouseEnter={() => setIsDisconnectHovering(true)} onMouseLeave={() => setIsDisconnectHovering(false)}>
-                <GiExitDoor />
+                <Link onClick={handleLogout}><GiExitDoor /></Link>
                 {isDisconnectHovering ? (
                   <Button content="Se déconnecter" onClick={handleLogout} />
                 ) : 
@@ -63,7 +63,7 @@ export default function Sidebar() {
             ) : (
               <>
               <div className='sidebar-item' onMouseEnter={() => setIsConnectHovering(true)} onMouseLeave={() => setIsConnectHovering(false)}>
-                <FaConnectdevelop />
+              <Link to="/connexion"><FaConnectdevelop /></Link>
                 {isConnectHovering ? (
                   <ButtonLink content="Se connecter" path="/connexion"/>
                 ) : 
@@ -71,7 +71,7 @@ export default function Sidebar() {
                 }
               </div>
               <div className='sidebar-item' onMouseEnter={() => setIsSubscribeHovering(true)} onMouseLeave={() => setIsSubscribeHovering(false)}>
-                <BsBook />
+                <Link to="/inscription"><BsBook /></Link>
                 { isSubscribeHovering ? (
                   <ButtonLink content="S'inscrire" path="/inscription"/>
                 ) : 
@@ -82,7 +82,7 @@ export default function Sidebar() {
             )
           }
           <div className='sidebar-item' onMouseEnter={() => setIsGetBackHovering(true)} onMouseLeave={() => setIsGetBackHovering(false)}>
-            <GiReturnArrow />
+            <Link to='/'><GiReturnArrow /></Link>
             { isGetBackHovering ? (
               <ButtonLink content="Retour au menu" path="/"/>
             ) : 
