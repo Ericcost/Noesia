@@ -7,10 +7,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  p {
+    opacity:0;
+  }
+  
   &:hover {
     transform: scale(1.1);
+    
     p {
-      color: black;
+      color: rgb(24, 25, 36, 0.7);
+      font-weight:  bold;
+      opacity: 1;
+      transition: 400ms ease;
     }
   }
 }

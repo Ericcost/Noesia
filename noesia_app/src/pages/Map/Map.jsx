@@ -14,7 +14,7 @@ export default function Map() {
   const enigmasRef = useRef(null);
   
   const Data = data?.data;
-  // console.log(Data);
+  
 
 
   const handleMouseMove = e => {

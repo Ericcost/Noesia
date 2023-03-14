@@ -65,7 +65,7 @@ const Home = () => {
               </div>
               <div className="home-item" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
                 <AvailableSoon />
-                Paramètre
+                Paramètres
               </div>
               <div className="home-item" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
                 <Link onClick={handleLogout}>
@@ -113,7 +113,7 @@ const Home = () => {
                   </div>
                   <div className="home-item"  onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
                     <AvailableSoon />
-                    Plein écran
+                    Paramètres
                   </div>
                   <div className="home-item" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
                     <Link to="/connexion">
