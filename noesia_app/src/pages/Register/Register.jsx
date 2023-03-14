@@ -1,6 +1,9 @@
-import { usePostUser } from "../../hooks/usePostUser";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
+import { usePostUser } from "../../hooks/user/usePostUser";
+
+import ButtonLink from '../../components/ButtonLink/ButtonLink'
 
 const Register = () => {
 
@@ -46,6 +49,7 @@ const Register = () => {
         <input type="password" name='password_confirmation' placeholder='Confirmer votre mot de passe' value={formData.password_confirmation} onChange={handleChange}/>
         <button type="submit">S'inscrire</button>
       </form>
+      <ButtonLink content="Se connecter" path="/connexion"/>
       {isLoading && <div>Loading ...</div>}
       {isError && <div>Une erreur s'est produite : {error.message}</div>}
       {isSuccess && <div>Inscription réussie!</div>}
