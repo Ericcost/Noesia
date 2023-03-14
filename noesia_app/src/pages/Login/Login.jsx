@@ -1,6 +1,9 @@
-import { usePostUser } from "../../hooks/usePostUser";
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
+
+import { usePostUser } from "../../hooks/user/usePostUser";
+
+import ButtonLink from '../../components/ButtonLink/ButtonLink'
 
 const Login = () => {
 
@@ -26,7 +29,7 @@ const Login = () => {
     e.preventDefault();
     const formDataToSend = { "user": formData }
     mutate(formDataToSend)
-    navigate("/accueil")
+    navigate("/")
   }
 
   return (
@@ -36,6 +39,7 @@ const Login = () => {
         <input type="password" name='password' placeholder='Mot de passe' value={formData.password} onChange={handleChange}/>
         <button type="submit">Se connecter</button>
       </form>
+      <ButtonLink content="S'inscrire" path="/inscription"/>
       {isLoading && <div>Loading ...</div>}
       {isError && <div>Une erreur s'est produite : {error.message}</div>}
       {isSuccess && <div>Connection réussie!</div>}

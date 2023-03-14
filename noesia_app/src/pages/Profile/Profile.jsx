@@ -1,5 +1,5 @@
 import React from 'react'
-import { useGetUser } from '../../hooks/useGetUser';
+import { useGetUser } from '../../hooks/user/useGetUser';
 
 export default function Profile() {
 

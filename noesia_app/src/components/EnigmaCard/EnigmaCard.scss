@@ -1,0 +1,24 @@
+@import 'src/styles/variables';
+
+.enigma-card {
+  border-radius: 1vmax;
+  position: absolute;
+  transition: transform 800ms ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    transform: scale(1.1);
+    p {
+      color: black;
+    }
+  }
+}
+
+@each $card, $properties in $card-properties {
+  .enigma-card:nth-child(#{$card}) {
+    @each $property, $value in $properties {
+      #{$property}: $value;
+    }
+  }
+}
