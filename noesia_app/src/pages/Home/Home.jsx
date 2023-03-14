@@ -85,16 +85,15 @@ const Home = () => {
                     <h1>Noesia</h1>
                   </div>
                   <div className='story-plot'>
-                    <p>Hello, Salut les gars, deuxième jour de cette semaine au top ! On va tout plier je vous le dis, force à vous bruh bruh bruh. Bon j'arrête d'accaparer le prompt y'a une histoire à raconter let's gooooo.</p>
                     <p><TypeAnimation
                       sequence={[
-                        9000,
+                        6000,
                         "Au milieu d'un désert aride et désolé, un portail mystérieux venait d'apparaître. Les scientifiques, fascinés par cette étrange apparition, se rassemblèrent autour du portail pour en étudier les propriétés. À chaque nouvelle connexion, le portail multipliait les chemins, offrant de nouvelles perspectives aux chercheurs. Mais la connaissance ne se suffit pas à elle seule pour prospérer. Les intentions de ceux qui l'utilisent peuvent la rendre utile ou dangereuse. Certains voulaient exploiter le portail pour en tirer profit, tandis que d'autres cherchaient à comprendre les secrets de cet univers fantastique." // Types 'One'
                       ]}
                       wrapper="strong"
                       cursor={true}
                       repeat={Infinity}
-                      style={{ fontSize: '1em', paddingLeft: '5px' }}
+                      style={{ fontSize: '1em' }}
                       /></p>
                   </div>
                   <div className='story-btn'>
