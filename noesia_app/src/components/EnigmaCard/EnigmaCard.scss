@@ -7,15 +7,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  p {
-    opacity:0;
+  cursor: not-allowed;
+  .enigma-content {
+    
+    .enigma-id {
+      opacity:0;
+    }
   }
   
   &:hover {
     transform: scale(1.1);
     
-    p {
+    .enigma-id {
       color: rgb(24, 25, 36, 0.7);
       font-weight:  bold;
       opacity: 1;
