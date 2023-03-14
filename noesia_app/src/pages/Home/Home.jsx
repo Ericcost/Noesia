@@ -36,18 +36,20 @@ const Home = () => {
   function handleStory() {
     setStory(!story);
   }
-  
+
   Array.from(document.getElementsByClassName("home-item"))
   .forEach((item, index) => {
     item.addEventListener("mouseover", () => {
       item.classList.add("active");
-      document.querySelector(".home").setAttribute("data-active-index", index);
+      const home = document.querySelector(".home")
+      if (home) {
+        home.setAttribute("data-active-index", index);
+      }
     });
     item.addEventListener("mouseout", () => {
       item.classList.remove("active");
     });
   });
-
 
   return (
     <>
@@ -61,9 +63,9 @@ const Home = () => {
                   Jouer
                 </Link>
               </div>
-              <div className="home-item"  onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
+              <div className="home-item" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
                 <AvailableSoon />
-                Plein écran
+                Paramètre
               </div>
               <div className="home-item" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
                 <Link onClick={handleLogout}>
