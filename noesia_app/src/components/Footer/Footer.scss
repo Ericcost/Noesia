@@ -2,14 +2,20 @@
   display: flex;
   align-items: center;
   position: fixed;
+  justify-content: space-between;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 1rem;
   padding: 1rem;
   background-color: transparent;
 
+  svg {
+    color: white;
+    margin-right: 2rem;
+  }
   p {
     color: white;
   }
+
 }
