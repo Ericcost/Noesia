@@ -10,7 +10,7 @@
     .home-items {
       margin-left: clamp(4rem, 20vw, 48rem);
       position: relative;
-      z-index: 5;
+      z-index: 3;
 
       &:hover > .home-item {
         opacity: 0.3;
@@ -38,6 +38,7 @@
         margin: 0.5rem;
         padding: 0.5rem;
         position: relative;
+        z-index: 4;
         
 
         &:hover {
@@ -75,7 +76,6 @@
     }
 
     .home-background-image {
-      background-position: center 40%;
       background-size: 120vmax;
       height: 100%;
       width: 100%;
@@ -83,9 +83,6 @@
       left: 0px;
       opacity: 0.85;
       position: absolute;
-      transition: opacity 800ms ease,
-        background-size 800ms ease,
-        background-position 800ms ease;
       z-index: 0;
     }
   }
@@ -125,15 +122,26 @@
       z-index: 1;
       
       .story-title {
+        flex: 2;
         display: flex;
-        justify-content: center;      
+        align-items: center;
+        justify-content: center;    
+      }
+
+      .story-plot {
+        flex: 5;
+        display: flex;
+        align-items: center;
+        text-align: justify;
+        text-justify: inter-word;
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
       }
   
       .story-btn {
+        flex: 3;
         display: flex;
-        justify-content: center;
         align-items: center;
-        bottom: 0;
+        justify-content: center;
       }
     }
 
