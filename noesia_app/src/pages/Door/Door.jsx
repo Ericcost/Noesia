@@ -54,17 +54,16 @@ export default function Door() {
                 Vous êtes sur le point d'explorer un nouveau monde, mais pour y
                 accéder, vous devez d'abord résoudre une énigme. La voici :{" "}
                 <br></br>
-                "Je suis l'outil de ceux qui cherchent à <strong>@</strong>
-                pprendre,
+                "Je <strong>$</strong>uis l'outil de ceux qui cherchent à apprendre,
                 <br></br>
                 Certains me voient comme un vecteur de bonheur,<br></br>
-                D'autres comme un moyen de <strong>$</strong>emer le malheur.
+                D'autres comme un moyen de semer le malheur.
                 <br></br>
                 Mais ma véritable utilité est entre les mains,<br></br>
                 De ceux qui ont la sag<strong>€</strong>sse et l'intention divine.
                 <br></br>
                 Si tu veux accéder à ce nouveau monde prometteur,<br></br>
-                Dis-moi, ami, quel est donc mon nom avec vigueur ?"<br></br>
+                Dis-moi, <strong>@</strong>mi, quel est donc mon nom avec vigueur ?"<br></br>
                 <br></br>
                 Trouvez les 3 caractères spéciaux qui se cachent dans cette énigme
                 et vous pourrez franchir le portail vers un nouveau monde rempli
