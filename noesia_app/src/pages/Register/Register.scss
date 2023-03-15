@@ -1,88 +1,78 @@
-html, body {
+@import '../../styles/abstracts/variables';
+@import '../../styles/abstracts/mixins.scss';
+
+.register {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: black;
-  color: white;
-}
+  background-color: $black;
 
-.register-wrapper {  
-  height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .register-form {
-    flex-basis: 50%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+  .register-wrapper {  
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    button {
-      margin: 10px 20px;
-      padding: 10px 20px;
-      backdrop-filter: blur(3px);
-      background-color: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 6px;
-      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
-      color: white;
-      cursor: pointer;  
-      transition: 
+    .register-form {
+      flex-basis: 50%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      button {
+        margin: 0.5rem 1rem;
+        padding: 0.5rem 1rem;
+        backdrop-filter: blur(0.2rem);
+        @include black-background(0.05);
+        @include black-border(0.1);
+        @include black-box-shadow(0.1);
+        border-radius: 0.5rem;
+        color: $white;
+        cursor: pointer;  
+        transition: 
         background-color 400ms, 
         border-color 400ms;
         &:hover {
-          color: #181924;
-          background-color: rgb(253, 232, 179, 0.7);
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          color: $darkblue;
+          background-color: $yellow;
+          @include black-border(0.2);
         }
         span {
           font-family: "Helvetica Neue";
           font-weight: bold;
         }
+      }
+
+      input {
+        background: $black;
+        color: $white;
+        width: 100%;
+        border: 1px solid $white;
+        border-radius: 0.5rem;
+        font-size: 2rem;
+        padding: 0.8rem;
+        margin: 0.8rem;
+      }
     }
-  }
 
-  input {
-    background-color: black;
-    width: 100%;
-    color: white;
-    border: 1px solid white;
-    border-radius: 8px;
-    font-size: 2rem;
-    padding: 15px;
-    margin: 15px;
-  }
+    .register-side {
+      flex-basis: 50%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
 
-  input:focus {
-    outline: none;
-    border: 1px solid grey;
-    border-radius: 8px;
-  }
-
- .button-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .register-side {
-    flex-basis: 50%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    img {
-      width: 80%;
-      border-radius: 50px;
-      margin-bottom: 20px;
+      img {
+        width: 80%;
+        border-radius: 4.5rem;
+        margin-bottom: 1.5rem;
+      }
     }
   }
 }
