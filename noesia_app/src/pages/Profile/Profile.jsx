@@ -2,6 +2,7 @@ import React from 'react'
 
 import Cursor from '../../components/Cursor/Cursor'
 import Button from '../../components/ButtonLink/ButtonLink';
+import Sidebar from '../../components/Sidebar/Sidebar';
 
 import { useGetUser } from '../../hooks/user/useGetUser';
 
@@ -41,6 +42,7 @@ export default function Profile() {
           <div className='profile-right'>
             <div className='profile-right-header'>Historique des parties</div>
           </div>
+          <Sidebar />
         </div>
       </div>
     </>
