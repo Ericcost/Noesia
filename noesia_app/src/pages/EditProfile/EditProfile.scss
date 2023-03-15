@@ -6,13 +6,13 @@ html, body {
   color: white;
 }
 
-.register-wrapper {  
+.edit-wrapper {  
   height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  .register-form {
+  .edit-form {
     flex-basis: 50%;
     height: 100%;
     margin: 0;
@@ -47,6 +47,9 @@ html, body {
   }
 
   input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: black;
     width: 100%;
     color: white;
@@ -69,7 +72,7 @@ html, body {
     justify-content: center;
   }
 
-  .register-side {
+  .edit-side {
     flex-basis: 50%;
     height: 100%;
     margin: 0;

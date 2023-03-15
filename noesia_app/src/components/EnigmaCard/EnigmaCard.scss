@@ -1,0 +1,36 @@
+@import 'src/styles/variables';
+
+.enigma-card {
+  border-radius: 1vmax;
+  position: absolute;
+  transition: transform 800ms ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: not-allowed;
+  .enigma-content {
+    
+    .enigma-id {
+      opacity:0;
+    }
+  }
+  
+  &:hover {
+    transform: scale(1.1);
+    
+    .enigma-id {
+      color: rgb(24, 25, 36, 0.7);
+      font-weight:  bold;
+      opacity: 1;
+      transition: 400ms ease;
+    }
+  }
+}
+
+@each $card, $properties in $card-properties {
+  .enigma-card:nth-child(#{$card}) {
+    @each $property, $value in $properties {
+      #{$property}: $value;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.sidebar {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 2rem;
+  top: 30%;
+  left: 0;
+  position: fixed;
+    
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+    padding: 1rem;
+
+    svg {
+      font-size: 3rem;
+    }
+    
+    &:hover {
+      svg {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
