@@ -16,13 +16,14 @@
 
     .register-form {
       flex-basis: 50%;
-      height: 70%;
+      height: 100%;
       margin: 0;
       padding: 0;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
+
       form {
         display: flex;
         align-items: center;
@@ -53,6 +54,7 @@
           cursor: pointer;
           text-align:right;
         }
+        
         small {
           flex: 4;
           text-align: justify;
