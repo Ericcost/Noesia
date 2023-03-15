@@ -3,9 +3,9 @@ import './Button.scss';
 
 export default function Button({content, onClick}) {
   return (
-    <div className='button'>
+    <div className='button' onClick={onClick}>
       <button>
-        <span onClick={onClick}>
+        <span>
           {content}
         </span>
       </button> 
