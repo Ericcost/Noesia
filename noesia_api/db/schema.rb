@@ -17,6 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_15_151741) do
   create_table "enigmas", force: :cascade do |t|
     t.string "title", null: false
     t.text "description", null: false
+    t.text "hint", null: false
     t.integer "world", null: false
     t.integer "level", null: false
     t.bigint "topic_id"
