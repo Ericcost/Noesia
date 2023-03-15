@@ -1,70 +1,68 @@
-html, body {
+.profile {
   height: 100%;
   margin: 0;
   padding: 0;
   background-color: black;
   color: white;
-}
 
-.profile-wrapper {
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-
-  .profile-left {
+  .profile-wrapper {
+    height: 100vh;
     display: grid;
-    grid-template-rows: 1fr 2fr;
+    grid-template-columns: 1fr 2fr;
 
-    .profile-left-top {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-      border-bottom: 2px solid white;
+    .profile-left {
+      display: grid;
+      grid-template-rows: 1fr 2fr;
+      border-right: 2px solid white;
+      .profile-left-top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        border-bottom: 2px solid white;
 
 
-      .profile-picture {
-        width: 120px;
-        height: 120px;
-        border-radius: 20%;
-        margin: 25px;
+        .profile-picture {
+          width: 120px;
+          height: 120px;
+          border-radius: 20%;
+          margin: 25px;
+        }
+
+        .profile-name {
+          margin: 0;
+          font-size: 24px;
+        }
+
+        .profile-edit-btn {
+          display: block;
+          margin-top: 10px;
+          background-color: #ccc;
+          color: #fff;
+          padding: 10px 20px;
+          text-align: center;
+          border-radius: 5px;
+        }
       }
-
-      .profile-name {
-        margin: 0;
+      
+      .profile-left-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         font-size: 24px;
-      }
-
-      .profile-edit-btn {
-        display: block;
-        margin-top: 10px;
-        background-color: #ccc;
-        color: #fff;
-        padding: 10px 20px;
-        text-align: center;
-        border-radius: 5px;
       }
     }
     
-    .profile-left-bottom {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
+    .profile-right {
+      display: grid;
+      grid-template-rows: 1fr 9fr;
+
+      .profile-right-header {
+        margin: 25px;
+        font-size: 24px;
+      }
     }
-
-    border-right: 2px solid white;
-  }
-  
-  .profile-right {
-    display: grid;
-    grid-template-rows: 1fr 9fr;
-
-    .profile-right-header {
-      margin: 25px;
-      font-size: 24px;
-    }
-
   }
 }
+
