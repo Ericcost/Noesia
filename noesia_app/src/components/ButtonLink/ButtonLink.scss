@@ -9,9 +9,10 @@
     margin: 0.5rem 1rem;
     padding: 0.5rem 1rem;
     backdrop-filter: blur(0.2rem);
-    @include black-background(0.05);
-    @include black-border(0.1);
+    @include white-background(0.05);
+    @include white-border(0.1);
     @include black-box-shadow(0.1);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
     border-radius: 0.5rem;
     color: $white;
     cursor: pointer;  
@@ -21,7 +22,7 @@
     &:hover {
       color: $darkblue;
       background-color: $yellow;
-      @include black-border(0.2);
+      @include white-border(0.2);
     }
     span {
       font-family: "Helvetica Neue";
