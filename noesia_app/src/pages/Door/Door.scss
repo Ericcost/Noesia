@@ -52,34 +52,34 @@
   line-height: 1.5;
 }
 
-input[type="text"] {
-  /* Définit les styles pour l'entrée de texte */
-  font-size: 24px;
-  color: #fff;
-  background-color: #1a1a1a;
-  border: none;
-  border-bottom: 2px solid #fff;
-  padding: 5px;
-  text-align: center;
-  width: 250px;
-  margin-bottom: 20px;
-}
+// input[type="text"] {
+//   /* Définit les styles pour l'entrée de texte */
+//   font-size: 24px;
+//   color: #fff;
+//   background-color: #1a1a1a;
+//   border: none;
+//   border-bottom: 2px solid #fff;
+//   padding: 5px;
+//   text-align: center;
+//   width: 250px;
+//   margin-bottom: 20px;
+// }
 
-button {
-  /* Définit les styles pour le bouton de validation */
-  background-color: rgb(253, 232, 179, 0.7);
-  border: none;
-  border-radius: 5px;
-  color: #1a1a1a;
-  font-size: 20px;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+// button {
+//   /* Définit les styles pour le bouton de validation */
+//   background-color: rgb(253, 232, 179, 0.7);
+//   border: none;
+//   border-radius: 5px;
+//   color: #1a1a1a;
+//   font-size: 20px;
+//   padding: 10px 20px;
+//   cursor: pointer;
+//   transition: background-color 0.3s ease;
 
-  &:hover {
-    background-color: #fff;
-  }
-}
+//   &:hover {
+//     background-color: #fff;
+//   }
+// }
 
 /* Définit les styles pour les boutons personnalisés */
 .button-custom {
@@ -95,15 +95,6 @@ button {
   &:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
-}
-
-/* Définit les styles pour les boutons personnalisés de lien */
-.button-link {
-  /* Utilise les styles des boutons personnalisés */
-  @extend .button-custom;
-
-  margin-top: 20px;
-  text-decoration: none;
 }
 
 .door-code-img {
