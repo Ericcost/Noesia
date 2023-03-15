@@ -67,9 +67,7 @@ const Home = () => {
                 Paramètres
               </div>
               <div className="home-item">
-                <Link onClick={handleLogout}>
-                  Se déconnecter
-                </Link>
+                  Quitter
               </div>
             </div>
             <div className="home-background-pattern"></div>
@@ -114,9 +112,7 @@ const Home = () => {
                     Paramètres
                   </div>
                   <div className="home-item">
-                    <Link to="/connexion">
-                      Se connecter
-                    </Link>
+                    Quitter
                   </div>
                 </div>
                 <div className="home-background-pattern"></div>
