@@ -6,6 +6,7 @@ import { usePostUser } from "../../hooks/user/usePostUser";
 import Sidebar from '../../components/Sidebar/Sidebar';
 import Cursor from "../../components/Cursor/Cursor";
 import ButtonLink from '../../components/ButtonLink/ButtonLink'
+import Button from '../../components/Button/Button'
 
 import LoginImg from '../../assets/images/login.png';
 import './Login.scss'
@@ -46,7 +47,7 @@ const Login = () => {
             <form action="" onSubmit={handleSubmit}>
               <input type="email" name='email' placeholder='Email' value={formData.email} onChange={handleChange}/>
               <input type="password" name='password' placeholder='Mot de passe' value={formData.password} onChange={handleChange}/>
-              <button type="submit">Se connecter</button>
+              <Button type="submit" content="Se connecter"/>
               {isLoading && <div>Loading ...</div>}
               {isError && <div>Une erreur s'est produite : {error.message}</div>}
               {isSuccess && <div>Connection réussie!</div>}
@@ -54,7 +55,7 @@ const Login = () => {
           </div>
           <div className="login-side">
             <img src={LoginImg} alt="Image d'une pyramide dans une jungle" />
-            <ButtonLink content="Créer un nouveu compte" path="/inscription"/>
+            <ButtonLink content="Créer un nouveau compte" path="/inscription"/>
           </div>
           <Sidebar />
         </div>
