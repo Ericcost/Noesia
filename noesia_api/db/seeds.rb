@@ -19,5 +19,5 @@ end
 end
 
 20.times do |i|
-  Enigma.create!(title: Faker::Movie.title, description: Faker::Lorem.sentence(word_count:25), world: 1, level: i, topic_id: Topic.all.sample.id)
+  Enigma.create!(title: Faker::Movie.title, description: Faker::Lorem.sentence(word_count:25), world: 1, level: i, topic_id: Topic.all.sample.id, hint: 'Débrouille toi !')
 end
