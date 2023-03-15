@@ -12,6 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 6rem;
 
     .login-form {
       flex-basis: 50%;
@@ -22,28 +23,11 @@
       align-items: center;
       justify-content: center;
 
-      button {
-        margin: 0.5rem 1rem;
-        padding: 0.5rem 1rem;
-        backdrop-filter: blur(0.2rem);
-        @include black-background(0.05);
-        @include black-border(0.1);
-        @include black-box-shadow(0.1);
-        border-radius: 0.5rem;
-        color: $white;
-        cursor: pointer;  
-        transition: 
-        background-color 400ms, 
-        border-color 400ms;
-        &:hover {
-          color: $darkblue;
-          background-color: $yellow;
-          @include black-border(0.2);
-        }
-        span {
-          font-family: "Helvetica Neue";
-          font-weight: bold;
-        }
+      form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
       }
     
       input {
@@ -69,7 +53,7 @@
       justify-content: center;
 
       img {
-        width: 80%;
+        width: 100%;
         border-radius: 4.5rem;
         margin-bottom: 1.5rem;
       }
