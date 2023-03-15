@@ -10,15 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_13_150036) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_15_151741) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "enigmas", force: :cascade do |t|
     t.string "title", null: false
     t.text "description", null: false
+    t.integer "world", null: false
+    t.integer "level", null: false
+    t.bigint "topic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["topic_id"], name: "index_enigmas_on_topic_id"
+  end
+
+  create_table "histories", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "enigma_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["enigma_id"], name: "index_histories_on_enigma_id"
+    t.index ["user_id"], name: "index_histories_on_user_id"
   end
 
   create_table "jwt_denylist", force: :cascade do |t|
@@ -27,6 +40,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_150036) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["jti"], name: "index_jwt_denylist_on_jti"
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string "title", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
