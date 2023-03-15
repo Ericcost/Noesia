@@ -3,8 +3,10 @@ import { useNavigate } from "react-router-dom";
 
 import { usePostUser } from "../../hooks/user/usePostUser";
 
+import Sidebar from '../../components/Sidebar/Sidebar';
 import ButtonLink from '../../components/ButtonLink/ButtonLink'
 
+import RegisterImg from '../../assets/images/register.png';
 import './Register.scss'
 
 const Register = () => {
@@ -63,9 +65,10 @@ const Register = () => {
         </form>
       </div>
       <div className="register-side">
-        <img src="./src/assets/images/background.jpg" />
+        <img src={RegisterImg} alt="Image d'une pyramide dans une jungle" />
         <ButtonLink content="J'ai déjà un compte" path="/connexion"/>
       </div>
+      <Sidebar />
     </div>
   );
 };
