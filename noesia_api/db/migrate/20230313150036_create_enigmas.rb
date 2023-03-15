@@ -3,6 +3,9 @@ class CreateEnigmas < ActiveRecord::Migration[7.0]
     create_table :enigmas do |t|
       t.string :title, null: false
       t.text :description, null: false
+      t.integer :world, null: false
+      t.integer :level, null: false
+      t.belongs_to :topic, index: true
 
       t.timestamps
     end
