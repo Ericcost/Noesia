@@ -12,7 +12,7 @@
     @include white-background(0.05);
     @include white-border(0.1);
     @include black-box-shadow(0.1);
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0.15rem 0.15rem 0.15rem rgba(0, 0, 0, 0.1);
     border-radius: 0.5rem;
     color: $white;
     cursor: pointer;  

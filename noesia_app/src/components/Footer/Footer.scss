@@ -1,3 +1,6 @@
+@import '../../styles/abstracts/variables';
+@import '../../styles/abstracts/mixins.scss';
+
 .footer {
   display: flex;
   align-items: center;
@@ -12,11 +15,11 @@
   z-index: 6;
 
   svg {
-    color: white;
+    color: $white;
     margin-right: 2rem;
   }
   p {
-    color: white;
+    color: $white;
   }
 
 }
