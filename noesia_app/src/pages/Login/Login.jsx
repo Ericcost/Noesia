@@ -3,9 +3,11 @@ import { useNavigate } from "react-router-dom";
 
 import { usePostUser } from "../../hooks/user/usePostUser";
 
+import Sidebar from '../../components/Sidebar/Sidebar';
 import Cursor from "../../components/Cursor/Cursor";
 import ButtonLink from '../../components/ButtonLink/ButtonLink'
 
+import LoginImg from '../../assets/images/login.png';
 import './Login.scss'
 
 const Login = () => {
@@ -32,7 +34,7 @@ const Login = () => {
     e.preventDefault();
     const formDataToSend = { "user": formData }
     mutate(formDataToSend)
-    navigate("/")
+    navigate("/carte")
   }
 
   return (
@@ -51,9 +53,10 @@ const Login = () => {
             </form>
           </div>
           <div className="login-side">
-            <img src="./src/assets/images/background.jpg" />
+            <img src={LoginImg} alt="Image d'une pyramide dans une jungle" />
             <ButtonLink content="Créer un nouveu compte" path="/inscription"/>
           </div>
+          <Sidebar />
         </div>
       </div>
     </>
