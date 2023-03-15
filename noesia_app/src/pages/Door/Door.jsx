@@ -71,7 +71,6 @@ export default function Door() {
                 de découvertes passionnantes et de merveilles insoupçonnées.
               </p>
               <button onClick={handleSubmit}>Valider</button>
-              <ButtonLink />
             </div>
           </div>
 
