@@ -1,9 +1,12 @@
+@import '../../styles/abstracts/variables';
+@import '../../styles/abstracts/mixins.scss';
+
 .profile {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: black;
-  color: white;
+  background-color: $black;
+  color: $white;
 
   .profile-wrapper {
     height: 100vh;
@@ -13,35 +16,35 @@
     .profile-left {
       display: grid;
       grid-template-rows: 1fr 2fr;
-      border-right: 2px solid white;
+      border-right: 0.15rem solid $white;
       .profile-left-top {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 20px;
-        border-bottom: 2px solid white;
+        margin-bottom: 1rem;
+        border-bottom: 0.15rem solid $white;
 
 
         .profile-picture {
-          width: 120px;
-          height: 120px;
+          width: 8rem;
+          height: 8rem;
           border-radius: 20%;
-          margin: 25px;
+          margin: 1.5rem;
         }
 
         .profile-name {
           margin: 0;
-          font-size: 24px;
+          font-size: 1.5rem;
         }
 
         .profile-edit-btn {
           display: block;
-          margin-top: 10px;
-          background-color: #ccc;
-          color: #fff;
-          padding: 10px 20px;
+          margin-top: 0.5rem;
+          background-color: $lightblue;
+          color: $white;
+          padding: 0.5rem 1rem;
           text-align: center;
-          border-radius: 5px;
+          border-radius: 0.3rem;
         }
       }
       
@@ -50,7 +53,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        font-size: 24px;
+        font-size: 1.5rem;
       }
     }
     
@@ -59,8 +62,8 @@
       grid-template-rows: 1fr 9fr;
 
       .profile-right-header {
-        margin: 25px;
-        font-size: 24px;
+        margin: 1.5rem;
+        font-size: 1.5rem;
       }
     }
   }
