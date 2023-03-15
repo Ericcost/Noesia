@@ -55,6 +55,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_15_151741) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "username", default: "", null: false
+    t.boolean "is_door_passed", default: false, null: false
+    t.integer "level", default: 1, null: false
+    t.integer "experience", default: 0, null: false
+    t.integer "karma", default: 0, null: false
+    t.integer "discipline", default: 0, null: false
+    t.integer "ingenuity", default: 0, null: false
+    t.integer "willpower", default: 0, null: false
+    t.integer "concentration", default: 0, null: false
+    t.integer "guile", default: 0, null: false
+    t.integer "dexterity", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
