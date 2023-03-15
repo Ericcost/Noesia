@@ -10,7 +10,7 @@
     .home-items {
       margin-left: clamp(4rem, 20vw, 48rem);
       position: relative;
-      z-index: 5;
+      z-index: 3;
 
       &:hover > .home-item {
         opacity: 0.3;
@@ -38,6 +38,7 @@
         margin: 0.5rem;
         padding: 0.5rem;
         position: relative;
+        z-index: 4;
         
 
         &:hover {
