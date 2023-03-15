@@ -20,7 +20,7 @@ export default function Door() {
   };
 
   const handleSubmit = () => {
-    if (inputValue === "@$€") {
+    if (inputValue === "$€@") {
       console.log(
         "Avec une satisfaction intense, vous prononcez 'connaissance' à haute voix. Et alors, la porte massive s'ouvre lentement, révélant un nouveau monde fascinant et rempli de merveilles insoupçonnées. Vous franchissez la porte, prêt à explorer ce nouveau monde avec une soif insatiable de connaissances et de découvertes."
       );
@@ -41,8 +41,9 @@ export default function Door() {
             <div className="buttons-left">
               <Button content="&" onClick={() => handleButtonClick("&")} />
               <Button content="€" onClick={() => handleButtonClick("€")} />
+              <Button content="#" onClick={() => handleButtonClick("#")} />
               <Button content="@" onClick={() => handleButtonClick("@")} />
-              <Button content="$" onClick={() => handleButtonClick("$")} />
+              
             </div>
           </div>
 
@@ -78,8 +79,8 @@ export default function Door() {
             <div className="buttons-right">
               <Button content="%" onClick={() => handleButtonClick("%")} />
               <Button content="£" onClick={() => handleButtonClick("£")} />
+              <Button content="$" onClick={() => handleButtonClick("$")} />
               <Button content="+" onClick={() => handleButtonClick("+")} />
-              <Button content="#" onClick={() => handleButtonClick("#")} />
             </div>
           </div>
         </div>
