@@ -12,15 +12,15 @@
   }
 }
 
-@mixin black-background($opacity) {
+@mixin white-background($opacity) {
   background-color: rgba($white, $opacity);
 }
 
-@mixin black-border($opacity) {
-  border: 1px solid rgba($white, $opacity);
+@mixin white-border($opacity) {
+  border: 0.05rem solid rgba($white, $opacity);
 }
 
 @mixin black-box-shadow($opacity) {
-  box-shadow: 2px 2px 2px rgba($black, $opacity);
+  box-shadow: 0.15rem 0.15rem 0.15rem rgba($black, $opacity);
 }
 
