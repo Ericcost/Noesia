@@ -1,71 +1,120 @@
 .door {
-  .door-code-img {
-    background-size: 120vmax;
-    height: 100%;
-    width: 100%;
-    top: 0px;
-    left: 0px;
-    position: absolute;
-    z-index: -1;
+  /* Définit les styles pour la boîte conteneur de la page de la porte */
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.door-screen {
+  /* Définit les styles pour l'écran de la porte */
+  background-color: #1a1a1a;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+}
+
+.special-buttons {
+  /* Définit les styles pour la rangée de boutons spéciaux */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.buttons-left {
+  /* Définit les styles pour les boutons spéciaux de gauche */
+  display: flex;
+  justify-content: flex-start;
+}
+
+.buttons-right {
+  /* Définit les styles pour les boutons spéciaux de droite */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.door-script {
+  /* Définit les styles pour la section de script de la porte */
+  margin-top: 20px;
+  text-align: center;
+}
+
+.door-script-text {
+  /* Définit les styles pour le texte de l'énigme */
+  font-size: 20px;
+  color: #fff;
+  line-height: 1.5;
+}
+
+input[type="text"] {
+  /* Définit les styles pour l'entrée de texte */
+  font-size: 24px;
+  color: #fff;
+  background-color: #1a1a1a;
+  border: none;
+  border-bottom: 2px solid #fff;
+  padding: 5px;
+  text-align: center;
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+button {
+  /* Définit les styles pour le bouton de validation */
+  background-color: rgb(253, 232, 179, 0.7);
+  border: none;
+  border-radius: 5px;
+  color: #1a1a1a;
+  font-size: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #fff;
   }
+}
 
-  .door-screen {
-    display: flex;
-    margin: 150px 50px;
+/* Définit les styles pour les boutons personnalisés */
+.button-custom {
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 
-    .special-center {
-      flex: 4;
-      flex-direction: column;
-      border: 2px solid black;
-      border-radius: 20px;
-      margin: 0 -80px;
-      padding: 10px 20px;
-      background-color: rgb(255, 255, 255, 0.9);
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
 
-      .door-script {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        gap: 80px;
+/* Définit les styles pour les boutons personnalisés de lien */
+.button-link {
+  /* Utilise les styles des boutons personnalisés */
+  @extend .button-custom;
 
-        input {
-          width: 98.7%;
-          height: 60px;
-          text-align: center;
-          font-size: 30px;
-        }
+  margin-top: 20px;
+  text-decoration: none;
+}
 
-        button {
-          height: 60px;
-        }
-      }
-    }
+.door-code-img {
+  float: right;
+  width: 30%;
+  margin: 0 0 2rem 2rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
 
-    .special-buttons {
-      flex: 4;
-      flex-direction: column;
-
-      .buttons-left {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: 100px;
-        width: 10px;
-        padding: 0 350px;
-        margin: 10px auto;
-      }
-
-      .buttons-right {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: 100px;
-        width: 10px;
-        padding: 0 350px;
-        margin: 10px auto;
-      }
-    }
+  &:hover {
+    transform: translateX(5px);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
   }
 }
