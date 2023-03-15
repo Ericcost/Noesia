@@ -57,7 +57,7 @@ const Home = () => {
         { logged ? (
           <div className="home">
             <div className="home-items" >
-              <div className="home-item" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
+              <div className="home-item">
                 <Link to='/porte'>
                   Jouer
                 </Link>
@@ -67,9 +67,7 @@ const Home = () => {
                 Paramètres
               </div>
               <div className="home-item">
-                <Link onClick={handleLogout}>
-                  Se déconnecter
-                </Link>
+                  Quitter
               </div>
             </div>
             <div className="home-background-pattern"></div>
@@ -104,7 +102,7 @@ const Home = () => {
               ) : (
               <div className="home">
                 <div className="home-items" >
-                  <div className="home-item" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
+                  <div className="home-item">
                     <Link to='/porte'>
                       Jouer
                     </Link>
@@ -114,9 +112,7 @@ const Home = () => {
                     Paramètres
                   </div>
                   <div className="home-item">
-                    <Link to="/connexion">
-                      Se connecter
-                    </Link>
+                    Quitter
                   </div>
                 </div>
                 <div className="home-background-pattern"></div>
