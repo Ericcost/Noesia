@@ -5,7 +5,7 @@ import { usePostUser } from "../../hooks/user/usePostUser";
 
 import Sidebar from '../../components/Sidebar/Sidebar';
 import Cursor from "../../components/Cursor/Cursor";
-]import ButtonLink from '../../components/ButtonLink/ButtonLink'
+import ButtonLink from '../../components/ButtonLink/ButtonLink'
 
 import LoginImg from '../../assets/images/login.png';
 import './Login.scss'
