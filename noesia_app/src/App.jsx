@@ -20,7 +20,7 @@ function App() {
         <main>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path='/tutoriel' element={<Door />} />
+              <Route path='/porte' element={<Door />} />
               <Route path="/carte" element={<Map />} />
               <Route path="/connexion" element={<Login />} />
               <Route path="/inscription" element={<Register />} />

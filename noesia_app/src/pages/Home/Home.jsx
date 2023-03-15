@@ -57,8 +57,8 @@ const Home = () => {
         { logged ? (
           <div className="home">
             <div className="home-items" >
-              <div className="home-item" >
-                <Link to='/tutoriel'>
+              <div className="home-item" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
+                <Link to='/porte'>
                   Jouer
                 </Link>
               </div>
@@ -104,8 +104,8 @@ const Home = () => {
               ) : (
               <div className="home">
                 <div className="home-items" >
-                  <div className="home-item">
-                    <Link to='/tutoriel'>
+                  <div className="home-item" onMouseEnter={() => setShowCursor(false)} onMouseLeave={() => setShowCursor(true)}>
+                    <Link to='/porte'>
                       Jouer
                     </Link>
                   </div>
