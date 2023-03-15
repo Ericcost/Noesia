@@ -21,23 +21,25 @@ const Register = () => {
     username: "",
     email: "",
     password: "",
-    password_confirmation: ""
+    password_confirmation: "",
+    accept_rgpd: false,
   });
   
   const [isPasswordInvalid, setIsPasswordInvalid] = useState(false);
   
   const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: type === "checkbox" ? checked : value,
     });
   };
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.password === formData.password_confirmation) {
+    if (formData.password === formData.password_confirmation && formData.accept_rgpd) {
       setIsPasswordInvalid(false);
-      const { password_confirmation, ...DataWithoutPasswordConfirmation } = formData;
+      const { password_confirmation, accept_rgpd, ...DataWithoutPasswordConfirmation } = formData;
       const dataToSend = { user: DataWithoutPasswordConfirmation };
       mutate(dataToSend);
     } else {
@@ -62,12 +64,20 @@ const Register = () => {
               <input type="email" name='email' placeholder='Email' value={formData.email} onChange={handleChange}/><br />
               <input type="password" name='password' placeholder='Mot de passe' value={formData.password} onChange={handleChange}/><br />
               <input type="password" name='password_confirmation' placeholder='Confirmer votre mot de passe' value={formData.password_confirmation} onChange={handleChange}/><br />
+              <div className="rgpd">
+                <input type="checkbox" name="accept_rgpd" id="accept_rgpd" checked={formData.accept_rgpd} onChange={handleChange} />
+                <small>
+                  Veuillez accepter la politique de confidentialité RGPD. Pour en savoir plus sur la
+                  gestion de vos données personnelles et pour exercer vos droits, reportez-vous à
+                  la politique de confidentialité.
+                </small><br />
+              </div> 
               <Button type="submit" content="S'inscrire"/>
               {isLoading && <div>Loading ...</div>}
               {isError && <div>Une erreur s'est produite : {error.message}</div>}
               {isSuccess && <div>Inscription réussie!</div>}
               {isPasswordInvalid && <div>Les mots de passe ne correspondent pas.</div>}
-            </form>
+            </form> 
           </div>
           <div className="register-side">
             <img src={RegisterImg} alt="Image d'une pyramide dans une jungle" />
