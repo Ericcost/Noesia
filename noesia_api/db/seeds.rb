@@ -15,9 +15,13 @@ topics.each do |topic|
 end
 
 20.times do |i|
-  User.create!(email: "user#{i+1}@gmail.com", password: "12345#{i}", username: "user#{i+1}")
+  User.create!(email: "user#{i}@gmail.com", password: "123456", username: "user#{i}")
 end
 
 20.times do |i|
   Enigma.create!(title: Faker::Movie.title, description: Faker::Lorem.sentence(word_count:25), world: 1, level: i, topic_id: Topic.all.sample.id, hint: 'Débrouille toi !')
+end
+
+100.times do |i|
+  History.create!(user_id: User.all.sample.id, enigma_id: Enigma.all.sample.id)
 end
