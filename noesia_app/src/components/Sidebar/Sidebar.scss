@@ -3,22 +3,21 @@
 
 .sidebar {
   margin: 2rem;
-  top: 50%;
-  left: 0;
+  bottom: 0;
+  left: 50%;
   position: fixed;
-  transform: translateY(-50%);
+  transform: translateX(-50%);
 
   .sidebar-items {
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
 
     .sidebar-item {
       display: flex;
       align-items: center;
-      flex-direction: row;
-      text-align: center;
-      padding: 1rem;
+      flex-direction: column-reverse;
+      margin: 0 1rem;
+      padding: 0 1rem;
       
       a {
         color: $white;
@@ -26,6 +25,7 @@
 
       svg {
         font-size: 4rem;
+        padding: 1rem;
       }
       
       &:hover {

@@ -4,6 +4,7 @@ import { CgProfile } from "react-icons/cg";
 import { GiExitDoor, GiReturnArrow } from "react-icons/gi";
 import { FaConnectdevelop } from "react-icons/fa";
 import { BsBook } from "react-icons/bs";
+import { HiOutlineMap } from "react-icons/hi";
 
 import ButtonLink from '../../components/ButtonLink/ButtonLink';
 import Button from '../../components/Button/Button'
@@ -22,7 +23,8 @@ export default function Sidebar() {
   const [isConnectHovering, setIsConnectHovering] = useState(false);
   const [isSubscribeHovering, setIsSubscribeHovering] = useState(false);
   const [isGetBackHovering, setIsGetBackHovering] = useState(false);
-
+  const [isMapHovering, setIsMapHovering] = useState(false);
+  
   const navigate = useNavigate();
 
   const auth_token = localStorage.getItem('Authorization_token');
@@ -30,6 +32,10 @@ export default function Sidebar() {
   const current_user = data?.user;
   const { mutate: deleteUser } = useDeleteUser('users/sign_out', auth_token);
   const logged = auth_token ? true : false;
+
+  const pathname = window.location.pathname.includes('/inscription') || window.location.pathname.includes('/connexion') || window.location.pathname.includes(`/profil/${current_user?.id}`);
+
+  
 
   const handleLogout = (e) => {
     localStorage.removeItem('Authorization_token');
@@ -41,56 +47,98 @@ export default function Sidebar() {
     <>
       <div className='sidebar'>
         <div className='sidebar-items'>
-          {logged ? (
-            <>
-              <div className='sidebar-item' onMouseEnter={() => setIsProfileHovering(true)} onMouseLeave={() => setIsProfileHovering(false)}>
-                <Link to={`/profil/${current_user?.id}`}><CgProfile /></Link>
-                {isProfileHovering ? (
-                  <ButtonLink content="Profil" path={`/profil/${current_user?.id}`}/>
-                ) : 
-                  null
-                }
-              </div>
-              <div className='sidebar-item' onMouseEnter={() => setIsDisconnectHovering(true)} onMouseLeave={() => setIsDisconnectHovering(false)}>
-                <Link onClick={handleLogout}><GiExitDoor /></Link>
-                {isDisconnectHovering ? (
-                  <Button content="Se déconnecter" onClick={handleLogout} />
-                ) : 
-                  null
-                }
-              </div>
-            </>
-            ) : (
+          {!logged ? 
+            (
               <>
-              <div className='sidebar-item' onMouseEnter={() => setIsConnectHovering(true)} onMouseLeave={() => setIsConnectHovering(false)}>
-              <Link to="/connexion"><FaConnectdevelop /></Link>
-                {isConnectHovering ? (
-                  <ButtonLink content="Se connecter" path="/connexion"/>
-                ) : 
-                  null
+                <div className='sidebar-item' onMouseEnter={() => setIsConnectHovering(true)} onMouseLeave={() => setIsConnectHovering(false)}>
+                  <Link to="/connexion"><FaConnectdevelop /></Link>
+                  {isConnectHovering ? (
+                    <ButtonLink content="Se connecter" path="/connexion"/>
+                  ) : 
+                    null
+                  }
+                </div>
+                <div className='sidebar-item' onMouseEnter={() => setIsSubscribeHovering(true)} onMouseLeave={() => setIsSubscribeHovering(false)}>
+                  <Link to="/inscription"><BsBook /></Link>
+                  { isSubscribeHovering ? (
+                    <ButtonLink content="S'inscrire" path="/inscription"/>
+                  ) : 
+                    null
+                  }
+                </div>
+                <div className='sidebar-item' onMouseEnter={() => setIsGetBackHovering(true)} onMouseLeave={() => setIsGetBackHovering(false)}>
+                  <Link to='/'><GiReturnArrow /></Link>
+                  { isGetBackHovering ? (
+                    <ButtonLink content="Retour au menu" path="/"/>
+                  ) : 
+                    null
+                  }
+                </div> 
+              </>
+            ) : ( 
+              <>
+                { !pathname ? 
+                  (
+                    <>
+                      <div className='sidebar-item' onMouseEnter={() => setIsProfileHovering(true)} onMouseLeave={() => setIsProfileHovering(false)}>
+                        <Link to={`/profil/${current_user?.id}`}><CgProfile /></Link>
+                        {isProfileHovering ? (
+                          <ButtonLink content="Profil" path={`/profil/${current_user?.id}`}/>
+                        ) : 
+                          null
+                        }
+                      </div>
+                      <div className='sidebar-item' onMouseEnter={() => setIsDisconnectHovering(true)} onMouseLeave={() => setIsDisconnectHovering(false)}>
+                        <Link onClick={handleLogout}><GiExitDoor /></Link>
+                        {isDisconnectHovering ? (
+                          <Button content="Se déconnecter" onClick={handleLogout} />
+                        ) : 
+                          null
+                        }
+                      </div>
+                      <div className='sidebar-item' onMouseEnter={() => setIsGetBackHovering(true)} onMouseLeave={() => setIsGetBackHovering(false)}>
+                        <Link to='/'><GiReturnArrow /></Link>
+                        { isGetBackHovering ? (
+                          <ButtonLink content="Retour au menu" path="/"/>
+                        ) : 
+                          null
+                        }
+                      </div>
+                    </> 
+                  ) : (
+                    <>
+                      <div className='sidebar-item' onMouseEnter={() => setIsProfileHovering(true)} onMouseLeave={() => setIsProfileHovering(false)}>
+                        <Link to={`/profil/${current_user?.id}`}><CgProfile /></Link>
+                        {isProfileHovering ? (
+                          <ButtonLink content="Profil" path={`/profil/${current_user?.id}`}/>
+                        ) : 
+                          null
+                        }
+                      </div>
+                      <div className='sidebar-item' onMouseEnter={() => setIsDisconnectHovering(true)} onMouseLeave={() => setIsDisconnectHovering(false)}>
+                        <Link onClick={handleLogout}><GiExitDoor /></Link>
+                        {isDisconnectHovering ? (
+                          <Button content="Se déconnecter" onClick={handleLogout} />
+                        ) : 
+                          null
+                        }
+                      </div>
+                      <div className='sidebar-item' onMouseEnter={() => setIsMapHovering(true)} onMouseLeave={() => setIsMapHovering(false)}>
+                        <Link to='/carte'><HiOutlineMap /></Link>
+                        { isMapHovering ? (
+                          <ButtonLink content="Carte" path="/carte"/>
+                        ) : 
+                          null
+                        }
+                      </div>
+                    </>
+                  )
                 }
-              </div>
-              <div className='sidebar-item' onMouseEnter={() => setIsSubscribeHovering(true)} onMouseLeave={() => setIsSubscribeHovering(false)}>
-                <Link to="/inscription"><BsBook /></Link>
-                { isSubscribeHovering ? (
-                  <ButtonLink content="S'inscrire" path="/inscription"/>
-                ) : 
-                  null
-                }
-              </div>
-            </>
+              </>
             )
           }
-          <div className='sidebar-item' onMouseEnter={() => setIsGetBackHovering(true)} onMouseLeave={() => setIsGetBackHovering(false)}>
-            <Link to='/'><GiReturnArrow /></Link>
-            { isGetBackHovering ? (
-              <ButtonLink content="Retour au menu" path="/"/>
-            ) : 
-              null
-            }
-          </div>
         </div>
-      </div>
+      </div> 
     </>
   )
 }
