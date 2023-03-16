@@ -23,8 +23,11 @@ export default function Profile() {
   const current_user = data?.user;
 
   const { isLoading: isHistoriesLoading, data: historiesData, isError: isHistoriesError, error: historiesError, isSuccess: isHistoriesSuccess } = useGetUserHistories('histories', current_user?.id);
-  const { isLoading: isAchievementsLoading, data: AchievementsData, isError: isAchievementsError, error: AchievementsError, isSuccess: isAchievementsSuccess } = useGetAchievements('achievements');
-  const { isLoading: isUserAchievementsLoading, data: UserAchievementsData, isError: isUserAchievementsError, error: UserAchievementsErro, isSuccess: isUserAchievementsSuccess } = useGetUserAchievements('join_table_user_achievements', current_user?.id);
+  const { data: AchievementsData } = useGetAchievements('achievements');
+  const { data: UserAchievementsData } = useGetUserAchievements('join_table_user_achievements', current_user?.id);
+
+  const numberOfAchievements = Object.values(AchievementsData).length;
+  const numberOfUserAchievements = Object.values(UserAchievementsData).length;
 
   const progressCircles = document.querySelectorAll('.progress');
 
@@ -69,7 +72,7 @@ export default function Profile() {
                     <circle className="progress" r="67" data-target="10" cx="75" cy="75" />
                   </svg>
                   {isExperienceHovering ? (
-                    <span className="center percentage"><span className="value">0/100</span></span>
+                    <span className="center percentage"><span className="value">{}%</span></span>
                   ) : (
                     <span className="center percentage"><span className="value">{current_user?.level}</span></span>
                   )}
@@ -82,7 +85,7 @@ export default function Profile() {
                 <div className="gauge-container" onMouseEnter={() => setIsKarmaHovering(true)} onMouseLeave={() => setIsKarmaHovering(false)}>
                   <svg className="gauge" viewBox="0 0 150 150">
                     <circle className="rail" r="67" cx="75" cy="75" />
-                    <circle className="progress" r="67" data-target="25" cx="75" cy="75" />
+                    <circle className="progress" r="67" data-target={current_user?.karma} cx="75" cy="75" />
                   </svg>
                   {isKarmaHovering ? (
                     <span className="center percentage"><span className="value">{current_user?.karma} %</span></span>
@@ -98,10 +101,10 @@ export default function Profile() {
                 <div className="gauge-container" onMouseEnter={() => setIsAchievementHovering(true)} onMouseLeave={() => setIsAchievementHovering(false)}>
                   <svg className="gauge" viewBox="0 0 150 150">
                     <circle className="rail" r="67" cx="75" cy="75" />
-                    <circle className="progress" r="67" data-target="50" cx="75" cy="75" />
+                    <circle className="progress" r="67" data-target={numberOfUserAchievements/numberOfAchievements*100} cx="75" cy="75" />
                   </svg>
                   {isAchievementHovering ? (
-                    <span className="center percentage"><span className="value">{UserAchievementsData?.lenght}/{AchievementsData?.lenght}</span></span>
+                    <span className="center percentage"><span className="value">{numberOfUserAchievements} / {numberOfAchievements}</span></span>
                   ) : (
                     <FaTrophy className="center icon" />
                   )}
