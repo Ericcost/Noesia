@@ -30,9 +30,11 @@ export default function Footer() {
     };
   }, []);
 
+  const actualDate = new Date();
+
   return (
     <div className="footer">
-      <p>Noesia © 2023</p>
+      <p>Noesia © 2023 - {actualDate.getFullYear()}</p>
       { isFullScreen ? 
           <RxExitFullScreen onClick={handleFullScreenClick} /> 
           :

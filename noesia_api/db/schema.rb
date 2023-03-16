@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_15_151741) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_16_172203) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "achievements", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "description", null: false
+    t.integer "points", default: 1, null: false
+    t.boolean "is_hidden", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "enigmas", force: :cascade do |t|
     t.string "title", null: false
@@ -28,6 +37,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_15_151741) do
     t.datetime "updated_at", null: false
     t.index ["enigma_id"], name: "index_histories_on_enigma_id"
     t.index ["user_id"], name: "index_histories_on_user_id"
+  end
+
+  create_table "join_table_user_achievements", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "achievement_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["achievement_id"], name: "index_join_table_user_achievements_on_achievement_id"
+    t.index ["user_id"], name: "index_join_table_user_achievements_on_user_id"
   end
 
   create_table "jwt_denylist", force: :cascade do |t|
