@@ -15,6 +15,13 @@
 @mixin white-background($opacity) {
   background-color: rgba($white, $opacity);
 }
+@mixin blueflash-background($opacity) {
+  background-color: rgba($blueflash, $opacity);
+}
+@mixin black-background($opacity) {
+  background-color: rgba($black, $opacity);
+}
+
 
 @mixin white-border($opacity) {
   border: 0.05rem solid rgba($white, $opacity);
