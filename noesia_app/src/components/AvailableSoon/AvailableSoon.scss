@@ -1,14 +1,17 @@
+@import '../../styles/abstracts/variables';
+@import '../../styles/abstracts/mixins.scss';
+
 .soon {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ef4444;
+    background-color: $red;
     width: 3rem;
     height: 1.5rem;
     border-radius: 0.5rem;
     position: absolute;
     
-    color: #ffffff;
+    color: $white;
     top: 0;
     right: -2rem;
     

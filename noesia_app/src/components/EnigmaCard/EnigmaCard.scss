@@ -1,4 +1,5 @@
-@import 'src/styles/variables';
+@import 'src/styles/abstracts/variables';
+@import '../../styles/abstracts/mixins.scss';
 
 .enigma-card {
   border-radius: 1vmax;
@@ -19,7 +20,7 @@
     transform: scale(1.1);
     
     .enigma-id {
-      color: rgb(24, 25, 36, 0.7);
+      color: $darkblue;
       font-weight:  bold;
       opacity: 1;
       transition: 400ms ease;

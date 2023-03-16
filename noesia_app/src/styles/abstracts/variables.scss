@@ -26,10 +26,10 @@ $card-properties: (
     25: (border-radius: 50%, background-color: rgb(253, 232, 179, 0.7), height: 3%, width: 3%, left: 82%, top: 50%)
 );
 
-@each $card, $properties in $card-properties {
-    .card:nth-child(#{$card}) {
-      @each $property, $value in $properties {
-        #{$property}: $value;
-      }
-    }
-}
+$black: rgb(20, 20, 20);
+$red:#ef4444;
+$yellow: rgb(253, 232, 179, 0.7);
+$lightblue: #b6c4c9;
+$darkblue: #181924;
+$white: rgb(255, 255, 255, 1);
+$gradient: linear-gradient(to right, $yellow, $lightblue, $darkblue, $white);

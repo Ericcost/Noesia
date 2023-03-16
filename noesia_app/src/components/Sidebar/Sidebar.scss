@@ -1,31 +1,39 @@
+@import '../../styles/abstracts/variables';
+@import '../../styles/abstracts/mixins.scss';
+
 .sidebar {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
   margin: 2rem;
-  top: 30%;
+  top: 50%;
   left: 0;
   position: fixed;
-    
-  .sidebar-item {
+  transform: translateY(-50%);
+
+  .sidebar-items {
     display: flex;
-    align-items: center;
-    flex-direction: row;
-    text-align: center;
-    padding: 1rem;
+    justify-content: space-between;
+    flex-direction: column;
 
-    a {
-      color: white;
-    }
+    .sidebar-item {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      text-align: center;
+      padding: 1rem;
+      
+      a {
+        color: $white;
+      }
 
-    svg {
-      font-size: 3.5rem;
-    }
-    
-    &:hover {
       svg {
-        transform: scale(1.05);
-        color: rgb(253, 232, 179, 0.7);
+        font-size: 4rem;
+        
+      }
+      
+      &:hover {
+        svg {
+          transform: scale(1.2);
+          color: $yellow;
+        }
       }
     }
   }

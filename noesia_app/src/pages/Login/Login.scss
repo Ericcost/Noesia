@@ -1,16 +1,18 @@
+@import '../../styles/abstracts/variables';
+@import '../../styles/abstracts/mixins.scss';
+
 .login {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: black;
-  color: white;
-
+  background-color: $black;
 
   .login-wrapper {  
-    height: 90vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 6rem;
 
     .login-form {
       flex-basis: 50%;
@@ -21,61 +23,23 @@
       align-items: center;
       justify-content: center;
 
+      form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+    
       input {
-        &:hover {
-          cursor: text;
-        }
+        background: $black;
+        color: $white;
+        width: 100%;
+        border: 0.05rem solid $white;
+        border-radius: 0.5rem;
+        font-size: 2rem;
+        padding: 0.8rem;
+        margin: 0.8rem;
       }
-
-      button {
-        margin: 10px 20px;
-        padding: 10px 20px;
-        backdrop-filter: blur(3px);
-        background-color: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 6px;
-        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
-        color: white;
-        cursor: pointer;  
-        transition: 
-          background-color 400ms, 
-          border-color 400ms;
-          &:hover {
-            color: #181924;
-            background-color: rgb(253, 232, 179, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-          }
-          span {
-            font-family: "Helvetica Neue";
-            font-weight: bold;
-          }
-      }
-    }
-
-    input {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: black;
-      width: 100%;
-      color: white;
-      border: 1px solid white;
-      border-radius: 8px;
-      font-size: 2rem;
-      padding: 15px;
-      margin: 15px;
-    }
-
-    input:focus {
-      outline: none;
-      border: 1px solid grey;
-      border-radius: 8px;
-    }
-
-  .button-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .login-side {
@@ -89,9 +53,9 @@
       justify-content: center;
 
       img {
-        width: 80%;
-        border-radius: 50px;
-        margin-bottom: 20px;
+        width: 100%;
+        border-radius: 4.5rem;
+        margin-bottom: 1.5rem;
       }
     }
   }

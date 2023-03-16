@@ -1,11 +1,14 @@
+@import '../../styles/abstracts/variables';
+@import '../../styles/abstracts/mixins.scss';
+
 .map {
-  background-color: black;
+  background-color: $black;
   height: 240vmax;  
   width: 240vmax;
   margin: -1rem;
   padding: 3rem;
   overflow: hidden;
-  color: white;
+  color: $white;
 
   .enigmas {
     height: 200vmax;
