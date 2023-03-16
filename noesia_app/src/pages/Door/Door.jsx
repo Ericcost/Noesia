@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Code from "../../assets/images/door-code02.png";
 import Cursor from "../../components/Cursor/Cursor"
 import Button from "../../components/Button/Button";
-import ButtonLink from "../../components/ButtonLink/ButtonLink"
+import ButtonDoor from "../../components/ButtonDoor/ButtonDoor"
 import "./Door.scss";
 
 export default function Door() {
@@ -35,53 +35,101 @@ export default function Door() {
     <>
       <Cursor />
       <div className="door">
-        <img className="door-code-img" src={Code} alt="door terminal" />
-        <div className="door-screen">
-          <div className="special-buttons">
+        <div className="door-content">
+          <div className="door-buttons">
             <div className="buttons-left">
-              <Button content="&" onClick={() => handleButtonClick("&")} />
-              <Button content="€" onClick={() => handleButtonClick("€")} />
-              <Button content="#" onClick={() => handleButtonClick("#")} />
-              <Button content="@" onClick={() => handleButtonClick("@")} />
-              
+              <div className="buttons-animate">
+                <ButtonDoor content="&" onClick={() => handleButtonClick("&")} />
+                <Button />
+                <Button />
+              </div>
+              <div className="buttons-animate">
+                <ButtonDoor content="€" onClick={() => handleButtonClick("€")} />
+                <Button />
+                <Button />
+              </div>
+              <div className="buttons-animate">
+                <ButtonDoor content="#" onClick={() => handleButtonClick("#")} />
+                <Button />
+                <Button />
+              </div>
+              <div className="buttons-animate">
+                <ButtonDoor content="@" onClick={() => handleButtonClick("@")} />
+                <Button />
+                <Button />
+              </div>
             </div>
           </div>
 
-          <div className="special-center">
-            <div className="door-script">
+          <div className="door-code">
+            <div className="door-screen">
+              <Button />
               <input type="text" value={inputValue} readOnly />
-              <p className="door-script-text">
+              <Button />
+            </div>
+            <div className="door-script">
+              <p>
                 Vous êtes sur le point d'explorer un nouveau monde, mais pour y
                 accéder, vous devez d'abord résoudre une énigme. La voici :{" "}
-                <br></br>
+              </p>
+                <br />
+              <p>
                 "Je <strong>$</strong>uis l'outil de ceux qui cherchent à apprendre,
-                <br></br>
-                Certains me voient comme un vecteur de bonheur,<br></br>
+                Certains me voient comme un vecteur de bonheur,
                 D'autres comme un moyen de semer le malheur.
-                <br></br>
-                Mais ma véritable utilité est entre les mains,<br></br>
+              </p>
+                <br />
+              <p>
+                Mais ma véritable utilité est entre les mains,
                 De ceux qui ont la sag<strong>€</strong>sse et l'intention divine.
-                <br></br>
-                Si tu veux accéder à ce nouveau monde prometteur,<br></br>
-                Dis-moi, <strong>@</strong>mi, quel est donc mon nom avec vigueur ?"<br></br>
-                <br></br>
+              </p>
+                <br />
+              <p>
+                Si tu veux accéder à ce nouveau monde prometteur,
+                Dis-moi, <strong>@</strong>mi, quel est donc mon nom avec vigueur ?"
+              </p>
+                <br />
+              <p>
                 Trouvez les 3 caractères spéciaux qui se cachent dans cette énigme
                 et vous pourrez franchir le portail vers un nouveau monde rempli
                 de découvertes passionnantes et de merveilles insoupçonnées.
               </p>
-              <button onClick={handleSubmit}>Valider</button>
+            </div>
+            <div className="door-validate">
+              <Button />
+              <Button />
+              <ButtonDoor onClick={handleSubmit} content="Valider"/>
+              <Button />
+              <Button />
             </div>
           </div>
 
-          <div className="special-buttons">
+          <div className="door-buttons">
             <div className="buttons-right">
-              <Button content="%" onClick={() => handleButtonClick("%")} />
-              <Button content="£" onClick={() => handleButtonClick("£")} />
-              <Button content="$" onClick={() => handleButtonClick("$")} />
-              <Button content="+" onClick={() => handleButtonClick("+")} />
+              <div className="buttons-animate">
+                <ButtonDoor content="%" onClick={() => handleButtonClick("%")} />
+                <Button />
+                <Button />
+              </div>
+              <div className="buttons-animate">
+                <ButtonDoor content="£" onClick={() => handleButtonClick("£")} />
+                <Button />
+                <Button />
+              </div>
+              <div className="buttons-animate">
+                <ButtonDoor content="$" onClick={() => handleButtonClick("$")} />
+                <Button />
+                <Button />
+              </div>
+              <div className="buttons-animate">
+                <ButtonDoor content="+" onClick={() => handleButtonClick("+")} />
+                <Button />
+                <Button />
+              </div>
             </div>
           </div>
         </div>
+        {/* <img className="door-background" src={Code} alt="door terminal"></img> */}
       </div>
     </>
   );

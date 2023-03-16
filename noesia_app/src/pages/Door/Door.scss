@@ -1,111 +1,131 @@
+@import '../../styles/abstracts/variables';
+@import '../../styles/abstracts/mixins.scss';
+
 .door {
-  /* Définit les styles pour la boîte conteneur de la page de la porte */
-  height: 100vh;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-}
+  background-color: $black;
 
-.door-screen {
-  /* Définit les styles pour l'écran de la porte */
-  background-color: #1a1a1a;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 50%;
-}
+  .door-content {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .door-buttons {
+      height: 100vh;
+      width: 100vw;
+      flex: 2;
+      display: flex; 
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      
+      .buttons-left {
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 5rem;
 
-.special-buttons {
-  /* Définit les styles pour la rangée de boutons spéciaux */
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
+        .buttons-animate {
+          display: flex; 
+          justify-content: center;
+          align-items: center;
+          flex-direction: row-reverse;
+        }
+      }
 
-.buttons-left {
-  /* Définit les styles pour les boutons spéciaux de gauche */
-  display: flex;
-  justify-content: flex-start;
-}
+      .buttons-right {
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 5rem;
 
-.buttons-right {
-  /* Définit les styles pour les boutons spéciaux de droite */
-  display: flex;
-  justify-content: flex-end;
-}
+        .buttons-animate {
+          display: flex; 
+          justify-content: center;
+          align-items: center;
+          flex-direction: row;
+        }
+      }
+    }
 
-.door-script {
-  /* Définit les styles pour la section de script de la porte */
-  margin-top: 20px;
-  text-align: center;
-}
+    .door-code {
+      flex: 3;
+      display: flex; 
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: transparent;
+      // @include white-background(0.8);
+      border-radius: 2rem;
+      margin: 3rem;
+      padding: 3rem 3rem 3rem 3rem;
+      gap: 2.5rem;
+      
+      .door-screen {
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        input {
+          cursor: not-allowed;
+          text-align: center;
+          border-radius: 1rem;
+          box-shadow: 0 0 0.25rem $blueflash, 0 0 1rem $blueflash, 0 0 2rem $blueflash, 0 0 4rem $blueflash;
+          width: 28vw;
+          height: 8vh;
+        }
+      }
 
-.door-script-text {
-  /* Définit les styles pour le texte de l'énigme */
-  font-size: 20px;
-  color: #fff;
-  line-height: 1.5;
-}
+      .door-script {
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 1rem;
+        padding: 1rem;
+        @include black-background(1);     
 
-// input[type="text"] {
-//   /* Définit les styles pour l'entrée de texte */
-//   font-size: 24px;
-//   color: #fff;
-//   background-color: #1a1a1a;
-//   border: none;
-//   border-bottom: 2px solid #fff;
-//   padding: 5px;
-//   text-align: center;
-//   width: 250px;
-//   margin-bottom: 20px;
-// }
+        p {
+          color: $white;
+          text-align: justify;
+          text-justify: inter-word;
+          overflow-wrap: break-word;
+          font-size: 1.2rem;
+          strong {
+            font-size: 2rem;
+          }
+        }
+      }
 
-// button {
-//   /* Définit les styles pour le bouton de validation */
-//   background-color: rgb(253, 232, 179, 0.7);
-//   border: none;
-//   border-radius: 5px;
-//   color: #1a1a1a;
-//   font-size: 20px;
-//   padding: 10px 20px;
-//   cursor: pointer;
-//   transition: background-color 0.3s ease;
+      .door-validate {
+        display: flex; 
+        flex-direction: row;
+        align-items: center;
+        
+        button {
+          
+        }
+      }
+    }
 
-//   &:hover {
-//     background-color: #fff;
-//   }
-// }
-
-/* Définit les styles pour les boutons personnalisés */
-.button-custom {
-  background-color: transparent;
-  border: none;
-  border-radius: 5px;
-  color: #fff;
-  font-size: 20px;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    
   }
-}
 
-.door-code-img {
-  float: right;
-  width: 30%;
-  margin: 0 0 2rem 2rem;
-  border-radius: 0.5rem;
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    transform: translateX(5px);
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  .door-background {
+    background-size: 100vmax;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    opacity: 1;
+    z-index: -1;
+    transform: scale(1.1);
   }
+
 }
