@@ -3,9 +3,9 @@ class HistoriesController < ApplicationController
 
   # GET /histories
   def index
-    @histories = History.all
+    @user_histories = History.where(user_id: params[:user_id])
 
-    render json: @histories
+    render json: @user_histories
   end
 
   # GET /histories/1
