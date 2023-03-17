@@ -5,7 +5,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $black;
+  background-color: grey;
+  z-index: -1;
+
+  .background-pattern {
+    height: 100vh;
+    width: 100vw;
+    background-image: 
+    radial-gradient(
+      $darkblue 9%,
+      transparent 9%
+    ),
+    radial-gradient(
+      $yellow 15%,
+      transparent 15%
+    );
+    background-size: 100vmin 100vmin;
+    position: absolute;
+    z-index: 0;
+    
+    transition: 
+      opacity 800ms ease,
+      background-size 800ms ease,
+      background-position 800ms ease;
+  }
 
   .door-content {
     height: 100vh;
@@ -13,7 +36,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    z-index: 2;
     .door-buttons {
       height: 100vh;
       width: 100vw;
@@ -75,7 +98,7 @@
           cursor: not-allowed;
           text-align: center;
           border-radius: 1rem;
-          box-shadow: 0 0 0.25rem $blueflash, 0 0 1rem $blueflash, 0 0 2rem $blueflash, 0 0 4rem $blueflash;
+          box-shadow: 0 0 0.25rem $yellow, 0 0 1rem $yellow, 0 0 2rem $yellow, 0 0 4rem $yellow;
           width: 28vw;
           height: 8vh;
         }
@@ -107,9 +130,9 @@
         flex-direction: row;
         align-items: center;
         
-        button {
+        // button {
           
-        }
+        // }
       }
     }
 

@@ -8,6 +8,7 @@ import Cursor from "../../components/Cursor/Cursor"
 import ButtonLink from '../../components/ButtonLink/ButtonLink'
 import Button from '../../components/Button/Button'
 
+import RGPD from '../../assets/pdf/RGPD_Noesia.pdf';
 import RegisterImg from '../../assets/images/register.png';
 import './Register.scss'
 
@@ -78,7 +79,7 @@ const Register = () => {
                 <small>
                   Veuillez accepter la politique de confidentialité RGPD. Pour en savoir plus sur la
                   gestion de vos données personnelles et pour exercer vos droits, reportez-vous à
-                  la politique de confidentialité.
+                  la <a href={RGPD}>politique de confidentialité.</a>
                 </small><br />
               </div> 
               <Button type="submit" content="S'inscrire"/>

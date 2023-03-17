@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 
+import { useFetchGet } from '../../hooks/fetchData/useFetchData';
 import { useFetchPost } from '../../hooks/fetchData/useFetchData';
 
 import Sidebar from '../../components/Sidebar/Sidebar';
@@ -12,6 +13,11 @@ import LoginImg from '../../assets/images/login.png';
 import './Login.scss'
 
 const Login = () => {
+
+  const auth_token = localStorage.getItem('Authorization_token');
+  const { isUserLoading, data, isUserError, userError } = useFetchGet('member-data', 'user', auth_token);
+  const current_user = data?.user;
+  const logged = auth_token ? true : false;
 
   const { mutate: logInUser, isLoading, isSuccess, isError, error } = useFetchPost('users/sign_in', 'user');
 
@@ -34,9 +40,10 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formDataToSend = { "user": formData }
+    
     logInUser(formDataToSend)
     if (isSuccess) {
-      navigate("/carte")
+      navigate("/");
     }
   }
 

@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
+import Code from "../../assets/images/door-code02.png";
+
 import { useFetchGet, useFetchPut } from "../../hooks/fetchData/useFetchData";
 import Cursor from "../../components/Cursor/Cursor"
 import Button from "../../components/Button/Button";
 import ButtonDoor from "../../components/ButtonDoor/ButtonDoor"
+
 import "./Door.scss";
 
 export default function Door() {
@@ -79,7 +83,7 @@ export default function Door() {
           <div className="door-code">
             <div className="door-screen">
               <Button />
-              <input type="text" value={inputValue} readOnly />
+              <input placeholder='Cliquer sur les bouttons pour répondre' type="text" value={inputValue} readOnly />
               <Button />
             </div>
             <div className="door-script">
@@ -144,6 +148,7 @@ export default function Door() {
             </div>
           </div>
         </div>
+        <div className="background-pattern"></div>
         {/* <img className="door-background" src={Code} alt="door terminal"></img> */}
       </div>
     </>
