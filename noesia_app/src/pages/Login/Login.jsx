@@ -35,7 +35,9 @@ const Login = () => {
     e.preventDefault();
     const formDataToSend = { "user": formData }
     mutate(formDataToSend)
-    navigate("/carte")
+    if (isSuccess) {
+      navigate("/carte")
+    }
   }
 
   return (
@@ -48,9 +50,9 @@ const Login = () => {
               <input type="email" name='email' placeholder='Email' value={formData.email} onChange={handleChange}/>
               <input type="password" name='password' placeholder='Mot de passe' value={formData.password} onChange={handleChange}/>
               <Button type="submit" content="Se connecter"/>
-              {isLoading && <div>Loading ...</div>}
-              {isError && <div>Une erreur s'est produite : {error.message}</div>}
-              {isSuccess && <div>Connection réussie!</div>}
+              {isLoading && <p>Loading ...</p>}
+              {isError && <p>Une erreur s'est produite : {error.message}</p>}
+              {isSuccess && <p>Connection réussie!</p>}
             </form>
           </div>
           <div className="login-side">
