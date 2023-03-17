@@ -20,7 +20,7 @@ export default function Profile() {
 
   const current_user = userData?.user;
 
-  const { data: userHistories } = useFetchGet(`user_histories?user_id=${current_user?.id}`, 'user_histories');
+  const { data: userHistories } = useFetchGet(`histories?user_id=${current_user?.id}`, 'user_histories');
   const { data: achievements } = useFetchGet('achievements', 'achievements');
   const { data: userAchievements } = useFetchGet(`join_table_user_achievements?user_id=${current_user?.id}`, 'user_achievements');
 

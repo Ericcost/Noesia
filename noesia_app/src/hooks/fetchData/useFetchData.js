@@ -17,7 +17,7 @@ export function useFetchGet(endpoint, query, dataToSend) {
 
 export function useFetchPost(endpoint, query) {
   const queryClient = useQueryClient();
-  const postUser = async (dataToSend) => {
+  const postData = async (dataToSend) => {
     const response = await axios.post(`${API_URL}/${endpoint}`, dataToSend, {
       headers: {
         'Content-Type': 'application/json',
@@ -27,16 +27,16 @@ export function useFetchPost(endpoint, query) {
       return response.data;
     };
 
-  return useMutation(postUser, {
+  return useMutation(postData, {
     onSuccess: () => {
       queryClient.invalidateQueries(query);
     },
   });
 }
 
-export function useFetchDelete(endpoint, query, dataToSend) {
+export function useFetchDelete(endpoint, query) {
   const queryClient = useQueryClient();
-  const deleteUser = async () => {
+  const deleteData = async (dataToSend) => {
     const response = await axios.delete(`${API_URL}/${endpoint}`, {
       headers: {
         Authorization: dataToSend,
@@ -45,9 +45,28 @@ export function useFetchDelete(endpoint, query, dataToSend) {
     return response.data;
   };
   
-  return useMutation(deleteUser, {
+  return useMutation(deleteData, {
     onSuccess: () => {
       queryClient.removeQueries(query);
+    },
+  });
+}
+
+export function useFetchPut(endpoint, query, auth_token) {
+  const queryClient = useQueryClient();
+  const patchData = async (dataToSend) => {
+    const response = await axios.put(`${API_URL}/${endpoint}`, dataToSend, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': auth_token,
+      },
+    });
+    return response.data;
+  };
+
+  return useMutation(patchData, {
+    onSuccess: () => {
+      queryClient.invalidateQueries(query);
     },
   });
 }
