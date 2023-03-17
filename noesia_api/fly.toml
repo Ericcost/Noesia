@@ -1,8 +1,9 @@
-# fly.toml file generated for noesia-api on 2023-03-03T16:51:25+01:00
+# fly.toml file generated for noesia-api on 2023-03-17T13:46:20+01:00
 
 app = "noesia-api"
 kill_signal = "SIGINT"
 kill_timeout = 5
+primary_region = "cdg"
 processes = []
 
 [env]
