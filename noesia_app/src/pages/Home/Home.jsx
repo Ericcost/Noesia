@@ -17,8 +17,11 @@ const Home = () => {
 
   const auth_token = localStorage.getItem('Authorization_token');
   const { isLoading, data, isError, error } = useFetchGet('member-data', 'user', auth_token);
+
   const current_user = data?.user;
-  const { mutate: deleteUser } = useFetchDelete('users/sign_out', 'user', auth_token);
+  const current_user_passed_door = current_user?.is_door_passed
+
+  const { mutate: deleteUser } = useFetchDelete('users/sign_out', 'user');
   const logged = auth_token ? true : false;
 
   const [story, setStory] = useState(false)
@@ -59,9 +62,15 @@ const Home = () => {
           <div className="home">
             <div className="home-items" >
               <div className="home-item">
-                <Link to='/porte'>
-                  Jouer
-                </Link>
+                { current_user_passed_door ? (
+                  <Link to='/carte'>
+                    Jouer
+                  </Link>
+                ) : (
+                  <Link to='/porte'>
+                    Jouer
+                  </Link>
+                )}
               </div>
               <div className="home-item" >
                 <Link to='#'>
