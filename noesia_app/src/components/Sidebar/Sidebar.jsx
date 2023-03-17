@@ -69,7 +69,7 @@ export default function Sidebar() {
                 <div className='sidebar-item' onMouseEnter={() => setIsGetBackHovering(true)} onMouseLeave={() => setIsGetBackHovering(false)}>
                   <Link to='/'><GiReturnArrow /></Link>
                   { isGetBackHovering ? (
-                    <ButtonLink content="Retour au menu" path="/"/>
+                    <ButtonLink content="Menu" path="/"/>
                   ) : 
                     null
                   }
@@ -91,15 +91,15 @@ export default function Sidebar() {
                       <div className='sidebar-item' onMouseEnter={() => setIsGetBackHovering(true)} onMouseLeave={() => setIsGetBackHovering(false)}>
                         <Link to='/'><GiReturnArrow /></Link>
                         { isGetBackHovering ? (
-                          <ButtonLink content="Retour au menu" path="/"/>
+                          <ButtonLink content="Menu" path="/"/>
                         ) : 
                           null
                         }
                       </div>
                       <div className='sidebar-item' onMouseEnter={() => setIsDisconnectHovering(true)} onMouseLeave={() => setIsDisconnectHovering(false)}>
-                        <Link onClick={handleLogout}><GiExitDoor /></Link>
+                        <Link to='/' onClick={handleLogout}><GiExitDoor /></Link>
                         {isDisconnectHovering ? (
-                          <Button content="Se déconnecter" onClick={handleLogout} />
+                          <ButtonLink content="Quitter" onClick={handleLogout} path='/'/>
                         ) : 
                           null
                         }
@@ -124,9 +124,9 @@ export default function Sidebar() {
                         }
                       </div>
                       <div className='sidebar-item' onMouseEnter={() => setIsDisconnectHovering(true)} onMouseLeave={() => setIsDisconnectHovering(false)}>
-                        <Link onClick={handleLogout}><GiExitDoor /></Link>
+                        <Link to='/' onClick={handleLogout}><GiExitDoor /></Link>
                         {isDisconnectHovering ? (
-                          <Button content="Se déconnecter" onClick={handleLogout} />
+                          <ButtonLink content="Se déconnecter" onClick={handleLogout} path='/' />
                         ) : 
                           null
                         }

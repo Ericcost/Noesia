@@ -5,8 +5,8 @@
   button {
     display: flex;
     align-items: center;
-    margin: 0.5rem 1rem;
-    padding: 0.5rem 1rem;
+    margin: 0.5rem 0.5rem;
+    padding: 0.5rem 0.5rem;
     backdrop-filter: blur(0.2rem);
     @include white-background(0.05);
     @include white-border(0.1);
