@@ -148,8 +148,8 @@ export default function Door() {
             </div>
           </div>
         </div>
-        <div className="background-pattern"></div>
-        {/* <img className="door-background" src={Code} alt="door terminal"></img> */}
+        {/* <div className="background-pattern"></div> */}
+        <img className="door-background" src={Code} alt="door terminal"></img>
       </div>
     </>
   );

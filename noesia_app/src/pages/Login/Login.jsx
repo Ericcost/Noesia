@@ -40,11 +40,12 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formDataToSend = { "user": formData }
-    
-    logInUser(formDataToSend)
-    if (isSuccess) {
-      navigate("/");
-    }
+    logInUser(formDataToSend, {
+      onSuccess: () => {
+        navigate("/");
+      }
+    })
+
   }
 
   return (
