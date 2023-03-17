@@ -88,18 +88,18 @@ export default function Sidebar() {
                           null
                         }
                       </div>
-                      <div className='sidebar-item' onMouseEnter={() => setIsDisconnectHovering(true)} onMouseLeave={() => setIsDisconnectHovering(false)}>
-                        <Link onClick={handleLogout}><GiExitDoor /></Link>
-                        {isDisconnectHovering ? (
-                          <Button content="Se déconnecter" onClick={handleLogout} />
-                        ) : 
-                          null
-                        }
-                      </div>
                       <div className='sidebar-item' onMouseEnter={() => setIsGetBackHovering(true)} onMouseLeave={() => setIsGetBackHovering(false)}>
                         <Link to='/'><GiReturnArrow /></Link>
                         { isGetBackHovering ? (
                           <ButtonLink content="Retour au menu" path="/"/>
+                        ) : 
+                          null
+                        }
+                      </div>
+                      <div className='sidebar-item' onMouseEnter={() => setIsDisconnectHovering(true)} onMouseLeave={() => setIsDisconnectHovering(false)}>
+                        <Link onClick={handleLogout}><GiExitDoor /></Link>
+                        {isDisconnectHovering ? (
+                          <Button content="Se déconnecter" onClick={handleLogout} />
                         ) : 
                           null
                         }
@@ -115,18 +115,18 @@ export default function Sidebar() {
                           null
                         }
                       </div>
-                      <div className='sidebar-item' onMouseEnter={() => setIsDisconnectHovering(true)} onMouseLeave={() => setIsDisconnectHovering(false)}>
-                        <Link onClick={handleLogout}><GiExitDoor /></Link>
-                        {isDisconnectHovering ? (
-                          <Button content="Se déconnecter" onClick={handleLogout} />
-                        ) : 
-                          null
-                        }
-                      </div>
                       <div className='sidebar-item' onMouseEnter={() => setIsMapHovering(true)} onMouseLeave={() => setIsMapHovering(false)}>
                         <Link to='/carte'><HiOutlineMap /></Link>
                         { isMapHovering ? (
                           <ButtonLink content="Carte" path="/carte"/>
+                        ) : 
+                          null
+                        }
+                      </div>
+                      <div className='sidebar-item' onMouseEnter={() => setIsDisconnectHovering(true)} onMouseLeave={() => setIsDisconnectHovering(false)}>
+                        <Link onClick={handleLogout}><GiExitDoor /></Link>
+                        {isDisconnectHovering ? (
+                          <Button content="Se déconnecter" onClick={handleLogout} />
                         ) : 
                           null
                         }
