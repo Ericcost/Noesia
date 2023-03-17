@@ -26,6 +26,7 @@ const Home = () => {
   const handleLogout = (e) => {
     localStorage.removeItem('Authorization_token');
     deleteUser(auth_token);
+    navigate('/');
   }
 
   useEffect(() => {
@@ -63,11 +64,15 @@ const Home = () => {
                 </Link>
               </div>
               <div className="home-item" >
-                <AvailableSoon />
-                Paramètres
+                <Link to='#'>
+                  <AvailableSoon />
+                  Paramètres
+                </Link>
               </div>
               <div className="home-item">
-                  Quitter
+                <Link onClick={handleLogout}>
+                  Se déconnecter
+                </Link>
               </div>
             </div>
             <div className="home-background-pattern"></div>
@@ -110,11 +115,14 @@ const Home = () => {
                     </Link>
                   </div>
                   <div className="home-item">
-                    <AvailableSoon />
-                    Paramètres
+                    <Link to='/connexion'>
+                      Se connecter
+                    </Link>
                   </div>
                   <div className="home-item">
-                    Quitter
+                    <Link to='/inscription'>
+                      S'inscrire
+                    </Link>
                   </div>
                 </div>
                 <div className="home-background-pattern"></div>
