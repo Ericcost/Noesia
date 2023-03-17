@@ -14,16 +14,12 @@ import './Login.scss'
 
 const Login = () => {
 
-<<<<<<< HEAD
   const auth_token = localStorage.getItem('Authorization_token');
   const { isUserLoading, data, isUserError, userError } = useFetchGet('member-data', 'user', auth_token);
   const current_user = data?.user;
   const logged = auth_token ? true : false;
 
-  const { mutate, isLoading, isSuccess, isError, error } = useFetchPost('users/sign_in', 'user');
-=======
   const { mutate: logInUser, isLoading, isSuccess, isError, error } = useFetchPost('users/sign_in', 'user');
->>>>>>> d2fc0cc1c72a083672e364e42aabe55cf0247040
 
   const navigate = useNavigate();
 
