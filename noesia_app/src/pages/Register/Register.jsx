@@ -73,10 +73,10 @@ const Register = () => {
                 </small><br />
               </div> 
               <Button type="submit" content="S'inscrire"/>
-              {isLoading && <div>Loading ...</div>}
-              {isError && <div>Une erreur s'est produite : {error.message}</div>}
-              {isSuccess && <div>Inscription réussie!</div>}
-              {isPasswordInvalid && <div>Les mots de passe ne correspondent pas.</div>}
+              {isLoading && <p>Loading ...</p>}
+              {isError && <p>Une erreur s'est produite : {error.message}</p>}
+              {isSuccess && <p>Inscription réussie!</p>}
+              {isPasswordInvalid && <p>Les mots de passe ne correspondent pas.</p>}
             </form> 
           </div>
           <div className="register-side">

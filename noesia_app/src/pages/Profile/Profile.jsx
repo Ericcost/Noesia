@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import Cursor from '../../components/Cursor/Cursor'
 import Button from '../../components/ButtonLink/ButtonLink';
+import Sidebar from '../../components/Sidebar/Sidebar';
 
 import { useFetchGet } from '../../hooks/fetchData/useFetchData';
 
@@ -163,7 +164,8 @@ export default function Profile() {
               ))}
             </div>
           </div>
-
+          
+          <Sidebar />
         </div>
       </div>
     </>

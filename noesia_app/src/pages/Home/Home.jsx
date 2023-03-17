@@ -26,6 +26,7 @@ const Home = () => {
   const handleLogout = (e) => {
     localStorage.removeItem('Authorization_token');
     deleteUser(auth_token);
+    navigate('/');
   }
 
   useEffect(() => {
@@ -63,11 +64,15 @@ const Home = () => {
                 </Link>
               </div>
               <div className="home-item" >
-                <AvailableSoon />
-                Paramètres
+                <Link to='#'>
+                  <AvailableSoon />
+                  Paramètres
+                </Link>
               </div>
               <div className="home-item">
-                  Quitter
+                <Link onClick={handleLogout}>
+                  Se déconnecter
+                </Link>
               </div>
             </div>
             <div className="home-background-pattern"></div>
@@ -82,16 +87,18 @@ const Home = () => {
                     <h1>Noesia</h1>
                   </div>
                   <div className='story-plot'>
-                    <p><TypeAnimation
+                    <p>
+                      <TypeAnimation
                       sequence={[
                         1000,
-                        "---------------Au milieu d'un désert aride et désolé, un portail mystérieux venait d'apparaître. Les scientifiques, fascinés par cette étrange apparition, se rassemblèrent autour du portail pour en étudier les propriétés. À chaque nouvelle connexion, le portail multipliait les chemins, offrant de nouvelles perspectives aux chercheurs. Mais la connaissance ne se suffit pas à elle seule pour prospérer. Les intentions de ceux qui l'utilisent peuvent la rendre utile ou dangereuse. Certains voulaient exploiter le portail pour en tirer profit, tandis que d'autres cherchaient à comprendre les secrets de cet univers fantastique." // Types 'One'
+                        "Au milieu d'un désert aride et désolé, un portail mystérieux venait d'apparaître. Les scientifiques, fascinés par cette étrange apparition, se rassemblèrent autour du portail pour en étudier les propriétés. À chaque nouvelle connexion, le portail multipliait les chemins, offrant de nouvelles perspectives aux chercheurs. Mais la connaissance ne se suffit pas à elle seule pour prospérer. Les intentions de ceux qui l'utilisent peuvent la rendre utile ou dangereuse. Certains voulaient exploiter le portail pour en tirer profit, tandis que d'autres cherchaient à comprendre les secrets de cet univers fantastique." // Types 'One'
                       ]}
                       wrapper="strong"
                       cursor={true}
                       repeat={Infinity}
                       style={{ fontSize: '1em' }}
-                      /></p>
+                      />
+                    </p>
                   </div>
                   <div className='story-btn'>
                     <Button onClick={handleStory} content='Skip'/>
@@ -108,11 +115,14 @@ const Home = () => {
                     </Link>
                   </div>
                   <div className="home-item">
-                    <AvailableSoon />
-                    Paramètres
+                    <Link to='/connexion'>
+                      Se connecter
+                    </Link>
                   </div>
                   <div className="home-item">
-                    Quitter
+                    <Link to='/inscription'>
+                      S'inscrire
+                    </Link>
                   </div>
                 </div>
                 <div className="home-background-pattern"></div>

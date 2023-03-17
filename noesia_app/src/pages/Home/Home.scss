@@ -28,11 +28,12 @@
       }
 
       .home-item {
-        color: white;
+        color: $white;
         font-size: clamp(3rem, 6vw, 8rem);
         font-family: "Ibarra Real Nova", serif;
         font-weight: bold;
         display: flex;
+        text-shadow: 0.1rem 0.1rem 0.2rem $black;
         text-decoration: none;
         padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
         transition: opacity 400ms ease,
@@ -114,7 +115,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 54%;
+      width: 50%;
       height: 100%;
       background-color: transparent;
       display: flex;
@@ -136,7 +137,13 @@
         align-items: center;
         text-align: justify;
         text-justify: inter-word;
-        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        line-height: 2;
+        p {
+          color: $white;
+          strong {
+            text-shadow: 0.1rem 0.1rem 0.2rem $black;
+          }
+        }
       }
   
       .story-btn {
