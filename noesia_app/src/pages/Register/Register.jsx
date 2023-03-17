@@ -13,7 +13,7 @@ import './Register.scss'
 
 const Register = () => {
 
-  const { mutate, isLoading, isSuccess, isError, error } = useFetchPost('users', 'user');
+  const { mutate: registerUser, isLoading, isSuccess, isError, error } = useFetchPost('users', 'user');
 
   const navigate = useNavigate();
 
@@ -22,10 +22,12 @@ const Register = () => {
     email: "",
     password: "",
     password_confirmation: "",
+    is_door_passed: false,
     accept_rgpd: false,
   });
   
   const [isPasswordInvalid, setIsPasswordInvalid] = useState(false);
+  const localStorageDoorPassed = localStorage.getItem('is_door_passed');
   
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -39,9 +41,16 @@ const Register = () => {
     e.preventDefault();
     if (formData.password === formData.password_confirmation && formData.accept_rgpd) {
       setIsPasswordInvalid(false);
+      if (localStorageDoorPassed) {
+        setFormData({
+          ...formData,
+          is_door_passed: true,
+        })
+      }
+      localStorage.removeItem('is_door_passed');
       const { password_confirmation, accept_rgpd, ...DataWithoutPasswordConfirmation } = formData;
       const dataToSend = { user: DataWithoutPasswordConfirmation };
-      mutate(dataToSend);
+      registerUser(dataToSend);
     } else {
       setIsPasswordInvalid(true);
     }
