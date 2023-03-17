@@ -26,8 +26,16 @@ export default function Profile() {
   const { data: AchievementsData } = useGetAchievements('achievements');
   const { data: UserAchievementsData } = useGetUserAchievements('join_table_user_achievements', current_user?.id);
 
-  const numberOfAchievements = Object.values(AchievementsData).length;
-  const numberOfUserAchievements = Object.values(UserAchievementsData).length;
+  let numberOfAchievements = 0;
+  let numberOfUserAchievements = 0;
+
+  if (AchievementsData) {
+    numberOfAchievements = Object.values(AchievementsData).length;
+  }
+
+  if (UserAchievementsData) {
+    numberOfUserAchievements = Object.values(UserAchievementsData).length;
+  }
 
   const progressCircles = document.querySelectorAll('.progress');
 
@@ -72,7 +80,7 @@ export default function Profile() {
                     <circle className="progress" r="67" data-target="10" cx="75" cy="75" />
                   </svg>
                   {isExperienceHovering ? (
-                    <span className="center percentage"><span className="value">{}%</span></span>
+                    <span className="center percentage"><span className="value">{current_user?.experience}%</span></span>
                   ) : (
                     <span className="center percentage"><span className="value">{current_user?.level}</span></span>
                   )}
