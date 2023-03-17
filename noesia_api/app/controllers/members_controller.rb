@@ -17,4 +17,5 @@ class MembersController < ApplicationController
     user_id = jwt_payload['sub']
     User.find(user_id.to_s)
   end
+
 end
