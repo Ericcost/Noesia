@@ -8,7 +8,7 @@ import { useFetchGet } from '../../hooks/fetchData/useFetchData';
 import { RiSurgicalMaskLine } from 'react-icons/ri'
 import { BsGear } from 'react-icons/bs'
 import { GiSwordsPower, GiConcentrationOrb, GiChest } from 'react-icons/gi'
-import { FaFeatherAlt, FaTrophy } from 'react-icons/fa'
+import { FaTrophy, FaHandSpock } from 'react-icons/fa'
 import { SiAlchemy } from 'react-icons/si'
 import './Profile.scss'
 
@@ -143,7 +143,7 @@ export default function Profile() {
                 <p>{current_user?.guile}</p>
               </div>
               <div className='profile-left-bottom-caract'>
-                <p><FaFeatherAlt className='dexterity' /> Dextérité :</p>
+                <p><FaHandSpock className='dexterity' /> Dextérité :</p>
                 <p>{current_user?.dexterity}</p>
               </div>
             </div>
