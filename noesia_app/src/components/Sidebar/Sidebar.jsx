@@ -30,7 +30,7 @@ export default function Sidebar() {
   const auth_token = localStorage.getItem('Authorization_token');
   const { isLoading, data, isError, error } = useFetchGet('member-data', 'user', auth_token);
   const current_user = data?.user;
-  const { mutate: deleteUser } = useFetchDelete('users/sign_out', 'user', auth_token);
+  const { mutate: deleteUser } = useFetchDelete('users/sign_out', 'user');
   const logged = auth_token ? true : false;
 
   const pathname = window.location.pathname.includes('/inscription') || window.location.pathname.includes('/connexion') || window.location.pathname.includes(`/profil/${current_user?.id}`);

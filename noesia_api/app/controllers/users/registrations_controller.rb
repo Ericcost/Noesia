@@ -3,6 +3,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   respond_to :json
 
+  def update
+    if resource.update(account_update_params)
+      render json: { message: 'Account updated successfully.' }, status: :ok
+    else
+      render json: { message: 'Failed to update account.' }, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def respond_with(resource, _opts = {})
@@ -25,7 +33,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :is_door_passed])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :is_door_passed])
+  end
+
+  def account_update_params
+    params.permit(:username, :is_door_passed)
   end
 
 end

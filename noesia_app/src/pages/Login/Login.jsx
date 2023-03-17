@@ -13,7 +13,7 @@ import './Login.scss'
 
 const Login = () => {
 
-  const { mutate, isLoading, isSuccess, isError, error } = useFetchPost('users/sign_in', 'user');
+  const { mutate: logInUser, isLoading, isSuccess, isError, error } = useFetchPost('users/sign_in', 'user');
 
   const navigate = useNavigate();
 
@@ -34,7 +34,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formDataToSend = { "user": formData }
-    mutate(formDataToSend)
+    logInUser(formDataToSend)
     if (isSuccess) {
       navigate("/carte")
     }
