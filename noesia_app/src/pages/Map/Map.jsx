@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 
-import { useGetEnigmas } from "../../hooks/enigma/useGetEnigmas";
+import { useFetchGet } from '../../hooks/fetchData/useFetchData';
 
 import './Map.scss';
 
@@ -10,12 +10,8 @@ import Cursor from '../../components/Cursor/Cursor';
 
 export default function Map() {
   const [mousePosition, setMousePosition] = useState({x: 0, y: 0});
-  const { isLoading, data, isError, error } = useGetEnigmas('enigmas');
+  const { isLoading, data: enigmas, } = useFetchGet('enigmas', 'enigmas');
   const enigmasRef = useRef(null);
-  
-  const Data = data?.data;
-  
-
 
   const handleMouseMove = e => {
     const ref = enigmasRef.current;
@@ -35,7 +31,7 @@ export default function Map() {
       <Cursor />
       <div className='map' onMouseMove={handleMouseMove}>
         <div className='enigmas' ref={enigmasRef}>
-          { Data ? (Data.map(enigma => (
+          { enigmas ? (enigmas.map(enigma => (
             <EnigmaCard enigma={enigma} key={enigma.id}/>
           ))
           ) : (
