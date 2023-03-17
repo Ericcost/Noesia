@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 
-import { usePostUser } from "../../hooks/user/usePostUser";
+import { useFetchPost } from '../../hooks/fetchData/useFetchData';
 
 import Sidebar from '../../components/Sidebar/Sidebar';
 import Cursor from "../../components/Cursor/Cursor";
@@ -13,7 +13,7 @@ import './Login.scss'
 
 const Login = () => {
 
-  const { mutate, isLoading, isSuccess, isError, error } = usePostUser('users/sign_in');
+  const { mutate, isLoading, isSuccess, isError, error } = useFetchPost('users/sign_in', 'user');
 
   const navigate = useNavigate();
 
