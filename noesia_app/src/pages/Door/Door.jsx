@@ -67,7 +67,7 @@ export default function Door() {
           <div className="door-code">
             <div className="door-screen">
               <Button />
-              <input type="text" value={inputValue} readOnly />
+              <input placeholder='Cliquer sur les bouttons pour répondre' type="text" value={inputValue} readOnly />
               <Button />
             </div>
             <div className="door-script">
@@ -132,6 +132,7 @@ export default function Door() {
             </div>
           </div>
         </div>
+        <div className="background-pattern"></div>
         {/* <img className="door-background" src={Code} alt="door terminal"></img> */}
       </div>
     </>
