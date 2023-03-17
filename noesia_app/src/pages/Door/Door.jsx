@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import Code from "../../assets/images/door-code02.png";
+
 import Cursor from "../../components/Cursor/Cursor"
 import Button from "../../components/Button/Button";
 import ButtonDoor from "../../components/ButtonDoor/ButtonDoor"
+
 import "./Door.scss";
 
 export default function Door() {
