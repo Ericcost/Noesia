@@ -37,7 +37,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       # Characteristic
       t.integer :level, null: false, default: 1
       t.integer :experience, null: false, default: 0
-      t.integer :karma, null:false, default: 0
+      t.integer :karma, null: false, default: 0
 
       # Primary characteristic
       t.integer :discipline, null: false, default: 0
