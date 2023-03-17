@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { usePostUser } from "../../hooks/user/usePostUser";
+import { useFetchPost } from "../../hooks/fetchData/useFetchData";
 
 import Sidebar from '../../components/Sidebar/Sidebar';
 import Cursor from "../../components/Cursor/Cursor"
@@ -13,7 +13,7 @@ import './Register.scss'
 
 const Register = () => {
 
-  const { mutate, isLoading, isSuccess, isError, error } = usePostUser('users');
+  const { mutate, isLoading, isSuccess, isError, error } = useFetchPost('users', 'user');
 
   const navigate = useNavigate();
 

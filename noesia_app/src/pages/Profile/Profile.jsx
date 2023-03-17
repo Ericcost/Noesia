@@ -3,38 +3,35 @@ import { useState } from 'react';
 import Cursor from '../../components/Cursor/Cursor'
 import Button from '../../components/ButtonLink/ButtonLink';
 
-import { useGetUserHistories } from '../../hooks/history/useGetUserHistories';
-import { useGetUserAchievements } from '../../hooks/user_achievement/useGetUserAchievements';
-import { useGetAchievements } from '../../hooks/achievement/useGetAchievements';
-import { useGetUser } from '../../hooks/user/useGetUser';
+import { useFetchGet } from '../../hooks/fetchData/useFetchData';
 
 import { RiSurgicalMaskLine } from 'react-icons/ri'
 import { BsGear } from 'react-icons/bs'
 import { GiSwordsPower, GiConcentrationOrb, GiChest } from 'react-icons/gi'
-import { FaFeatherAlt, FaTrophy } from 'react-icons/fa'
+import { FaTrophy, FaHandSpock } from 'react-icons/fa'
 import { SiAlchemy } from 'react-icons/si'
 import './Profile.scss'
 
 export default function Profile() {
 
   const auth_token = localStorage.getItem('Authorization_token');
-  const { isLoading, data, isError, error } = useGetUser('member-data', auth_token);
+  const { data: userData } = useFetchGet('member-data', 'user', auth_token);
 
-  const current_user = data?.user;
+  const current_user = userData?.user;
 
-  const { isLoading: isHistoriesLoading, data: historiesData, isError: isHistoriesError, error: historiesError, isSuccess: isHistoriesSuccess } = useGetUserHistories('histories', current_user?.id);
-  const { data: AchievementsData } = useGetAchievements('achievements');
-  const { data: UserAchievementsData } = useGetUserAchievements('join_table_user_achievements', current_user?.id);
+  const { data: userHistories } = useFetchGet(`user_histories?user_id=${current_user?.id}`, 'user_histories');
+  const { data: achievements } = useFetchGet('achievements', 'achievements');
+  const { data: userAchievements } = useFetchGet(`join_table_user_achievements?user_id=${current_user?.id}`, 'user_achievements');
 
   let numberOfAchievements = 0;
   let numberOfUserAchievements = 0;
 
-  if (AchievementsData) {
-    numberOfAchievements = Object.values(AchievementsData).length;
+  if (achievements) {
+    numberOfAchievements = Object.values(achievements).length;
   }
 
-  if (UserAchievementsData) {
-    numberOfUserAchievements = Object.values(UserAchievementsData).length;
+  if (userAchievements) {
+    numberOfUserAchievements = Object.values(userAchievements).length;
   }
 
   const progressCircles = document.querySelectorAll('.progress');
@@ -146,7 +143,7 @@ export default function Profile() {
                 <p>{current_user?.guile}</p>
               </div>
               <div className='profile-left-bottom-caract'>
-                <p><FaFeatherAlt className='dexterity' /> Dextérité :</p>
+                <p><FaHandSpock className='dexterity' /> Dextérité :</p>
                 <p>{current_user?.dexterity}</p>
               </div>
             </div>
@@ -158,14 +155,12 @@ export default function Profile() {
               <h2>Historique des parties</h2>
             </div>
             <div className='profile-right-cards'>
-              {historiesData && historiesData?.map(history => (
+              {userHistories && userHistories?.map(history => (
                 <div key={history.id} className='profile-right-card'>
                   <p>Énigme: {history.enigma_id}</p>
                   <p>Réalisé le: {history.created_at}</p>
                 </div>
               ))}
-              {isHistoriesLoading && <p>Loading...</p>}
-              {isHistoriesError && <p>Error: {historiesError.message}</p>}
             </div>
           </div>
 

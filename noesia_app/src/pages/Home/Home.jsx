@@ -6,8 +6,7 @@ import Cursor from "../../components/Cursor/Cursor";
 import AvailableSoon from "../../components/AvailableSoon/AvailableSoon";
 import Button from "../../components/Button/Button";
 
-import { useDeleteUser } from "../../hooks/user/useDeleteUser";
-import { useGetUser } from "../../hooks/user/useGetUser";
+import { useFetchGet, useFetchDelete } from "../../hooks/fetchData/useFetchData";
 
 import Background from '../../assets/images/background.jpg';
 
@@ -15,10 +14,11 @@ import "./Home.scss";
 
 
 const Home = () => {
+
   const auth_token = localStorage.getItem('Authorization_token');
-  const { isLoading, data, isError, error } = useGetUser('member-data', auth_token);
+  const { isLoading, data, isError, error } = useFetchGet('member-data', 'user', auth_token);
   const current_user = data?.user;
-  const { mutate: deleteUser } = useDeleteUser('users/sign_out', auth_token);
+  const { mutate: deleteUser } = useFetchDelete('users/sign_out', 'user', auth_token);
   const logged = auth_token ? true : false;
 
   const [story, setStory] = useState(false)
