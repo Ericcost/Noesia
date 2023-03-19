@@ -5,30 +5,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: grey;
-  z-index: -1;
-
-  .background-pattern {
-    height: 100vh;
-    width: 100vw;
-    background-image: 
-    radial-gradient(
-      $darkblue 9%,
-      transparent 9%
-    ),
-    radial-gradient(
-      $yellow 15%,
-      transparent 15%
-    );
-    background-size: 100vmin 100vmin;
-    position: absolute;
-    z-index: 0;
-    
-    transition: 
-      opacity 800ms ease,
-      background-size 800ms ease,
-      background-position 800ms ease;
-  }
 
   .door-content {
     height: 100vh;
@@ -52,6 +28,7 @@
         align-items: center;
         flex-direction: column;
         gap: 5rem;
+        margin: 0 0 0 3rem;
 
         .buttons-animate {
           display: flex; 
@@ -67,6 +44,7 @@
         align-items: center;
         flex-direction: column;
         gap: 5rem;
+        margin: 0 3rem 0 0;
 
         .buttons-animate {
           display: flex; 
@@ -84,7 +62,7 @@
       align-items: center;
       flex-direction: column;
       background-color: transparent;
-      // @include white-background(0.8);
+      // @include white-border(0.8);
       border-radius: 2rem;
       margin: 3rem;
       padding: 3rem 3rem 3rem 3rem;
@@ -94,11 +72,15 @@
         display: flex; 
         justify-content: center;
         align-items: center;
+        background-color: $white;
+        border-radius: 1rem;
+        height: 10vh;
+
         input {
           cursor: not-allowed;
+          background-color: $black;
           text-align: center;
           border-radius: 1rem;
-          box-shadow: 0 0 0.25rem $yellow, 0 0 1rem $yellow, 0 0 2rem $yellow, 0 0 4rem $yellow;
           width: 28vw;
           height: 8vh;
         }
@@ -111,7 +93,7 @@
         flex-direction: column;
         border-radius: 1rem;
         padding: 1rem;
-        @include black-background(1);     
+        background-color: transparent;     
 
         p {
           color: $white;
@@ -119,8 +101,10 @@
           text-justify: inter-word;
           overflow-wrap: break-word;
           font-size: 1.2rem;
+          text-shadow: 0.2rem 0.2rem 0.4rem $black;
           strong {
             font-size: 2rem;
+            
           }
         }
       }
@@ -141,7 +125,8 @@
 
   .door-background {
     background-size: 100vmax;
-    height: 100%;
+    object-fit: cover;
+    height: 145%;
     width: 100%;
     top: 0;
     left: 0;
