@@ -126,7 +126,7 @@ export default function Sidebar() {
                       <div className='sidebar-item' onMouseEnter={() => setIsDisconnectHovering(true)} onMouseLeave={() => setIsDisconnectHovering(false)}>
                         <Link to='/' onClick={handleLogout}><GiExitDoor /></Link>
                         {isDisconnectHovering ? (
-                          <ButtonLink content="Se déconnecter" onClick={handleLogout} path='/' />
+                          <ButtonLink content="Quitter" onClick={handleLogout} path='/' />
                         ) : 
                           null
                         }
