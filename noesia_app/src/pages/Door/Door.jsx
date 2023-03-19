@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import Code from "../../assets/images/door-code02.png";
+import Code from "../../assets/images/door-code.png";
 
 import { useFetchGet, useFetchPut } from "../../hooks/fetchData/useFetchData";
 import Cursor from "../../components/Cursor/Cursor"
@@ -61,9 +61,11 @@ export default function Door() {
                 <ButtonDoor content="&" onClick={() => handleButtonClick("&")} />
                 <Button />
                 <Button />
+                <Button />
               </div>
               <div className="buttons-animate">
                 <ButtonDoor content="€" onClick={() => handleButtonClick("€")} />
+                <Button />
                 <Button />
                 <Button />
               </div>
@@ -71,9 +73,11 @@ export default function Door() {
                 <ButtonDoor content="#" onClick={() => handleButtonClick("#")} />
                 <Button />
                 <Button />
+                <Button />
               </div>
               <div className="buttons-animate">
                 <ButtonDoor content="@" onClick={() => handleButtonClick("@")} />
+                <Button />
                 <Button />
                 <Button />
               </div>
@@ -117,7 +121,13 @@ export default function Door() {
             <div className="door-validate">
               <Button />
               <Button />
+              <Button />
+              <Button />
+              <Button />
               <ButtonDoor onClick={handleSubmit} content="Valider"/>
+              <Button />
+              <Button />
+              <Button />
               <Button />
               <Button />
             </div>
@@ -129,9 +139,11 @@ export default function Door() {
                 <ButtonDoor content="%" onClick={() => handleButtonClick("%")} />
                 <Button />
                 <Button />
+                <Button />
               </div>
               <div className="buttons-animate">
                 <ButtonDoor content="£" onClick={() => handleButtonClick("£")} />
+                <Button />
                 <Button />
                 <Button />
               </div>
@@ -139,9 +151,11 @@ export default function Door() {
                 <ButtonDoor content="$" onClick={() => handleButtonClick("$")} />
                 <Button />
                 <Button />
+                <Button />
               </div>
               <div className="buttons-animate">
                 <ButtonDoor content="+" onClick={() => handleButtonClick("+")} />
+                <Button />
                 <Button />
                 <Button />
               </div>
