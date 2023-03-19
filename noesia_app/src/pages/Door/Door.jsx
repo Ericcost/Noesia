@@ -85,11 +85,15 @@ export default function Door() {
           </div>
 
           <div className="door-code">
+          <Button />
             <div className="door-screen">
               <Button />
-              <input placeholder='Cliquer sur les bouttons pour répondre' type="text" value={inputValue} readOnly />
+              <Button />
+              <input placeholder='*   *   *' type="text" value={inputValue} readOnly />
+              <Button />
               <Button />
             </div>
+            <Button />
             <div className="door-script">
               <p>
                 Vous êtes sur le point d'explorer un nouveau monde, mais pour y
@@ -99,7 +103,7 @@ export default function Door() {
               <p>
                 "Je <strong>$</strong>uis l'outil de ceux qui cherchent à apprendre,
                 Certains me voient comme un vecteur de bonheur,
-                D'autres comme un moyen de semer le malheur.
+                d'autres comme un moyen de semer le malheur.
               </p>
                 <br />
               <p>
@@ -162,7 +166,6 @@ export default function Door() {
             </div>
           </div>
         </div>
-        {/* <div className="background-pattern"></div> */}
         <img className="door-background" src={Code} alt="door terminal"></img>
       </div>
     </>

@@ -62,7 +62,7 @@
       align-items: center;
       flex-direction: column;
       background-color: transparent;
-      // @include white-background(0.8);
+      // @include white-border(0.8);
       border-radius: 2rem;
       margin: 3rem;
       padding: 3rem 3rem 3rem 3rem;
@@ -72,12 +72,15 @@
         display: flex; 
         justify-content: center;
         align-items: center;
-        
+        background-color: $white;
+        border-radius: 1rem;
+        height: 10vh;
+
         input {
           cursor: not-allowed;
+          background-color: $black;
           text-align: center;
           border-radius: 1rem;
-          box-shadow: 0 0 0.25rem $yellow, 0 0 1rem $yellow, 0 0 2rem $yellow, 0 0 4rem $yellow;
           width: 28vw;
           height: 8vh;
         }
