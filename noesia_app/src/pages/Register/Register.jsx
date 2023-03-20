@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { useFetchPost } from "../../hooks/fetchData/useFetchData";
 
 import Sidebar from '../../components/Sidebar/Sidebar';
-import Cursor from "../../components/Cursor/Cursor"
 import ButtonLink from '../../components/ButtonLink/ButtonLink'
 import Button from '../../components/Button/Button'
 
@@ -65,7 +64,6 @@ const Register = () => {
 
   return (
     <>
-      <Cursor />
       <div className="register">
         <div className="register-wrapper">
           <div className="register-form">

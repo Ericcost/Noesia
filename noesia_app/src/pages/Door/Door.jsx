@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Code from "../../assets/images/door-code.png";
 
 import { useFetchGet, useFetchPut } from "../../hooks/fetchData/useFetchData";
-import Cursor from "../../components/Cursor/Cursor"
+
 import Button from "../../components/Button/Button";
 import ButtonDoor from "../../components/ButtonDoor/ButtonDoor"
 
@@ -52,7 +52,6 @@ export default function Door() {
 
   return (
     <>
-      <Cursor />
       <div className="door">
         <div className="door-content">
           <div className="door-buttons">
