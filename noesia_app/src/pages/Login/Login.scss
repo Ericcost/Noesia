@@ -51,8 +51,11 @@
           @include tablet {
             margin: 1.2rem;
             font-size: 1.3rem;
-            width: 180%;
           }
+        }
+
+        p {
+          width: 100%;
         }
       }
     }
