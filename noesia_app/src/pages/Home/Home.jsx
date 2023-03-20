@@ -39,19 +39,19 @@ const Home = () => {
     setStory(!story);
   }
 
-  Array.from(document.getElementsByClassName("home-item"))
-  .forEach((item, index) => {
-    item.addEventListener("mouseover", () => {
-      item.classList.add("active");
-      const home = document.querySelector(".home")
-      if (home) {
-        home.setAttribute("data-active-index", index);
-      }
-    });
-    item.addEventListener("mouseout", () => {
-      item.classList.remove("active");
-    });
-  });
+  // Array.from(document.getElementsByClassName("home-item"))
+  // .forEach((item, index) => {
+  //   item.addEventListener("mouseover", () => {
+  //     item.classList.add("active");
+  //     const home = document.querySelector(".home")
+  //     if (home) {
+  //       home.setAttribute("data-active-index", index);
+  //     }
+  //   });
+  //   item.addEventListener("mouseout", () => {
+  //     item.classList.remove("active");
+  //   });
+  // });
 
   return (
     <>
