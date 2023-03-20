@@ -6,7 +6,6 @@ import './Map.scss';
 
 import Sidebar from '../../components/Sidebar/Sidebar'
 import EnigmaCard from '../../components/EnigmaCard/EnigmaCard'
-import Cursor from '../../components/Cursor/Cursor';
 
 export default function Map() {
   const [mousePosition, setMousePosition] = useState({x: 0, y: 0});
@@ -28,11 +27,10 @@ export default function Map() {
 
   return (
     <>
-      <Cursor />
       <div className='map' onMouseMove={handleMouseMove}>
         <div className='enigmas' ref={enigmasRef}>
           { enigmas ? (enigmas.map(enigma => (
-            <EnigmaCard enigma={enigma} key={enigma.id}/>
+            <EnigmaCard enigma={enigma} key={enigma.id} path={`/enigme/${enigma.id}`}/>
           ))
           ) : (
             <div>
