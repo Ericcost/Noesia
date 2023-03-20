@@ -51,6 +51,9 @@
         a {
           text-decoration: none;
           color: $white;
+          @include mobile {
+            font-size: 2.5rem;
+          }
         }
       }
     }
@@ -124,11 +127,23 @@
       padding: 3rem 2rem;
       z-index: 1;
       
+      @include mobile {
+        width: 75%;
+        padding: 1rem 1rem;
+      }
+
       .story-title {
         flex: 2;
         display: flex;
         align-items: center;
-        justify-content: center;    
+        justify-content: center;
+        
+        h1 {
+
+          @include mobile {
+            font-size: 2.5rem;
+          }
+        }
       }
 
       .story-plot {
@@ -139,10 +154,18 @@
         text-justify: inter-word;
         line-height: 2;
 
+        @include mobile {
+          line-height: 1.8;
+        }
+
         p {
           color: $white;
           strong {
             text-shadow: 0.1rem 0.1rem 0.2rem $black;
+          }
+
+          @include mobile {
+            font-size: 0.8rem;
           }
         }
       }
@@ -153,6 +176,10 @@
         align-items: center;
         justify-content: center;
         padding: 4rem 0 0 0;
+
+        @include mobile {
+          padding: 2rem 0 0 0;
+        }
       }
     }
   }
