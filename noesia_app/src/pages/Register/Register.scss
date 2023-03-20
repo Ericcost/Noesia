@@ -33,6 +33,10 @@
         margin: -4rem 0 0 0;
       }
 
+      @include mobile {
+        margin: 0 0 0 0;
+      }
+
       form {
         display: flex;
         align-items: center;
@@ -53,6 +57,11 @@
             margin: 0.4rem;
             font-size: 1.3rem;
           }
+
+          @include mobile {
+            margin: 0;
+            font-size: 0.8rem;
+          }
         }
       }
       
@@ -71,7 +80,7 @@
         input {
           flex: 1;
           margin: -2rem;
-          cursor: pointer;
+          cursor: text;
           text-align:right;
         }
         
@@ -96,6 +105,10 @@
       justify-content: center;
 
       @include tablet {
+        margin: -4rem 0 0 0;
+      }
+
+      @include mobile {
         margin: -4rem 0 0 0;
       }
 
