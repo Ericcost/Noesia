@@ -82,7 +82,7 @@ const Home = () => {
                 </Link>
               </div>
             </div>
-            <div className="home-background-pattern"></div>
+            {/* <div className="home-background-pattern"></div> */}
             <img className="home-background-image" src={Background} alt=''></img>
           </div>  
         ) : ( 
