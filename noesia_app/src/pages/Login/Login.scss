@@ -32,6 +32,10 @@
         margin: -8rem 0 0 0;
       }
 
+      @include mobile {
+        margin: -4rem 0 0 0;
+      }
+
       form {
         display: flex;
         align-items: center;
@@ -72,6 +76,10 @@
 
       @include tablet {
         margin: -8rem 0 0 0;
+      }
+
+      @include mobile {
+        margin: -4rem 0 0 0;
       }
 
       img {
