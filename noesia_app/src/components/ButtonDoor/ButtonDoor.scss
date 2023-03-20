@@ -11,10 +11,14 @@
     color: $white;
     font-size: 2rem;
     text-decoration: none;
-    // text-transform: uppercase;
     overflow: hidden;
     transition: 0.5s;
     letter-spacing: 0.25rem;
+
+    @include tablet {
+      margin: .5rem;
+      padding: 1.5rem 3rem;
+    }
   
     span {
       position: absolute;
