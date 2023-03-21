@@ -3,26 +3,27 @@ import { useNavigate } from "react-router-dom";
 
 import Code from "../../assets/images/door-code.png";
 
-import { useFetchGet, useFetchPut } from "../../hooks/fetchData/useFetchData";
+import { useFetchGet, useFetchPost, useFetchPut } from "../../hooks/fetchData/useFetchData";
 
 import Button from "../../components/Button/Button";
 import ButtonDoor from "../../components/ButtonDoor/ButtonDoor"
 
 import "./Door.scss";
 
-export default function Door() {
+export default function Door({ onUnlockSuccess, onAchievementTitle }) {
 
   const auth_token = localStorage.getItem('Authorization_token');
   const { data: userData } = useFetchGet('member-data', 'user', auth_token);
 
   const current_user = userData?.user;
+  const current_user_id = current_user?.id
 
   const { mutate: updateUser } = useFetchPut(`users`, 'user', auth_token);
+  
+  const { mutate: unlockAchievement, isSuccess } = useFetchPost(`join_table_user_achievements`, 'user_achievement');
 
   const [inputValue, setInputValue] = useState("");
   const navigate = useNavigate();
-
-  const isDoorPassed = {is_door_passed: true}
 
   const handleButtonClick = (character) => {
     if (
@@ -38,8 +39,13 @@ export default function Door() {
       console.log(
         "Avec une satisfaction intense, vous prononcez 'connaissance' à haute voix. Et alors, la porte massive s'ouvre lentement, révélant un nouveau monde fascinant et rempli de merveilles insoupçonnées. Vous franchissez la porte, prêt à explorer ce nouveau monde avec une soif insatiable de connaissances et de découvertes."
       );
-      if (auth_token && userData) {
-        updateUser(isDoorPassed);
+      if (auth_token && userData && !current_user?.is_door_passed) {
+        updateUser({user_id: current_user_id, is_door_passed: true});
+        unlockAchievement({user_id: current_user_id, achievement_id: 1})
+        if (isSuccess) {
+          handleSuccessUnlock();
+          handleAchievementTitle('La porte')
+        }
       } else {
         localStorage.setItem("is_door_passed", true);
       }
@@ -48,6 +54,14 @@ export default function Door() {
     } else {
       setInputValue("");
     }
+  };
+
+  const handleSuccessUnlock = () => {
+    onUnlockSuccess();
+  };
+
+  const handleAchievementTitle = (text) => {
+    onAchievementTitle(text);
   };
 
   return (
