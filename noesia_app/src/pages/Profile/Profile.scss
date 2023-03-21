@@ -63,6 +63,10 @@
               align-items: center;
               justify-content: center;
               font-size: 3rem;
+
+              @include mobile {
+                font-size: 1rem;
+              }
             }
 
             .button-link {
@@ -197,6 +201,7 @@
 
         @include mobile {
           margin: 0 0 1rem 0 ;
+          font-size: 1rem;
         }
 
         h2 {
@@ -241,6 +246,10 @@
             svg {
               margin-right: 1rem;
             }
+
+            @include mobile {
+              font-size: 1rem;
+            }
           }
         }
       }
@@ -257,6 +266,13 @@
       .profile-right-header {
         margin: 1.5rem;
         font-size: 1.5rem;
+
+        @include mobile {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1rem;
+        }
       }
 
       .profile-right-cards {
