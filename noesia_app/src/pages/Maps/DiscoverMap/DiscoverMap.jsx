@@ -6,6 +6,7 @@ import './DiscoverMap.scss';
 
 import Sidebar from '../../../components/Sidebar/Sidebar';
 import EnigmaCard from '../../../components/EnigmaCard/EnigmaCard';
+import WorldsBar from '../../../components/WorldsBar/WorldsBar';
 
 import DiscoverBackground from '../../../assets/images/discover.png';
 
@@ -15,15 +16,16 @@ export default function DiscoverMap() {
   return (
     <>
       <div className='discover-map'>
+        {/* <WorldsBar /> */}
         <div className='enigmas'>
           { enigmas ? (enigmas.map(enigma => (
             <EnigmaCard enigma={enigma} key={enigma.id} path={`/enigme/${enigma.id}`}/>
-          ))
-          ) : (
-            <div>
+            ))
+            ) : (
+              <div>
               {isLoading}
             </div>
-          )
+            )
           }
         </div>
         <Sidebar />
