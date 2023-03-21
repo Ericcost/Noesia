@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-import Cursor from '../../components/Cursor/Cursor'
 import Button from '../../components/ButtonLink/ButtonLink';
 import Sidebar from '../../components/Sidebar/Sidebar';
 
@@ -52,7 +51,6 @@ export default function Profile() {
 
   return (
     <>
-      <Cursor />
       <div className='profile'>
         <div className='profile-wrapper'>
 

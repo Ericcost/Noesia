@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { TypeAnimation } from 'react-type-animation';
 import { Link } from "react-router-dom";
 
-import Cursor from "../../components/Cursor/Cursor";
 import AvailableSoon from "../../components/AvailableSoon/AvailableSoon";
 import Button from "../../components/Button/Button";
 
@@ -40,23 +39,22 @@ const Home = () => {
     setStory(!story);
   }
 
-  Array.from(document.getElementsByClassName("home-item"))
-  .forEach((item, index) => {
-    item.addEventListener("mouseover", () => {
-      item.classList.add("active");
-      const home = document.querySelector(".home")
-      if (home) {
-        home.setAttribute("data-active-index", index);
-      }
-    });
-    item.addEventListener("mouseout", () => {
-      item.classList.remove("active");
-    });
-  });
+  // Array.from(document.getElementsByClassName("home-item"))
+  // .forEach((item, index) => {
+  //   item.addEventListener("mouseover", () => {
+  //     item.classList.add("active");
+  //     const home = document.querySelector(".home")
+  //     if (home) {
+  //       home.setAttribute("data-active-index", index);
+  //     }
+  //   });
+  //   item.addEventListener("mouseout", () => {
+  //     item.classList.remove("active");
+  //   });
+  // });
 
   return (
     <>
-      <Cursor />
       <div className="home-background">
         { logged ? (
           <div className="home">
@@ -134,7 +132,7 @@ const Home = () => {
                     </Link>
                   </div>
                 </div>
-                <div className="home-background-pattern"></div>
+                {/* <div className="home-background-pattern"></div> */}
                 <img className="home-background-image" src={Background} alt=''></img>
               </div>  
             )}     

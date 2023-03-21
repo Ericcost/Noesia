@@ -5,7 +5,6 @@ import { useFetchGet } from '../../hooks/fetchData/useFetchData';
 import { useFetchPost } from '../../hooks/fetchData/useFetchData';
 
 import Sidebar from '../../components/Sidebar/Sidebar';
-import Cursor from "../../components/Cursor/Cursor";
 import ButtonLink from '../../components/ButtonLink/ButtonLink'
 import Button from '../../components/Button/Button'
 
@@ -50,7 +49,6 @@ const Login = () => {
 
   return (
     <>
-      <Cursor />
       <div className='login'>
         <div className="login-wrapper">
           <div className="login-form">

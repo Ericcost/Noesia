@@ -12,6 +12,8 @@ import Profile from "./pages/Profile/Profile";
 import Door from "./pages/Door/Door";
 import Map from "./pages/Map/Map";
 import AchievementPopUp from './components/AchievementPopUp/AchievementPopUp';
+import Enigma1 from "./pages/Enigmas/Enigma1/Enigma1";
+import Enigma2 from "./pages/Enigmas/Enigma2/Enigma2";
 
 //Components
 import Footer from "./components/Footer/Footer";
@@ -43,6 +45,8 @@ function App() {
               <Route path="/connexion" element={<Login />} />
               <Route path="/inscription" element={<Register />} />
               <Route path="/profil/:id" element={<Profile />} />
+              <Route path="/enigme/1" element={<Enigma1 />} />
+              <Route path="/enigme/2" element={<Enigma2 />} />
             </Routes>
         </main>
         <footer>

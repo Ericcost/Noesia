@@ -1,16 +1,20 @@
-import React from 'react'
-import './EnigmaCard.scss'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './EnigmaCard.scss';
 
 import AvailableSoon from '../../components/AvailableSoon/AvailableSoon'
 
-export default function EnigmaCard({enigma}) {
+export default function EnigmaCard({enigma, path}) {
+
   return (
     <>
       <div className='enigma-card'>
         <AvailableSoon />
-        <div className='enigma-content'>
-          <p className='enigma-id'>{enigma.id}</p>
-        </div>
+        <Link to={path}>
+          <div className='enigma-content'>
+            <p className='enigma-id'>{enigma.id}</p>
+          </div>
+        </Link>
       </div> 
     </>
   )

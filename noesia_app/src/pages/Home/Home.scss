@@ -20,12 +20,12 @@
 
       &:hover > .home-item:hover {
         opacity: 1;
-      }    
-
-      &:hover ~ .home-background-pattern {
-        background-size: 12vmin 12vmin;
-        opacity: 0.5;
       }
+
+      // &:hover ~ .home-background-pattern {
+      //   background-size: 12vmin 12vmin;
+      //   opacity: 0.5;
+      // }
 
       .home-item {
         color: $white;
@@ -42,7 +42,6 @@
         padding: 0.5rem;
         position: relative;
         z-index: 4;
-        
 
         &:hover {
           opacity: 1;
@@ -52,31 +51,29 @@
         a {
           text-decoration: none;
           color: $white;
-          cursor: none; 
         }
-        
       }
     }
      
 
-    .home-background-pattern {
-      height: 100vh;
-      width: 100vw;
-      background-image: 
-      radial-gradient(
-        rgba(255, 255, 255, 0.3) 9%,
-        transparent 9%
-      );
-      background-position: 0% 0%;
-      background-size: 10vmin 10vmin;
-      position: absolute;
-      z-index: 1;
+    // .home-background-pattern {
+    //   height: 100vh;
+    //   width: 100vw;
+    //   background-image: 
+    //   radial-gradient(
+    //     rgba(255, 255, 255, 0.3) 9%,
+    //     transparent 9%
+    //   );
+    //   background-position: 0% 0%;
+    //   background-size: 10vmin 10vmin;
+    //   position: absolute;
+    //   z-index: 1;
       
-      transition: 
-        opacity 800ms ease,
-        background-size 800ms ease,
-        background-position 800ms ease;
-    }
+    //   transition: 
+    //     opacity 800ms ease,
+    //     background-size 800ms ease,
+    //     background-position 800ms ease;
+    // }
 
     .home-background-image {
       background-size: 120vmax;
@@ -90,17 +87,17 @@
     }
   }
 
-  .home[data-active-index="0"] > .home-background-pattern {
-    background-position: 0% -25%;
-  }
+  // .home[data-active-index="0"] > .home-background-pattern {
+  //   background-position: 0% -25%;
+  // }
   
-  .home[data-active-index="1"] > .home-background-pattern {
-    background-position: 0% -50%;
-  }
+  // .home[data-active-index="1"] > .home-background-pattern {
+  //   background-position: 0% -50%;
+  // }
     
-  .home[data-active-index="2"] > .home-background-pattern {
-    background-position: 0% -75%;
-  }
+  // .home[data-active-index="2"] > .home-background-pattern {
+  //   background-position: 0% -75%;
+  // }
 
   .story-overlay {
     position: fixed;
@@ -138,6 +135,7 @@
         text-align: justify;
         text-justify: inter-word;
         line-height: 2;
+
         p {
           color: $white;
           strong {
@@ -151,6 +149,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        padding: 4rem 0 0 0;
       }
     }
 
