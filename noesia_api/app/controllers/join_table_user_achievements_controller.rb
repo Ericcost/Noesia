@@ -15,6 +15,7 @@ class JoinTableUserAchievementsController < ApplicationController
 
   # POST /join_table_user_achievements
   def create
+    
     @join_table_user_achievement = JoinTableUserAchievement.new(join_table_user_achievement_params)
 
     if @join_table_user_achievement.save
@@ -46,6 +47,6 @@ class JoinTableUserAchievementsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def join_table_user_achievement_params
-      params.fetch(:join_table_user_achievement, {})
+      params.require(:join_table_user_achievement).permit(:user_id, :achievement_id)
     end
 end
