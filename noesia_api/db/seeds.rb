@@ -25,3 +25,5 @@ end
 100.times do |i|
   History.create!(user_id: User.all.sample.id, enigma_id: Enigma.all.sample.id)
 end
+
+Achievement.create!(title: 'La porte', description: "Vous avez réussi l'énigme de la porte !")

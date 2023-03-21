@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+import { useState } from 'react';
 
 //SCSS
 import './styles/main.scss'
@@ -11,6 +12,7 @@ import Profile from "./pages/Profile/Profile";
 import Door from "./pages/Door/Door";
 import DiscoverMap from "./pages/Maps/DiscoverMap/DiscoverMap";
 import Parameters from "./pages/Parameters/Parameters";
+import AchievementPopUp from './components/AchievementPopUp/AchievementPopUp';
 import Enigma1 from "./pages/Enigmas/Enigma1/Enigma1";
 import Enigma2 from "./pages/Enigmas/Enigma2/Enigma2";
 
@@ -18,13 +20,34 @@ import Enigma2 from "./pages/Enigmas/Enigma2/Enigma2";
 import Footer from "./components/Footer/Footer";
 
 function App() {
+
+  const [achievementUnlocked, setAchievementUnlocked] = useState(false);
+  const [achievementTitle, setAchievementTitle] = useState('');
+
+  const handleUnlockSuccess = () => {
+    setAchievementUnlocked(true);
+  };
+
+  const handleUAchievementTitle = (title) => {
+    setAchievementTitle(title);
+  };
+
   return (
       <div className='App'>
         <main>
+            {achievementUnlocked && <AchievementPopUp 
+              text={achievementTitle} 
+              onClose={() => setAchievementUnlocked(false)} 
+            />}
             <Routes>
               <Route path="/" element={<Home />} />
+<<<<<<< HEAD
               <Route path='/porte' element={<Door />} />
               <Route path="/découverte" element={<DiscoverMap />} />
+=======
+              <Route path='/porte' element={<Door onUnlockSuccess={handleUnlockSuccess} onAchievementTitle={handleUAchievementTitle} />} />
+              <Route path="/carte" element={<Map />} />
+>>>>>>> 0c984c048a890a0d7f2a7cc90e10de470681a10f
               <Route path="/connexion" element={<Login />} />
               <Route path="/inscription" element={<Register />} />
               <Route path="/profil/:id" element={<Profile />} />

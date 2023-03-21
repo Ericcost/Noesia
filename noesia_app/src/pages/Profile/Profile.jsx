@@ -63,7 +63,7 @@ export default function Profile() {
                 </div>
                 <div className="profile-left-top-info-name">
                   <h2 className="profile-name">{current_user?.username}</h2>
-                  <Button content="Editer le profil" path="/profil/editer"/>
+                  <Button content="Editer le profil" path="/profil/editer" />
                 </div>
               </div>
               <div className='profile-left-top-player-caract'>
