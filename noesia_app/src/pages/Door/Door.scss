@@ -38,6 +38,7 @@
         @include tablet {
           flex-direction: row;
           margin: 0;
+          gap: 2rem;
         }
 
         .buttons-animate {
@@ -59,6 +60,7 @@
         @include tablet {
           flex-direction: row;
           margin: 0;
+          gap: 2rem;
         }
 
         .buttons-animate {
