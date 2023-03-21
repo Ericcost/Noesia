@@ -102,14 +102,16 @@
         input {
           color: $white;
           background-color: $black;
-          text-align: center;
           border-radius: 1rem;
           margin: .5rem;
           width: 28vw;
           height: 8vh;
+          text-align: center;
+          font-size: 2rem;
 
           @include tablet {
             height: 4vh;
+            font-size: 1.2rem;
           }
         }
       }
