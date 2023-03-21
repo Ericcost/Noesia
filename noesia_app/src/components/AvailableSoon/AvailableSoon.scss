@@ -10,12 +10,22 @@
     height: 1.5rem;
     border-radius: 0.5rem;
     position: absolute;
-    
     color: $white;
     top: -1rem;
     right: -2rem;
+
+    @include mobile {
+      width: 2rem;
+      height: 1rem;
+      top: -0.5rem;
+      right: -1rem;
+    }
     
     small {
-      font-size: small;
+      font-size: 0.8rem;
+
+      @include mobile {
+        font-size: 0.6rem;
+      }
     }
   }
