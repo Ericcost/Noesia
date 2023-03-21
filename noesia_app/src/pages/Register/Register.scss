@@ -34,7 +34,7 @@
       }
 
       @include mobile {
-        margin: 0 0 0 0;
+        margin: -1rem 0 0 0;
       }
 
       form {
@@ -60,7 +60,7 @@
 
           @include mobile {
             margin: 0;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
           }
         }
       }
@@ -74,7 +74,7 @@
         flex-direction: row;
 
         @include tablet {
-          margin: 0 4rem;
+          margin: 0 2rem;
         }
         
         input {
@@ -90,6 +90,11 @@
           text-justify: inter-word;
           color: white;
           margin: 1rem;
+
+          @include mobile {
+            margin: 0 0.5rem;
+            font-size: 0.5rem;
+          }
         }
       }      
     }
@@ -116,6 +121,10 @@
         width: 80%;
         border-radius: 4.5rem;
         margin-bottom: 1.5rem;
+
+        @include mobile {
+          width: 60%;
+        }
       }
     }
   }
