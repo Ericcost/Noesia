@@ -68,51 +68,51 @@ export default function Profile() {
               </div>
               <div className='profile-left-top-player-caract'>
 
-              <div className="container">
+                <div className="container">
 
-                <div className="gauge-container" onMouseEnter={() => setIsExperienceHovering(true)} onMouseLeave={() => setIsExperienceHovering(false)}>
-                  <svg className="gauge" viewBox="0 0 150 150">
-                    <circle className="rail" r="67" cx="75" cy="75" />
-                    <circle className="progress" r="67" data-target="10" cx="75" cy="75" />
-                  </svg>
-                  {isExperienceHovering ? (
-                    <span className="center percentage"><span className="value">{current_user?.experience}%</span></span>
-                  ) : (
-                    <span className="center percentage"><span className="value">{current_user?.level}</span></span>
-                  )}
-                </div>
+                  <div className="gauge-container" onMouseEnter={() => setIsExperienceHovering(true)} onMouseLeave={() => setIsExperienceHovering(false)}>
+                    <svg className="gauge" viewBox="0 0 150 150">
+                      <circle className="rail" r="67" cx="75" cy="75" />
+                      <circle className="progress" r="67" data-target="10" cx="75" cy="75" />
+                    </svg>
+                    {isExperienceHovering ? (
+                      <span className="center percentage"><span className="value">{current_user?.experience}%</span></span>
+                    ) : (
+                      <span className="center percentage"><span className="value">{current_user?.level}</span></span>
+                    )}
+                  </div>
 
                 </div>
 
                 <div className="container">
 
-                <div className="gauge-container" onMouseEnter={() => setIsKarmaHovering(true)} onMouseLeave={() => setIsKarmaHovering(false)}>
-                  <svg className="gauge" viewBox="0 0 150 150">
-                    <circle className="rail" r="67" cx="75" cy="75" />
-                    <circle className="progress" r="67" data-target={current_user?.karma} cx="75" cy="75" />
-                  </svg>
-                  {isKarmaHovering ? (
-                    <span className="center percentage"><span className="value">{current_user?.karma} %</span></span>
-                  ) : (
-                    <SiAlchemy className="center icon" />
-                  )}
-                </div>
+                  <div className="gauge-container" onMouseEnter={() => setIsKarmaHovering(true)} onMouseLeave={() => setIsKarmaHovering(false)}>
+                    <svg className="gauge" viewBox="0 0 150 150">
+                      <circle className="rail" r="67" cx="75" cy="75" />
+                      <circle className="progress" r="67" data-target={current_user?.karma} cx="75" cy="75" />
+                    </svg>
+                    {isKarmaHovering ? (
+                      <span className="center percentage"><span className="value">{current_user?.karma} %</span></span>
+                    ) : (
+                      <SiAlchemy className="center icon" />
+                    )}
+                  </div>
 
-                </div>
+                  </div>
 
-                <div className="container">
+                  <div className="container">
 
-                <div className="gauge-container" onMouseEnter={() => setIsAchievementHovering(true)} onMouseLeave={() => setIsAchievementHovering(false)}>
-                  <svg className="gauge" viewBox="0 0 150 150">
-                    <circle className="rail" r="67" cx="75" cy="75" />
-                    <circle className="progress" r="67" data-target={numberOfUserAchievements/numberOfAchievements*100} cx="75" cy="75" />
-                  </svg>
-                  {isAchievementHovering ? (
-                    <span className="center percentage"><span className="value">{numberOfUserAchievements} / {numberOfAchievements}</span></span>
-                  ) : (
-                    <FaTrophy className="center icon" />
-                  )}
-                </div>
+                  <div className="gauge-container" onMouseEnter={() => setIsAchievementHovering(true)} onMouseLeave={() => setIsAchievementHovering(false)}>
+                    <svg className="gauge" viewBox="0 0 150 150">
+                      <circle className="rail" r="67" cx="75" cy="75" />
+                      <circle className="progress" r="67" data-target={numberOfUserAchievements/numberOfAchievements*100} cx="75" cy="75" />
+                    </svg>
+                    {isAchievementHovering ? (
+                      <span className="center percentage"><span className="value">{numberOfUserAchievements} / {numberOfAchievements}</span></span>
+                    ) : (
+                      <FaTrophy className="center icon" />
+                    )}
+                  </div>
 
                 </div>
 
