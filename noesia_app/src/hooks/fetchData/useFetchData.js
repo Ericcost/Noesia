@@ -23,7 +23,9 @@ export function useFetchPost(endpoint, query) {
         'Content-Type': 'application/json',
       },
     });
+    if (endpoint.includes('users')) {
       localStorage.setItem('Authorization_token', response.headers.authorization);
+    }
       return response.data;
     };
 
@@ -54,7 +56,7 @@ export function useFetchDelete(endpoint, query) {
 
 export function useFetchPut(endpoint, query, auth_token) {
   const queryClient = useQueryClient();
-  const patchData = async (dataToSend) => {
+  const putData = async (dataToSend) => {
     const response = await axios.put(`${API_URL}/${endpoint}`, dataToSend, {
       headers: {
         'Content-Type': 'application/json',
@@ -64,7 +66,7 @@ export function useFetchPut(endpoint, query, auth_token) {
     return response.data;
   };
 
-  return useMutation(patchData, {
+  return useMutation(putData, {
     onSuccess: () => {
       queryClient.invalidateQueries(query);
     },
