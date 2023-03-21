@@ -35,3 +35,23 @@
     }
   }
 }
+
+@include tablet {
+  @each $card, $properties in $card-properties-tablet {
+    .enigma-card:nth-child(#{$card}) {
+      @each $property, $value in $properties {
+        #{$property}: $value;
+      }
+    }
+  }
+}
+
+@include mobile {
+  @each $card, $properties in $card-properties-mobile {
+    .enigma-card:nth-child(#{$card}) {
+      @each $property, $value in $properties {
+        #{$property}: $value;
+      }
+    }
+  }
+}

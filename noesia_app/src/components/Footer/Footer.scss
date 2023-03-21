@@ -17,10 +17,23 @@
   svg {
     color: $white;
     margin-right: 2rem;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
   }
+
   p {
     font-size: 1rem;
     color: $white;
+
+    @include mobile {
+      display: none;
+    }
   }
 
 }
