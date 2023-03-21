@@ -6,6 +6,7 @@ import './styles/main.scss'
 
 //Pages
 import Home from "./pages/Home/Home";
+import Admin from './pages/Admin/Admin';
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Profile from "./pages/Profile/Profile";
@@ -40,6 +41,7 @@ function App() {
             />}
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/admin" element={<Admin />} />
               <Route path='/porte' element={<Door onUnlockSuccess={handleUnlockSuccess} onAchievementTitle={handleUAchievementTitle} />} />
               <Route path="/carte" element={<Map />} />
               <Route path="/connexion" element={<Login />} />
