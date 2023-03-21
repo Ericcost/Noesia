@@ -127,6 +127,10 @@
           margin: 2rem 4rem;
         }
 
+        @include mobile {
+          margin: 1rem 2rem;
+        }
+
         p {
           color: $white;
           text-align: justify;
@@ -134,6 +138,10 @@
           overflow-wrap: break-word;
           font-size: 1.4rem;
           text-shadow: 0.2rem 0.2rem 0.4rem $black;
+
+          @include mobile {
+            font-size: 0.9rem;
+          }
         }
       }
 
