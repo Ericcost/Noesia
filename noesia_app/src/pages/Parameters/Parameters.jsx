@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Background from "../../assets/images/maze.png";
 import AvailableSoon from "../../components/AvailableSoon/AvailableSoon";
 
 import './Parameters.scss';
@@ -31,6 +32,7 @@ export default function Parameters() {
           {/* <label for="sound"></label> */}
         </div>
       </div>
+      <img className='parameters-background-image' src={Background} />
     </div>
   )
 }

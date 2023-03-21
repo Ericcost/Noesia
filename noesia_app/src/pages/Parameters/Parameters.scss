@@ -8,7 +8,21 @@
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-  color: $black;
+  color: $white;
+
+  .parameters-background-image {
+    background-size: 120vmax;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.85;
+    position: absolute;
+    z-index: -1;
+    @include tablet {
+      object-fit: cover;
+    }
+  }
 
   .parameters-item {
     flex: 1;
@@ -19,6 +33,12 @@
     gap: 1rem;
     height: 100%;
 
+    label {
+      font-weight: bold;
+      text-transform: uppercase;
+      text-shadow: 0.1rem 0.1rem 0.2rem black;
+    }
+
     
     .dark-mode {
       display: flex;
@@ -26,11 +46,11 @@
       align-items: center;
       width: 10rem;
       height: 2rem;
-      background: #333;
+      background: $white;
       position: relative;
       border-radius: 4rem;
       box-shadow: inset 0 0.05rem 0.05rem rgba(0,0,0,0.5), 0 0.05rem 0 rgba(255,255,255,0.2);
-      
+
       &:after {
         content: 'OFF';
         color: $black;
@@ -48,7 +68,7 @@
         position: absolute;
         left: 0.8rem;
         z-index: 0;
-        font: 0.8rem Arial, sans-serif;
+        font-size: 0.8rem;
         font-weight: bold;
       }
 
@@ -81,7 +101,7 @@
       align-items: center;
       width: 10rem;
       height: 2rem;
-      background: #333;
+      background: $white;
       position: relative;
       border-radius: 4rem;
       box-shadow: inset 0 0.05rem 0.05rem rgba(0,0,0,0.5), 0 0.05rem 0 rgba(255,255,255,0.2);
@@ -136,7 +156,7 @@
       align-items: center;
       width: 10rem;
       height: 2rem;
-      background: #333;
+      background: $white;
       position: relative;
       border-radius: 4rem;
       box-shadow: inset 0 0.05rem 0.05rem rgba(0,0,0,0.5), 0 0.05rem 0 rgba(255,255,255,0.2);

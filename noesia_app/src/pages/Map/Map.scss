@@ -3,16 +3,18 @@
 
 .map {
   background-color: $black;
-  height: 240vmax;  
-  width: 240vmax;
-  margin: -1rem;
-  padding: 3rem;
-  overflow: hidden;
   color: $white;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 
-  .enigmas {
-    height: 200vmax;
-    width: 200vmax;  
+  @include tablet {
+    
+  }
+
+  .enigmas { 
+    height: 100%;
+    width: 100%;
     position: absolute;
   }
 
