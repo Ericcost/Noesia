@@ -10,6 +10,7 @@ import Register from "./pages/Register/Register";
 import Profile from "./pages/Profile/Profile";
 import Door from "./pages/Door/Door";
 import Map from "./pages/Map/Map";
+import Parameters from "./pages/Parameters/Parameters";
 import Enigma1 from "./pages/Enigmas/Enigma1/Enigma1";
 import Enigma2 from "./pages/Enigmas/Enigma2/Enigma2";
 
@@ -27,6 +28,7 @@ function App() {
               <Route path="/connexion" element={<Login />} />
               <Route path="/inscription" element={<Register />} />
               <Route path="/profil/:id" element={<Profile />} />
+              <Route path="/paramètres" element={<Parameters/>} />
               <Route path="/enigme/1" element={<Enigma1 />} />
               <Route path="/enigme/2" element={<Enigma2 />} />
             </Routes>
