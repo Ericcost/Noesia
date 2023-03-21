@@ -60,7 +60,7 @@ const Home = () => {
             <div className="home-items" >
               <div className="home-item">
                 { current_user_passed_door ? (
-                  <Link to='/carte'>
+                  <Link to='/découverte'>
                     Jouer
                   </Link>
                 ) : (
@@ -81,7 +81,7 @@ const Home = () => {
               </div>
             </div>
             {/* <div className="home-background-pattern"></div> */}
-            <img className="home-background-image" src={Background} alt=''></img>
+            <img className="home-background-image" src={Background} alt='La porte qui donne accès à Noesia'></img>
           </div>  
         ) : ( 
           <>

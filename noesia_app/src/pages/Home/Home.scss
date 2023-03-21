@@ -183,24 +183,20 @@
       }
     }
   }
-    .story-background-image {
-      background-position: center 40%;
-      background-size: 120vmax;
-      height: 100%;
-      width: 100%;
-      top: 0px;
-      left: 0px;
-      opacity: 0.85;
-      position: absolute;
-      transition: opacity 800ms ease,
-        background-size 800ms ease,
-        background-position 800ms ease;
-      z-index: 0;
 
-      @include tablet {
-        object-fit: cover;
-      }
-      
+  .story-background-image {
+    background-size: 100vmax;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.85;
+    position: absolute;
+    z-index: 0;
+
+    @include tablet {
+      object-fit: cover;
+    }
   }
 }
 
