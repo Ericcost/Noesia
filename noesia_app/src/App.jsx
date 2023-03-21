@@ -9,7 +9,7 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Profile from "./pages/Profile/Profile";
 import Door from "./pages/Door/Door";
-import Map from "./pages/Map/Map";
+import DiscoverMap from "./pages/Maps/DiscoverMap/DiscoverMap";
 import Parameters from "./pages/Parameters/Parameters";
 import Enigma1 from "./pages/Enigmas/Enigma1/Enigma1";
 import Enigma2 from "./pages/Enigmas/Enigma2/Enigma2";
@@ -24,7 +24,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path='/porte' element={<Door />} />
-              <Route path="/carte" element={<Map />} />
+              <Route path="/découverte" element={<DiscoverMap />} />
               <Route path="/connexion" element={<Login />} />
               <Route path="/inscription" element={<Register />} />
               <Route path="/profil/:id" element={<Profile />} />

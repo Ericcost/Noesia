@@ -47,7 +47,7 @@ export default function Door() {
       } else {
         localStorage.setItem("is_door_passed", true);
       }
-      navigate("/carte");
+      navigate("/découverte");
     } else {
       setInputValue("");
     }
