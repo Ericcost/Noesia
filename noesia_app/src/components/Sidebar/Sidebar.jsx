@@ -8,8 +8,6 @@ import { BsBook } from "react-icons/bs";
 import { HiOutlineMap } from "react-icons/hi";
 
 import ButtonLink from '../../components/ButtonLink/ButtonLink';
-import Button from '../../components/Button/Button'
-
 
 import { useFetchGet, useFetchDelete } from '../../hooks/fetchData/useFetchData';
 
@@ -116,9 +114,9 @@ export default function Sidebar() {
                         }
                       </div>
                       <div className='sidebar-item' onMouseEnter={() => setIsMapHovering(true)} onMouseLeave={() => setIsMapHovering(false)}>
-                        <Link to='/carte'><HiOutlineMap /></Link>
+                        <Link to='/découverte'><HiOutlineMap /></Link>
                         { isMapHovering ? (
-                          <ButtonLink content="Carte" path="/carte"/>
+                          <ButtonLink content="Carte" path="/découverte"/>
                         ) : 
                           null
                         }

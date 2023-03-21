@@ -7,6 +7,7 @@
   left: 50%;
   position: fixed;
   transform: translateX(-50%);
+  z-index: 1;
 
    @include tablet {
     margin: 0 0 1rem 0;
