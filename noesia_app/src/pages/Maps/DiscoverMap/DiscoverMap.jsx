@@ -8,7 +8,7 @@ import Sidebar from '../../../components/Sidebar/Sidebar';
 import EnigmaCard from '../../../components/EnigmaCard/EnigmaCard';
 import WorldsBar from '../../../components/WorldsBar/WorldsBar';
 
-import DiscoverBackground from '../../../assets/images/discover.png';
+import DiscoverBackground from '../../../assets/images/discover01.png';
 
 export default function DiscoverMap() {
   const { isLoading, data: enigmas, } = useFetchGet('enigmas', 'enigmas');
