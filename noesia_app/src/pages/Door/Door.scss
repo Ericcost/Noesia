@@ -83,6 +83,12 @@
       padding: 3rem 3rem 3rem 3rem;
       gap: 3.5rem;
 
+      .hidden_achievement {
+        button {
+          margin-bottom: -1rem;
+        }
+      }
+
       @include tablet {
         margin: 0;
         padding: 0;
