@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Tile from "../Tile/Tile.jsx";
+import ButtonLink from "../ButtonLink/ButtonLink.jsx";
 import "./SlidingPuzzle.scss";
 
 const SlidingPuzzle = ({ image, gridSize }) => {
@@ -109,6 +110,7 @@ const SlidingPuzzle = ({ image, gridSize }) => {
         {puzzleSolved && (
           <div className="message">
             Félicitations, vous avez résolu le puzzle !
+            <ButtonLink content='Retour' path='/découverte'/>
           </div>
         )}
       </div>
