@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { TypeAnimation } from 'react-type-animation';
 import { Link } from "react-router-dom";
 
-import AvailableSoon from "../../components/AvailableSoon/AvailableSoon";
 import Button from "../../components/Button/Button";
 
 import { useFetchGet, useFetchDelete } from "../../hooks/fetchData/useFetchData";
@@ -61,7 +60,7 @@ const Home = () => {
             <div className="home-items" >
               <div className="home-item">
                 { current_user_passed_door ? (
-                  <Link to='/carte'>
+                  <Link to='/découverte'>
                     Jouer
                   </Link>
                 ) : (
@@ -71,8 +70,7 @@ const Home = () => {
                 )}
               </div>
               <div className="home-item" >
-                <Link to='#'>
-                  <AvailableSoon />
+                <Link to='/paramètres'>
                   Paramètres
                 </Link>
               </div>
@@ -82,8 +80,8 @@ const Home = () => {
                 </Link>
               </div>
             </div>
-            <div className="home-background-pattern"></div>
-            <img className="home-background-image" src={Background} alt=''></img>
+            {/* <div className="home-background-pattern"></div> */}
+            <img className="home-background-image" src={Background} alt='La porte qui donne accès à Noesia'></img>
           </div>  
         ) : ( 
           <>

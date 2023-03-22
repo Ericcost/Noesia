@@ -27,15 +27,19 @@ export default function Door({ onUnlockSuccess, onAchievementTitle }) {
 
   const handleButtonClick = (character) => {
     if (
-      inputValue.length < 3 &&
-      ["@", "$", "€", "&", "%", "£", "+", "#"].includes(character)
+      inputValue.length < 9 &&
+      [" @ ", " $ ", " € ", " & ", " % ", " £ ", " + ", " # "].includes(character)
     ) {
       setInputValue(inputValue + character);
     }
   };
 
+  const handleClearClick = () => {
+    setInputValue("");
+  };
+
   const handleSubmit = () => {
-    if (inputValue === "$€@") {
+    if (inputValue === " $  €  @ ") {
       console.log(
         "Avec une satisfaction intense, vous prononcez 'connaissance' à haute voix. Et alors, la porte massive s'ouvre lentement, révélant un nouveau monde fascinant et rempli de merveilles insoupçonnées. Vous franchissez la porte, prêt à explorer ce nouveau monde avec une soif insatiable de connaissances et de découvertes."
       );
@@ -49,8 +53,7 @@ export default function Door({ onUnlockSuccess, onAchievementTitle }) {
       } else {
         localStorage.setItem("is_door_passed", true);
       }
-      navigate("/carte");
-      // Remplacez le console.log par le code pour amener l'utilisateur à la page Map
+      navigate("/découverte");
     } else {
       setInputValue("");
     }
@@ -71,42 +74,24 @@ export default function Door({ onUnlockSuccess, onAchievementTitle }) {
           <div className="door-buttons">
             <div className="buttons-left">
               <div className="buttons-animate">
-                <ButtonDoor content="&" onClick={() => handleButtonClick("&")} />
-                <Button />
-                <Button />
-                <Button />
+                <ButtonDoor content=" & " onClick={() => handleButtonClick(" & ")} />
               </div>
               <div className="buttons-animate">
-                <ButtonDoor content="€" onClick={() => handleButtonClick("€")} />
-                <Button />
-                <Button />
-                <Button />
+                <ButtonDoor content=" € " onClick={() => handleButtonClick(" € ")} />
               </div>
               <div className="buttons-animate">
-                <ButtonDoor content="#" onClick={() => handleButtonClick("#")} />
-                <Button />
-                <Button />
-                <Button />
+                <ButtonDoor content=" # " onClick={() => handleButtonClick(" # ")} />
               </div>
               <div className="buttons-animate">
-                <ButtonDoor content="@" onClick={() => handleButtonClick("@")} />
-                <Button />
-                <Button />
-                <Button />
+                <ButtonDoor content=" @ " onClick={() => handleButtonClick(" @ ")} />
               </div>
             </div>
           </div>
-
           <div className="door-code">
-          <Button />
             <div className="door-screen">
-              <Button />
-              <Button />
               <input placeholder='*   *   *' type="text" value={inputValue} readOnly />
-              <Button />
-              <Button />
+              <Button className="door-clear" content='Effacer' onClick={handleClearClick} />
             </div>
-            <Button />
             <div className="door-script">
               <p>
                 Vous êtes sur le point d'explorer un nouveau monde, mais pour y
@@ -136,45 +121,22 @@ export default function Door({ onUnlockSuccess, onAchievementTitle }) {
               </p>
             </div>
             <div className="door-validate">
-              <Button />
-              <Button />
-              <Button />
-              <Button />
-              <Button />
-              <ButtonDoor onClick={handleSubmit} content="Valider"/>
-              <Button />
-              <Button />
-              <Button />
-              <Button />
-              <Button />
+              <Button onClick={handleSubmit} content="Valider"/>
             </div>
           </div>
-
           <div className="door-buttons">
             <div className="buttons-right">
               <div className="buttons-animate">
-                <ButtonDoor content="%" onClick={() => handleButtonClick("%")} />
-                <Button />
-                <Button />
-                <Button />
+                <ButtonDoor content=" % " onClick={() => handleButtonClick(" % ")} />
               </div>
               <div className="buttons-animate">
-                <ButtonDoor content="£" onClick={() => handleButtonClick("£")} />
-                <Button />
-                <Button />
-                <Button />
+                <ButtonDoor content=" £ " onClick={() => handleButtonClick(" £ ")} />
               </div>
               <div className="buttons-animate">
-                <ButtonDoor content="$" onClick={() => handleButtonClick("$")} />
-                <Button />
-                <Button />
-                <Button />
+                <ButtonDoor content=" $ " onClick={() => handleButtonClick(" $ ")} />
               </div>
               <div className="buttons-animate">
-                <ButtonDoor content="+" onClick={() => handleButtonClick("+")} />
-                <Button />
-                <Button />
-                <Button />
+                <ButtonDoor content=" + " onClick={() => handleButtonClick(" + ")} />
               </div>
             </div>
           </div>

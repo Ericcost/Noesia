@@ -51,6 +51,9 @@
         a {
           text-decoration: none;
           color: $white;
+          @include mobile {
+            font-size: 2.5rem;
+          }
         }
       }
     }
@@ -84,6 +87,9 @@
       opacity: 0.85;
       position: absolute;
       z-index: 0;
+      @include tablet {
+        object-fit: cover;
+      }
     }
   }
 
@@ -121,11 +127,23 @@
       padding: 3rem 2rem;
       z-index: 1;
       
+      @include mobile {
+        width: 75%;
+        padding: 1rem 1rem;
+      }
+
       .story-title {
         flex: 2;
         display: flex;
         align-items: center;
-        justify-content: center;    
+        justify-content: center;
+        
+        h1 {
+
+          @include mobile {
+            font-size: 2.5rem;
+          }
+        }
       }
 
       .story-plot {
@@ -136,10 +154,18 @@
         text-justify: inter-word;
         line-height: 2;
 
+        @include mobile {
+          line-height: 1.8;
+        }
+
         p {
           color: $white;
           strong {
             text-shadow: 0.1rem 0.1rem 0.2rem $black;
+          }
+
+          @include mobile {
+            font-size: 0.8rem;
           }
         }
       }
@@ -150,22 +176,26 @@
         align-items: center;
         justify-content: center;
         padding: 4rem 0 0 0;
+
+        @include mobile {
+          padding: 2rem 0 0 0;
+        }
       }
     }
+  }
 
-    .story-background-image {
-      background-position: center 40%;
-      background-size: 120vmax;
-      height: 100%;
-      width: 100%;
-      top: 0px;
-      left: 0px;
-      opacity: 0.85;
-      position: absolute;
-      transition: opacity 800ms ease,
-        background-size 800ms ease,
-        background-position 800ms ease;
-      z-index: 0;
+  .story-background-image {
+    background-size: 100vmax;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.85;
+    position: absolute;
+    z-index: 0;
+
+    @include tablet {
+      object-fit: cover;
     }
   }
 }

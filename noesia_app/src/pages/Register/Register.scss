@@ -2,9 +2,6 @@
 @import '../../styles/abstracts/mixins.scss';
 
 .register {
-  height: 100%;
-  margin: 0;
-  padding: 0;
   background-color: $black;
 
   .register-wrapper {  
@@ -13,6 +10,14 @@
     align-items: center;
     justify-content: center;
     margin: 0 6rem;
+
+    @include tablet {
+      margin: 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
 
     .register-form {
       flex-basis: 50%;
@@ -24,34 +29,58 @@
       justify-content: center;
       flex-direction: column;
 
+      @include tablet {
+        margin: -4rem 0 0 0;
+      }
+
+      @include mobile {
+        margin: 0 0 0 0;
+      }
+
       form {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+
+        input {
+          background: $white;
+          color: $black;
+          width: 80%;
+          border: 0.05rem solid $white;
+          border-radius: 0.5rem;
+          font-size: 2rem;
+          padding: 0.8rem;
+          margin: 0.8rem;
+
+          @include tablet {
+            margin: 0.4rem;
+            font-size: 1.3rem;
+          }
+
+          @include mobile {
+            margin: 0;
+            font-size: 0.8rem;
+          }
+        }
       }
       
-      input {
-        background: $white;
-        color: $black;
-        width: 80%;
-        border: 1px solid $white;
-        border-radius: 0.5rem;
-        font-size: 2rem;
-        padding: 0.8rem;
-        margin: 0.8rem;
-      }
+      
 
       .rgpd {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: row;
+
+        @include tablet {
+          margin: 0 4rem;
+        }
         
         input {
           flex: 1;
           margin: -2rem;
-          cursor: pointer;
+          cursor: text;
           text-align:right;
         }
         
@@ -75,6 +104,14 @@
       align-items: center;
       justify-content: center;
 
+      @include tablet {
+        margin: -4rem 0 0 0;
+      }
+
+      @include mobile {
+        margin: -4rem 0 0 0;
+      }
+
       img {
         width: 80%;
         border-radius: 4.5rem;
@@ -83,3 +120,5 @@
     }
   }
 }
+
+
