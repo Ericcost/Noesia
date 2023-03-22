@@ -48,7 +48,7 @@ function App() {
   }
 
   function ProtectedRoute({ children }) {
-    if (logged === false) {
+    if (!logged) {
       return <Navigate to="/connexion" />;
     };
 
@@ -76,10 +76,10 @@ function App() {
                   </ProtectedRoute>
                 }
                 children= {[
-                  <Route key="profile" path="/profil/:id" element={<Profile />} />,
-                  <Route key="parameters" path="/paramètres" element={<Parameters/>} />,
-                  <Route key="enigma1" path="/enigme/1" element={<Enigma1 />} />,
-                  <Route key="enigma2" path="/enigme/2" element={<Enigma2 />} />
+                  <Route key="profil" path="/profil/:id" element={<Profile />} />,
+                  <Route key="paramètres" path="/paramètres" element={<Parameters/>} />,
+                  <Route key="enigme/1" path="/enigme/1" element={<Enigma1 />} />,
+                  <Route key="enigme/2" path="/enigme/2" element={<Enigma2 />} />
                 ]}
               />
             </Routes>
