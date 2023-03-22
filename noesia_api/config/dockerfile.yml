@@ -21,7 +21,7 @@ options:
   redis: false
   root: false
   sqlite3: false
-  swap: 
+  swap: 512M
   yjit: false
   packages: {}
   envs: {}
