@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 //SCSS
 import './styles/main.scss'
@@ -29,7 +29,7 @@ function App() {
     setAchievementUnlocked(true);
   };
 
-  const handleUAchievementTitle = (title) => {
+  const handleAchievementTitle = (title) => {
     setAchievementTitle(title);
   };
 
@@ -43,9 +43,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/admin" element={<Admin />} />
-              <Route path='/porte' element={<Door />} />
               <Route path="/découverte" element={<DiscoverMap />} />
-              <Route path='/porte' element={<Door onUnlockSuccess={handleUnlockSuccess} onAchievementTitle={handleUAchievementTitle} />} />
+              <Route path='/porte' element={<Door onUnlockSuccess={handleUnlockSuccess} onAchievementTitle={handleAchievementTitle} />} />
               <Route path="/connexion" element={<Login />} />
               <Route path="/inscription" element={<Register />} />
               <Route path="/profil/:id" element={<Profile />} />
