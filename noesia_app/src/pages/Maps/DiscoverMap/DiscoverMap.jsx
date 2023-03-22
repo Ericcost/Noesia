@@ -8,7 +8,7 @@ import Sidebar from '../../../components/Sidebar/Sidebar';
 import EnigmaCard from '../../../components/EnigmaCard/EnigmaCard';
 import WorldsBar from '../../../components/WorldsBar/WorldsBar';
 
-import DiscoverBackground from '../../../assets/images/discover01.png';
+import DiscoverMapBackground from '../../../assets/images/discover01.webp';
 
 export default function DiscoverMap() {
   const { isLoading, data: enigmas, } = useFetchGet('enigmas', 'enigmas');
@@ -29,7 +29,7 @@ export default function DiscoverMap() {
           }
         </div>
         <Sidebar />
-        <img className='discover-background-image' src={DiscoverBackground} />
+        <img className='discover-background-image' src={DiscoverMapBackground} alt="Carte du monde découverte"/>
       </div>
     </>
   )

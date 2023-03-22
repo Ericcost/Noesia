@@ -3,6 +3,9 @@ import { useState } from 'react';
 import Button from '../../components/ButtonLink/ButtonLink';
 import Sidebar from '../../components/Sidebar/Sidebar';
 
+import ProfileImg from '../../assets/images/digicode.webp';
+import ProfileBackground from '../../assets/images/discover02.webp';
+
 import { useFetchGet } from '../../hooks/fetchData/useFetchData';
 
 import { RiSurgicalMaskLine } from 'react-icons/ri'
@@ -52,6 +55,7 @@ export default function Profile() {
   return (
     <>
       <div className='profile'>
+        <img className='profile-background' src={ProfileBackground} alt="" />
         <div className='profile-wrapper'>
 
           <div className='profile-left'>
@@ -59,7 +63,7 @@ export default function Profile() {
             <div className='profile-left-top'>
               <div className="profile-left-top-info">
                 <div className="profile-left-top-info-picture">
-                  <img className='profile-picture' src="../src/assets/images/background.jpg" />
+                  <img className='profile-picture' src={ProfileImg} alt='Un coffre-fort'/>
                 </div>
                 <div className="profile-left-top-info-name">
                   <h2 className="profile-name">{current_user?.username}</h2>

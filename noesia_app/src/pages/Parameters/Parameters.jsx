@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Background from "../../assets/images/maze.png";
+import ParametersBackground from "../../assets/images/maze.webp";
 import AvailableSoon from "../../components/AvailableSoon/AvailableSoon";
 import ButtonLink from "../../components/ButtonLink/ButtonLink";
 
@@ -38,7 +38,7 @@ export default function Parameters() {
           <ButtonLink content='Retour' path='/'/>
         </div>
       </div>
-      <img className='parameters-background-image' src={Background} />
+      <img className='parameters-background-image' src={ParametersBackground} alt="une pyramide au milieu d'un labyrynthe"/>
     </div>
   )
 }

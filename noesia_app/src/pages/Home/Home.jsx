@@ -6,7 +6,7 @@ import Button from "../../components/Button/Button";
 
 import { useFetchGet, useFetchDelete } from "../../hooks/fetchData/useFetchData";
 
-import Background from '../../assets/images/background.jpg';
+import HomeBackground from '../../assets/images/background.webp';
 
 import "./Home.scss";
 
@@ -81,7 +81,7 @@ const Home = () => {
               </div>
             </div>
             {/* <div className="home-background-pattern"></div> */}
-            <img className="home-background-image" src={Background} alt='La porte qui donne accès à Noesia'></img>
+            <img className="home-background-image" src={HomeBackground} alt='La porte qui donne accès à Noesia'></img>
           </div>  
         ) : ( 
           <>
@@ -109,7 +109,7 @@ const Home = () => {
                     <Button onClick={handleStory} content='Skip'/>
                   </div>
                 </div>
-                <img className="story-background-image" src={Background} alt=''></img>
+                <img className="story-background-image" src={HomeBackground} alt='La porte qui donne accès à Noesia'></img>
               </div>
               ) : (
               <div className="home">
@@ -131,7 +131,7 @@ const Home = () => {
                   </div>
                 </div>
                 {/* <div className="home-background-pattern"></div> */}
-                <img className="home-background-image" src={Background} alt=''></img>
+                <img className="home-background-image" src={HomeBackground} alt='La porte qui donne accès à Noesia'></img>
               </div>  
             )}     
           </>    

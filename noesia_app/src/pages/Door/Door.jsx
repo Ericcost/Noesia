@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import Code from "../../assets/images/door-code.png";
+import DoorBackground from "../../assets/images/door.webp";
 
 import { useFetchGet, useFetchPost, useFetchPut } from "../../hooks/fetchData/useFetchData";
 
@@ -141,7 +141,7 @@ export default function Door({ onUnlockSuccess, onAchievementTitle }) {
             </div>
           </div>
         </div>
-        <img className="door-background" src={Code} alt="door terminal"></img>
+        <img className="door-background" src={DoorBackground} alt="door's enigma to enter in the Neosia World"></img>
       </div>
     </>
   );
