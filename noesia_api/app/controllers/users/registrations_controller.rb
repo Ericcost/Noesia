@@ -4,16 +4,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   respond_to :json
 
   def update
-    @current_user_updated = User.find_by(id: account_update_params[:user_id])
-
-    unless @current_user_updated
-      if resource.update(account_update_params)
-        render json: { message: 'Account updated successfully.' }, status: :ok
-      else
-        render json: { message: 'Failed to update account.' }, status: :unprocessable_entity
-      end
+    @current_user_updated = User.find_by(id: account_update_params[:id])
+  
+    if @current_user_updated.update(account_update_params)
+      render json: { message: 'Account updated successfully.' }, status: :ok
+    else
+      render json: { message: 'Failed to update account.' }, status: :unprocessable_entity
     end
-
   end
 
   private
@@ -41,9 +38,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :is_door_passed])
     devise_parameter_sanitizer.permit(:update, keys: [:username, :is_door_passed])
   end
-
+  
   def account_update_params
-    params.require(:registration).permit(:user_id, :is_door_passed).merge(username: params[:username])
+    params.require(:registration).permit(:id, :email, :password, :is_door_passed)
   end
 
 end
