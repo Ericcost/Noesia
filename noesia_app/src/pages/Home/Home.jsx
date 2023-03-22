@@ -19,7 +19,7 @@ const Home = () => {
   const current_user = data?.user;
   const current_user_passed_door = current_user?.is_door_passed
 
-  const { mutate: deleteUser } = useFetchDelete('users/sign_out', 'user');
+  const { mutate: deleteUser } = useFetchDelete('users/sign_out');
   const logged = auth_token ? true : false;
 
   const [story, setStory] = useState(false)
