@@ -10,7 +10,7 @@ const Admin = () => {
 
   // Enigmas
   const { data: enigmas, isSuccess: isEnigmaSucess } = useFetchGet('enigmas', 'enigmas');
-  const { mutate: postEnigma } = useFetchPost('enigmas', 'enigmas');
+  const { mutate: postEnigma } = useFetchPost('enigmas');
 
   const [displayEnigmas, setDisplayEnigmas] = useState(false);
 
@@ -72,7 +72,7 @@ const Admin = () => {
 
   // Achievement
   const { data: achievements } = useFetchGet('achievements', 'achievements');
-  const { mutate: postAchievement } = useFetchPost('achievements', 'achievements');
+  const { mutate: postAchievement } = useFetchPost('achievements');
 
   const [displayAchievements, setDisplayAchievements] = useState(false)
 
@@ -105,7 +105,7 @@ const Admin = () => {
       <div className='admin-sidebar'>
         <h2>Catégories</h2>
         <button onClick={handleEnigmasDisplay}>Énigmes</button>
-        <button onClick={handleAchievementsDisplay}>Succés</button>
+        <button onClick={handleAchievementsDisplay}>Succès</button>
       </div>
       <div className='admin-right'>
         <div className='admin-right-top-display'>
@@ -130,7 +130,7 @@ const Admin = () => {
           {displayAchievements && 
             <div>
               <div className="admin-right-top-header">
-                <h3>Liste des succés</h3>
+                <h3>Liste des succès</h3>
               </div>
               <div className="admin-card-container">
                 {achievements.map((achievement, index) => { 
@@ -162,11 +162,11 @@ const Admin = () => {
           }
           {displayAchievements && 
             <div>
-              <h3>Créer un nouveau succés</h3>
+              <h3>Créer un nouveau succès</h3>
               <form action="" onSubmit={handleAchievementSubmit}>
-                <input type="text" name='title' placeholder="Titre du succés" value={formAchievementData.title} onChange={handleAchievementChange}/>
-                <input type="text" name='description' placeholder="Description du succés" value={formAchievementData.description} onChange={handleAchievementChange}/>
-                <Button type="submit" content="Créer l'énigme"/>
+                <input type="text" name='title' placeholder="Titre du succès" value={formAchievementData.title} onChange={handleAchievementChange}/>
+                <input type="text" name='description' placeholder="Description du succès" value={formAchievementData.description} onChange={handleAchievementChange}/>
+                <Button type="submit" content="Créer le succès"/>
               </form>
             </div>
           }
