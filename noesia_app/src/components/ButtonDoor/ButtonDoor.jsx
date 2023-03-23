@@ -1,4 +1,4 @@
-import React from 'react'
+// SCSS
 import './ButtonDoor.scss'
 
 export default function ButtonDoor({content, onClick}) {
