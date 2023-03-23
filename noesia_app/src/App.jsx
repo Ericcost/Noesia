@@ -1,5 +1,6 @@
 import { Routes, Route, Outlet, Navigate } from 'react-router-dom'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
 
 import { useFetchGet } from './hooks/fetchData/useFetchData';
 
@@ -8,9 +9,11 @@ import './styles/main.scss'
 
 //Pages
 import Home from "./pages/Home/Home";
+import Admin from './pages/Admin/Admin';
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Profile from "./pages/Profile/Profile";
+import EditProfile from "./pages/EditProfile/EditProfile";
 import Door from "./pages/Door/Door";
 import DiscoverMap from "./pages/Maps/DiscoverMap/DiscoverMap";
 import Parameters from "./pages/Parameters/Parameters";
@@ -35,7 +38,7 @@ function App() {
     setAchievementUnlocked(true);
   };
 
-  const handleUAchievementTitle = (title) => {
+  const handleAchievementTitle = (title) => {
     setAchievementTitle(title);
   };
 
@@ -65,9 +68,10 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/découverte" element={<DiscoverMap />} />
-              <Route path='/porte' element={<Door onUnlockSuccess={handleUnlockSuccess} onAchievementTitle={handleUAchievementTitle} />} />
+              <Route path='/porte' element={<Door onUnlockSuccess={handleUnlockSuccess} onAchievementTitle={handleAchievementTitle} />} />
               <Route path="/connexion" element={<Login />} />
               <Route path="/inscription" element={<Register />} />
+
               <Route 
                 path="/" 
                 element={
@@ -76,7 +80,9 @@ function App() {
                   </ProtectedRoute>
                 }
                 children= {[
+                  <Route key="admin" path="/admin" element={<Admin />} />,
                   <Route key="profil" path="/profil/:id" element={<Profile />} />,
+                  <Route key="profil" path="/profil/:id/editer" element={<EditProfile />} />
                   <Route key="paramètres" path="/paramètres" element={<Parameters/>} />,
                   <Route key="enigme/1" path="/enigme/1" element={<Enigma1 />} />,
                   <Route key="enigme/2" path="/enigme/2" element={<Enigma2 />} />

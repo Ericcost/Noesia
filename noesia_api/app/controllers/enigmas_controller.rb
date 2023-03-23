@@ -46,6 +46,6 @@ class EnigmasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def enigma_params
-      params.fetch(:enigma, {})
+      params.require(:enigma).permit(:title, :description, :topic_id, :world, :level, :hint)
     end
 end

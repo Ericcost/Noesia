@@ -38,6 +38,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_16_172203) do
   create_table "histories", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "enigma_id"
+    t.integer "status", default: 2, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["enigma_id"], name: "index_histories_on_enigma_id"
@@ -73,7 +74,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_16_172203) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "username", default: "", null: false
+    t.string "username", null: false
+    t.boolean "admin", default: false, null: false
     t.boolean "is_door_passed", default: false, null: false
     t.integer "level", default: 1, null: false
     t.integer "experience", default: 0, null: false
