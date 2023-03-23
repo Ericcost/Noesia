@@ -1,9 +1,16 @@
-import React, { useState } from 'react';
+// React router
 import { Link } from "react-router-dom";
 
-import ButtonLink from '../ButtonLink/ButtonLink';
+// Hooks
+import { useState } from 'react';
+
+// React icons
 import { GiAbstract005, GiAbstract010, GiAbstract011, GiAbstract014  } from "react-icons/gi";
 
+// Components
+import ButtonLink from '../ButtonLink/ButtonLink';
+
+// SCSS
 import './WorldsBar.scss';
 
 export default function WorldsBar() {
