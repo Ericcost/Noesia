@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 import { Routes, Route, Outlet, Navigate } from 'react-router-dom'
-import { useState } from 'react';
-=======
-import { Routes, Route } from 'react-router-dom'
 import { useState, useEffect } from 'react';
->>>>>>> 94a293159e8961428aa9687b7af3be6e9c163603
 
 import { useFetchGet } from './hooks/fetchData/useFetchData';
 
@@ -70,27 +65,17 @@ function App() {
               onClose={() => setAchievementUnlocked(false)} 
             />}
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
               <Route path="/découverte" element={<DiscoverMap />} />
               <Route path='/porte' element={<Door onUnlockSuccess={handleUnlockSuccess} onAchievementTitle={handleAchievementTitle} />} />
               <Route path="/connexion" element={<Login />} />
               <Route path="/inscription" element={<Register />} />
-              <Route 
-                path="/" 
-                element={
-                  <ProtectedRoute>
-                    <Layout />
-                  </ProtectedRoute>
-                }
-                children= {[
-                  <Route key="admin" path="/admin" element={<Admin />} />,
-                  <Route key="profil" path="/profil/:id" element={<Profile />} />,
-                  <Route key="profil/editer" path="/profil/:id/editer" element={<EditProfile />} />,
-                  <Route key="paramètres" path="/paramètres" element={<Parameters/>} />,
-                  <Route key="enigme/1" path="/enigme/1" element={<Enigma1 />} />,
-                  <Route key="enigme/2" path="/enigme/2" element={<Enigma2 />} />
-                ]}
-              />
+                  <Route key="admin" path="/admin" element={<ProtectedRoute><Admin /></ProtectedRoute>} />,
+                  <Route key="profil" path="/profil/:id" element={<ProtectedRoute><Profile /></ProtectedRoute>} />,
+                  <Route key="profil/editer" path="/profil/:id/editer" element={<ProtectedRoute><EditProfile /></ProtectedRoute>} />,
+                  <Route key="paramètres" path="/paramètres" element={<ProtectedRoute><Parameters/></ProtectedRoute>} />,
+                  <Route key="enigme/1" path="/enigme/1" element={<ProtectedRoute><Enigma1 /></ProtectedRoute>} />,
+                  <Route key="enigme/2" path="/enigme/2" element={<ProtectedRoute><Enigma2 /></ProtectedRoute>} />
             </Routes>
         </main>
         <footer>
