@@ -1,4 +1,4 @@
-import React from "react";
+// SCSS
 import "./Tile.scss";
 
 const Tile = ({ index, gridSize, tileNumber, image, tileSize, onClick }) => {
@@ -27,8 +27,5 @@ const Tile = ({ index, gridSize, tileNumber, image, tileSize, onClick }) => {
       ></div>
     );
   };
-  
-  
-  
 
 export default Tile;
