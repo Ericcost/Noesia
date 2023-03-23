@@ -1,7 +1,7 @@
 @import '../../styles/abstracts/variables';
 @import '../../styles/abstracts/mixins.scss';
 
-.card {
+.carousel-card {
   width: 100%;
   height: 100%;
   padding: 2rem;
@@ -10,7 +10,7 @@
   text-align: justify;
   transition: all 0.3s ease-out;
 
-  .card-background {
+  .carousel-card-background {
     width: 100%;
     object-fit: cover;
   }
