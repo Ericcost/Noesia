@@ -1,4 +1,4 @@
-import React from 'react';
+// SCSS
 import './Sun.scss';
 
 export default function Sun({fireCount}) {
