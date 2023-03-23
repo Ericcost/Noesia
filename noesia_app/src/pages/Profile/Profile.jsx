@@ -73,7 +73,7 @@ export default function Profile() {
                   <div className="gauge-container" onMouseEnter={() => setIsExperienceHovering(true)} onMouseLeave={() => setIsExperienceHovering(false)}>
                     <svg className="gauge" viewBox="0 0 150 150">
                       <circle className="rail" r="67" cx="75" cy="75" />
-                      <circle className="progress" r="67" data-target="10" cx="75" cy="75" />
+                      <circle className="progress" r="67" data-target={current_user?.experience.toString()} cx="75" cy="75" />
                     </svg>
                     {isExperienceHovering ? (
                       <span className="center percentage"><span className="value">{current_user?.experience}%</span></span>
@@ -92,7 +92,7 @@ export default function Profile() {
                       <circle className="progress" r="67" data-target={current_user?.karma} cx="75" cy="75" />
                     </svg>
                     {isKarmaHovering ? (
-                      <span className="center percentage"><span className="value">{current_user?.karma} %</span></span>
+                      <span className="center percentage"><span className="value">{current_user?.karma.toString()} %</span></span>
                     ) : (
                       <SiAlchemy className="center icon" />
                     )}
@@ -105,7 +105,7 @@ export default function Profile() {
                   <div className="gauge-container" onMouseEnter={() => setIsAchievementHovering(true)} onMouseLeave={() => setIsAchievementHovering(false)}>
                     <svg className="gauge" viewBox="0 0 150 150">
                       <circle className="rail" r="67" cx="75" cy="75" />
-                      <circle className="progress" r="67" data-target={numberOfUserAchievements/numberOfAchievements*100} cx="75" cy="75" />
+                      <circle className="progress" r="67" data-target={(numberOfUserAchievements/numberOfAchievements*100).toString()} cx="75" cy="75" />
                     </svg>
                     {isAchievementHovering ? (
                       <span className="center percentage"><span className="value">{numberOfUserAchievements} / {numberOfAchievements}</span></span>
