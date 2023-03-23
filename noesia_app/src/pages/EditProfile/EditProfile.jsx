@@ -1,20 +1,23 @@
+// Hooks
 import { useState, useEffect } from 'react'
 import { useFetchGet, useFetchPatch } from '../../hooks/fetchData/useFetchData';
 import { useNavigate } from "react-router-dom";
+
+// Components
 import Button from '../../components/Button/Button'
 import ButtonLink from '../../components/ButtonLink/ButtonLink'
 
+// SCSS
 import './EditProfile.scss'
 
 const EditProfile = () => {
 
-  const auth_token = localStorage.getItem('Authorization_token');
-  const { isLoading, data, isError, error } = useFetchGet('member-data', 'user', auth_token);
-
-  const current_user = data?.user;
-
   const navigate = useNavigate();
 
+  // User
+  const auth_token = localStorage.getItem('Authorization_token');
+  const { isLoading, data, isError, error } = useFetchGet('member-data', 'user', auth_token);
+  const current_user = data?.user;
   const { mutate: updateUser, isSuccess: updateUserSuccess } = useFetchPatch(`users`, auth_token);
 
   const [formData, setFormData] = useState({
