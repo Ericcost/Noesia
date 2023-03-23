@@ -1,14 +1,16 @@
-import { useState, useRef, useEffect } from 'react';
-
+// Hooks
 import { useFetchGet } from '../../../hooks/fetchData/useFetchData';
 
-import './DiscoverMap.scss';
-
+// Components
 import Sidebar from '../../../components/Sidebar/Sidebar';
 import EnigmaCard from '../../../components/EnigmaCard/EnigmaCard';
-import WorldsBar from '../../../components/WorldsBar/WorldsBar';
+// import WorldsBar from '../../../components/WorldsBar/WorldsBar';
 
+// Assets
 import DiscoverMapBackground from '../../../assets/images/discover01.webp';
+
+// SCSS
+import './DiscoverMap.scss';
 
 export default function DiscoverMap() {
   const { isLoading, data: enigmas, } = useFetchGet('enigmas', 'enigmas');
@@ -23,8 +25,8 @@ export default function DiscoverMap() {
             ))
             ) : (
               <div>
-              {isLoading}
-            </div>
+                {isLoading}
+              </div>
             )
           }
         </div>
