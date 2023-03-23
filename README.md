@@ -29,6 +29,8 @@ What would you do if you had more free time? In 2017, the top answer in surveys 
 
 In the "Noesia" team we believe that learning is about repetition, emotion and play. In this context we want to develop a hybrid application (PWA) that allows users to cultivate their knowledge through interactive mini-games developed by the "Noesia" team.
 
+All ideas are good to take, we will be delighted to read your feedback, do not hesitate to contact us. 📬
+
 - For this, we have developed a [React application](https://github.com/Ericcost/Noesia/tree/main/noesia_app)
 <br/>
 <p align="center">
@@ -49,7 +51,19 @@ In the "Noesia" team we believe that learning is about repetition, emotion and p
 
 ### ✅ - Features
 
-Coming 🔜
+- Access to a first enigma without registration
+- Registration / Login
+- Two enigmas (and many more to come!)
+- A system of levels, experience and characteristics that will serve you later in your adventure.
+- Full screen mode for total immersion
+- Achievements ! (and some hidden!)
+
+🔜
+
+[] - A more complete story
+[] - More enigmas
+[] - More achievemnts
+[] - ... ?
 
 ### 👨‍💻 - Authors Details 
 
