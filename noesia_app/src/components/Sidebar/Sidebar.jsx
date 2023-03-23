@@ -1,17 +1,19 @@
-import React, { useState } from 'react'
+// Hooks
+import { useState } from 'react'
 import { useNavigate, Link } from "react-router-dom";
+import { useFetchGet, useFetchDelete } from '../../hooks/fetchData/useFetchData';
 
+// Components
+import ButtonLink from '../../components/ButtonLink/ButtonLink';
+
+// React icons
 import { CgProfile } from "react-icons/cg";
 import { GiExitDoor, GiReturnArrow } from "react-icons/gi";
 import { FaConnectdevelop } from "react-icons/fa";
 import { BsBook } from "react-icons/bs";
 import { HiOutlineMap } from "react-icons/hi";
 
-import ButtonLink from '../../components/ButtonLink/ButtonLink';
-
-import { useFetchGet, useFetchDelete } from '../../hooks/fetchData/useFetchData';
-
-
+// SCSS
 import "./Sidebar.scss"
 
 
@@ -26,15 +28,12 @@ export default function Sidebar() {
   const navigate = useNavigate();
 
   const auth_token = localStorage.getItem('Authorization_token');
-  const { isLoading, data, isError, error } = useFetchGet('member-data', 'user', auth_token);
+  const { data } = useFetchGet('member-data', 'user', auth_token);
   const current_user = data?.user;
   const { mutate: deleteUser } = useFetchDelete('users/sign_out');
   const logged = auth_token ? true : false;
 
-
   const pathname = window.location.pathname.includes('/inscription') || window.location.pathname.includes('/connexion') || window.location.pathname.includes(`/profil/${current_user?.id}`);
-
-  
 
   const handleLogout = (e) => {
     localStorage.removeItem('Authorization_token');
