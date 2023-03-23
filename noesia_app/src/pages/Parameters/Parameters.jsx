@@ -10,7 +10,7 @@ export default function Parameters() {
   return (
     <div className='parameters'>
       <div className='parameters-items'>
-        <div class="parameters-item">
+        <div className="parameters-item">
           <label>Dark-mode</label>
           <div className='dark-mode'>
             <AvailableSoon />

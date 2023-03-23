@@ -25,7 +25,6 @@ export default function Sidebar() {
   
   const navigate = useNavigate();
 
-  
   const auth_token = localStorage.getItem('Authorization_token');
   const { isLoading, data, isError, error } = useFetchGet('member-data', 'user', auth_token);
   const current_user = data?.user;
