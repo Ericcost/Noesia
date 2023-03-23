@@ -1,4 +1,4 @@
-import React from 'react'
+// SCSS
 import './AvailableSoon.scss'
 
 export default function AvailableSoon() {
