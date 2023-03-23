@@ -15,7 +15,7 @@ export function useFetchGet(endpoint, query, dataToSend) {
   );
 }
 
-export function useFetchPost(endpoint, query) {
+export function useFetchPost(endpoint) {
   const queryClient = useQueryClient();
   const postData = async (dataToSend) => {
     const response = await axios.post(`${API_URL}/${endpoint}`, dataToSend, {
@@ -29,14 +29,10 @@ export function useFetchPost(endpoint, query) {
       return response.data;
     };
 
-  return useMutation(postData, {
-    onSuccess: () => {
-      queryClient.invalidateQueries(query);
-    },
-  });
+  return useMutation(postData);
 }
 
-export function useFetchDelete(endpoint, query) {
+export function useFetchDelete(endpoint) {
   const queryClient = useQueryClient();
   const deleteData = async (dataToSend) => {
     const response = await axios.delete(`${API_URL}/${endpoint}`, {
@@ -47,14 +43,10 @@ export function useFetchDelete(endpoint, query) {
     return response.data;
   };
   
-  return useMutation(deleteData, {
-    onSuccess: () => {
-      queryClient.removeQueries(query);
-    },
-  });
+  return useMutation(deleteData);
 }
 
-export function useFetchPut(endpoint, query, auth_token) {
+export function useFetchPut(endpoint, auth_token) {
   const queryClient = useQueryClient();
   const putData = async (dataToSend) => {
     const response = await axios.put(`${API_URL}/${endpoint}`, dataToSend, {
@@ -66,9 +58,20 @@ export function useFetchPut(endpoint, query, auth_token) {
     return response.data;
   };
 
-  return useMutation(putData, {
-    onSuccess: () => {
-      queryClient.invalidateQueries(query);
-    },
-  });
+  return useMutation(putData);
+}
+
+export function useFetchPatch(endpoint, auth_token) {
+  const queryClient = useQueryClient();
+  const patchData = async (dataToSend) => {
+    const response = await axios.patch(`${API_URL}/${endpoint}`, dataToSend, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': auth_token,
+      },
+    });
+    return response.data;
+  };
+
+  return useMutation(patchData);
 }
