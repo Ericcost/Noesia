@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function CarouselCard({ img }) {
   return (
     <div className='carousel-card'>
