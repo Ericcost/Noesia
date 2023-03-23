@@ -1,6 +1,5 @@
 @import '../../styles/abstracts/variables';
 
-
 .achievement-popup {
   position: fixed;
   display: flex;
@@ -11,7 +10,7 @@
   padding: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: opacity 0.3s ease-in-out;
-  z-index: 99;
+  z-index: 10001;
 
   .achievement-popup-icon {
     display: flex;

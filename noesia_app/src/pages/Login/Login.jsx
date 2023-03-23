@@ -18,7 +18,7 @@ const Login = () => {
   const current_user = data?.user;
   const logged = auth_token ? true : false;
 
-  const { mutate: logInUser, isLoading, isSuccess, isError, error } = useFetchPost('users/sign_in', 'user');
+  const { mutate: logInUser, isLoading, isSuccess, isError, error } = useFetchPost('users/sign_in');
 
   const navigate = useNavigate();
 

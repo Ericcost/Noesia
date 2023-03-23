@@ -18,8 +18,12 @@ end
   User.create!(email: "user#{i}@gmail.com", password: "123456", username: "user#{i}")
 end
 
-20.times do |i|
+25.times do |i|
   Enigma.create!(title: Faker::Movie.title, description: Faker::Lorem.sentence(word_count:25), world: 1, level: i, topic_id: Topic.all.sample.id, hint: 'Débrouille toi !')
+end
+
+25.times do |i|
+  Enigma.create!(title: Faker::Movie.title, description: Faker::Lorem.sentence(word_count:25), world: 2, level: i, topic_id: Topic.all.sample.id, hint: 'Débrouille toi !')
 end
 
 100.times do |i|

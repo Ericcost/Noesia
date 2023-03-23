@@ -1,14 +1,16 @@
 import { Routes, Route } from 'react-router-dom'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 //SCSS
 import './styles/main.scss'
 
 //Pages
 import Home from "./pages/Home/Home";
+import Admin from './pages/Admin/Admin';
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Profile from "./pages/Profile/Profile";
+import EditProfile from "./pages/EditProfile/EditProfile";
 import Door from "./pages/Door/Door";
 import DiscoverMap from "./pages/Maps/DiscoverMap/DiscoverMap";
 import Parameters from "./pages/Parameters/Parameters";
@@ -28,7 +30,7 @@ function App() {
     setAchievementUnlocked(true);
   };
 
-  const handleUAchievementTitle = (title) => {
+  const handleAchievementTitle = (title) => {
     setAchievementTitle(title);
   };
 
@@ -41,12 +43,13 @@ function App() {
             />}
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path='/porte' element={<Door />} />
+              <Route path="/admin" element={<Admin />} />
               <Route path="/découverte" element={<DiscoverMap />} />
-              <Route path='/porte' element={<Door onUnlockSuccess={handleUnlockSuccess} onAchievementTitle={handleUAchievementTitle} />} />
+              <Route path='/porte' element={<Door onUnlockSuccess={handleUnlockSuccess} onAchievementTitle={handleAchievementTitle} />} />
               <Route path="/connexion" element={<Login />} />
               <Route path="/inscription" element={<Register />} />
               <Route path="/profil/:id" element={<Profile />} />
+              <Route path="/profil/:id/editer" element={<EditProfile />} />
               <Route path="/paramètres" element={<Parameters/>} />
               <Route path="/enigme/1" element={<Enigma1 />} />
               <Route path="/enigme/2" element={<Enigma2 />} />

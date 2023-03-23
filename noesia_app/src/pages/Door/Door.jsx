@@ -1,26 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Code from "../../assets/images/door-code.png";
 
-import { useFetchGet, useFetchPost, useFetchPut } from "../../hooks/fetchData/useFetchData";
+import { useFetchGet, useFetchPost, useFetchPatch, useFetchPut } from "../../hooks/fetchData/useFetchData";
 
 import Button from "../../components/Button/Button";
 import ButtonDoor from "../../components/ButtonDoor/ButtonDoor"
 
 import "./Door.scss";
 
-export default function Door({ onUnlockSuccess, onAchievementTitle }) {
+export default function Door({ onUnlockSuccess, onAchievementTitle}) {
 
   const auth_token = localStorage.getItem('Authorization_token');
   const { data: userData } = useFetchGet('member-data', 'user', auth_token);
-
   const current_user = userData?.user;
   const current_user_id = current_user?.id
+  const { data: userAchievements, refetch: refetchUserAchievements} = useFetchGet(`join_table_user_achievements?user_id=${current_user?.id}`, 'user_achievements');
 
-  const { mutate: updateUser } = useFetchPut(`users`, 'user', auth_token);
+  const { mutate: updateUser } = useFetchPatch(`users`, auth_token);
   
-  const { mutate: unlockAchievement, isSuccess } = useFetchPost(`join_table_user_achievements`, 'user_achievement');
+  const { mutate: unlockAchievementDoor, isSuccess: unlockAchievementDoorSuccess } = useFetchPost(`join_table_user_achievements`);
+  const { mutate: unlockAchievementHidden, isSuccess: unlockAchievementHiddenSuccess } = useFetchPost(`join_table_user_achievements`);
 
   const [inputValue, setInputValue] = useState("");
   const navigate = useNavigate();
@@ -44,16 +45,17 @@ export default function Door({ onUnlockSuccess, onAchievementTitle }) {
         "Avec une satisfaction intense, vous prononcez 'connaissance' à haute voix. Et alors, la porte massive s'ouvre lentement, révélant un nouveau monde fascinant et rempli de merveilles insoupçonnées. Vous franchissez la porte, prêt à explorer ce nouveau monde avec une soif insatiable de connaissances et de découvertes."
       );
       if (auth_token && userData && !current_user?.is_door_passed) {
-        updateUser({user_id: current_user_id, is_door_passed: true});
-        unlockAchievement({user_id: current_user_id, achievement_id: 1})
-        if (isSuccess) {
-          handleSuccessUnlock();
-          handleAchievementTitle('La porte')
-        }
+        updateUser({id: current_user_id, is_door_passed: true});
+        refetchUserAchievements();
+        if (userAchievements && !Object.values(userAchievements).some(achievement => achievement.achievement_id === 1)) {
+          unlockAchievementDoor({user_id: current_user_id, achievement_id: 1})
+        }        
       } else {
         localStorage.setItem("is_door_passed", true);
       }
-      navigate("/découverte");
+      setTimeout(() => {
+        navigate("/découverte");
+      }, 1000);
     } else {
       setInputValue("");
     }
@@ -66,6 +68,33 @@ export default function Door({ onUnlockSuccess, onAchievementTitle }) {
   const handleAchievementTitle = (text) => {
     onAchievementTitle(text);
   };
+
+  // Door Achievement
+
+  useEffect(() => {
+    if (unlockAchievementDoorSuccess) {
+      handleAchievementTitle('La porte');
+      handleSuccessUnlock();
+    }
+  }, [unlockAchievementDoorSuccess]);
+
+  // Hidden Achievement
+
+  const handleHiddenAchievementUnlock = () => {
+    refetchUserAchievements();
+    if (userAchievements && !Object.values(userAchievements).some(achievement => achievement.achievement_id === 2)) {
+      unlockAchievementDoor({user_id: current_user_id, achievement_id: 2})
+    }
+  }
+
+  useEffect(() => {
+    refetchUserAchievements();
+    if (unlockAchievementHiddenSuccess) {
+      handleAchievementTitle('La pyramide');
+      handleSuccessUnlock();
+    }
+  }, [unlockAchievementHiddenSuccess]);
+
 
   return (
     <>
@@ -88,6 +117,9 @@ export default function Door({ onUnlockSuccess, onAchievementTitle }) {
             </div>
           </div>
           <div className="door-code">
+            <div className="hidden_achievement">
+              <Button onClick={handleHiddenAchievementUnlock}></Button>
+            </div>
             <div className="door-screen">
               <input placeholder='*   *   *' type="text" value={inputValue} readOnly />
               <Button className="door-clear" content='Effacer' onClick={handleClearClick} />
