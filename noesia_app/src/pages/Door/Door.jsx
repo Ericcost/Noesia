@@ -1,30 +1,35 @@
-import React, { useState, useEffect } from "react";
+// Hooks
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useFetchGet, useFetchPost, useFetchPatch } from "../../hooks/fetchData/useFetchData";
 
-import DoorBackground from "../../assets/images/door.webp";
-
-import { useFetchGet, useFetchPost, useFetchPatch, useFetchPut } from "../../hooks/fetchData/useFetchData";
-
+// Components
 import Button from "../../components/Button/Button";
 import ButtonDoor from "../../components/ButtonDoor/ButtonDoor"
 
+// Assets
+import DoorBackground from "../../assets/images/door.webp";
+
+// SCSS
 import "./Door.scss";
 
 export default function Door({ onUnlockSuccess, onAchievementTitle}) {
 
+  const navigate = useNavigate();
+
+  // User
   const auth_token = localStorage.getItem('Authorization_token');
   const { data: userData } = useFetchGet('member-data', 'user', auth_token);
   const current_user = userData?.user;
   const current_user_id = current_user?.id
   const { data: userAchievements, refetch: refetchUserAchievements} = useFetchGet(`join_table_user_achievements?user_id=${current_user?.id}`, 'user_achievements');
-
   const { mutate: updateUser } = useFetchPatch(`users`, auth_token);
   
-  const { mutate: unlockAchievementDoor, isSuccess: unlockAchievementDoorSuccess } = useFetchPost(`join_table_user_achievements`);
-  const { mutate: unlockAchievementHidden, isSuccess: unlockAchievementHiddenSuccess } = useFetchPost(`join_table_user_achievements`);
+  // Achivements
+  const { mutate: unlockAchievement } = useFetchPost(`join_table_user_achievements`);
 
+  // Enigmas
   const [inputValue, setInputValue] = useState("");
-  const navigate = useNavigate();
 
   const handleButtonClick = (character) => {
     if (
@@ -48,7 +53,7 @@ export default function Door({ onUnlockSuccess, onAchievementTitle}) {
         updateUser({id: current_user_id, is_door_passed: true});
         refetchUserAchievements();
         if (userAchievements && !Object.values(userAchievements).some(achievement => achievement.achievement_id === 1)) {
-          unlockAchievementDoor({user_id: current_user_id, achievement_id: 1})
+          unlockAchievement({user_id: current_user_id, achievement_id: 1})
         }        
       } else {
         localStorage.setItem("is_door_passed", true);
@@ -83,7 +88,7 @@ export default function Door({ onUnlockSuccess, onAchievementTitle}) {
   const handleHiddenAchievementUnlock = () => {
     refetchUserAchievements();
     if (userAchievements && !Object.values(userAchievements).some(achievement => achievement.achievement_id === 2)) {
-      unlockAchievementDoor({user_id: current_user_id, achievement_id: 2})
+      unlockAchievement({user_id: current_user_id, achievement_id: 2})
     }
   }
 
