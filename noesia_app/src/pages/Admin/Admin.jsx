@@ -1,7 +1,12 @@
-import './Admin.scss'
+// Hooks
 import { useState, useEffect } from 'react'
 import { useFetchGet, useFetchPost } from '../../hooks/fetchData/useFetchData'
+
+// Components
 import Button from '../../components/Button/Button'
+
+// SCSS
+import './Admin.scss'
 
 const Admin = () => {
 
@@ -9,7 +14,7 @@ const Admin = () => {
   const { data: topics } = useFetchGet('topics', 'topics');
 
   // Enigmas
-  const { data: enigmas, isSuccess: isEnigmaSucess } = useFetchGet('enigmas', 'enigmas');
+  const { data: enigmas } = useFetchGet('enigmas', 'enigmas');
   const { mutate: postEnigma } = useFetchPost('enigmas');
 
   const [displayEnigmas, setDisplayEnigmas] = useState(false);
@@ -42,6 +47,7 @@ const Admin = () => {
     postEnigma(formEnigmaData)
   }
 
+    // World in Enigmas
   const [worldSelected, setWorldSelected] = useState(0)
 
   const handleWorldSelectedChange = (e) => {
