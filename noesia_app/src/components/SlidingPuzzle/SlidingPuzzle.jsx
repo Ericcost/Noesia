@@ -1,6 +1,11 @@
-import React, { useState, useEffect } from "react";
+// Hooks
+import { useState, useEffect } from "react";
+
+// Components
 import Tile from "../Tile/Tile.jsx";
 import ButtonLink from "../ButtonLink/ButtonLink.jsx";
+
+// SCSS
 import "./SlidingPuzzle.scss";
 
 const SlidingPuzzle = ({ image, gridSize }) => {
