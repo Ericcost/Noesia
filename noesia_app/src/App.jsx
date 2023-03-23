@@ -10,6 +10,7 @@ import Admin from './pages/Admin/Admin';
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Profile from "./pages/Profile/Profile";
+import EditProfile from "./pages/EditProfile/EditProfile";
 import Door from "./pages/Door/Door";
 import DiscoverMap from "./pages/Maps/DiscoverMap/DiscoverMap";
 import Parameters from "./pages/Parameters/Parameters";
@@ -48,6 +49,7 @@ function App() {
               <Route path="/connexion" element={<Login />} />
               <Route path="/inscription" element={<Register />} />
               <Route path="/profil/:id" element={<Profile />} />
+              <Route path="/profil/:id/editer" element={<EditProfile />} />
               <Route path="/paramètres" element={<Parameters/>} />
               <Route path="/enigme/1" element={<Enigma1 />} />
               <Route path="/enigme/2" element={<Enigma2 />} />
