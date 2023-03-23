@@ -1,8 +1,15 @@
+// React
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
-import './styles/main.scss';
+
+// React query
 import { QueryClient, QueryClientProvider } from 'react-query';
+
+// App
+import App from './App';
+
+// SCSS
+import './styles/main.scss';
 
 const queryClient = new QueryClient();
 
