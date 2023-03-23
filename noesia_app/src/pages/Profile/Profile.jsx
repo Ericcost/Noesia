@@ -55,7 +55,7 @@ export default function Profile() {
   return (
     <>
       <div className='profile'>
-        <img className='profile-background' src={ProfileBackground} alt="" />
+        <img className='profile-background' src={ProfileBackground} alt="Une carte découverte de Noesia" />
         <div className='profile-wrapper'>
 
           <div className='profile-left'>
