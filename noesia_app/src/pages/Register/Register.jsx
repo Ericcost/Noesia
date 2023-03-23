@@ -8,7 +8,7 @@ import ButtonLink from '../../components/ButtonLink/ButtonLink'
 import Button from '../../components/Button/Button'
 
 import RGPD from '../../assets/pdf/RGPD_Noesia.pdf';
-import RegisterImg from '../../assets/images/register.png';
+import RegisterImg from '../../assets/images/register.webp';
 import './Register.scss'
 
 const Register = () => {

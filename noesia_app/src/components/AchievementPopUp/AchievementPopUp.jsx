@@ -1,5 +1,5 @@
-import './AchievementPopUp.scss';
 import { useEffect } from 'react';
+import './AchievementPopUp.scss';
 
 import { FaTrophy } from 'react-icons/fa';
 

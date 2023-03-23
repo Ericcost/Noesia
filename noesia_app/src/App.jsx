@@ -1,5 +1,7 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Outlet, Navigate } from 'react-router-dom'
 import { useState, useEffect } from 'react';
+
+import { useFetchGet } from './hooks/fetchData/useFetchData';
 
 //SCSS
 import './styles/main.scss'
@@ -26,6 +28,11 @@ function App() {
   const [achievementUnlocked, setAchievementUnlocked] = useState(false);
   const [achievementTitle, setAchievementTitle] = useState('');
 
+  const auth_token = localStorage.getItem('Authorization_token');
+  const { isLoading, data, isError, error } = useFetchGet('member-data', 'user', auth_token);
+  const current_user = data?.user;
+  const logged = auth_token ? true : false;
+
   const handleUnlockSuccess = () => {
     setAchievementUnlocked(true);
   };
@@ -33,6 +40,22 @@ function App() {
   const handleAchievementTitle = (title) => {
     setAchievementTitle(title);
   };
+
+  function Layout() {
+    return (
+      <div>
+        <Outlet />
+      </div>
+    );
+  }
+
+  function ProtectedRoute({ children }) {
+    if (!logged) {
+      return <Navigate to="/connexion" />;
+    };
+
+    return children;
+  } 
 
   return (
       <div className='App'>
@@ -43,16 +66,26 @@ function App() {
             />}
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/admin" element={<Admin />} />
               <Route path="/découverte" element={<DiscoverMap />} />
               <Route path='/porte' element={<Door onUnlockSuccess={handleUnlockSuccess} onAchievementTitle={handleAchievementTitle} />} />
               <Route path="/connexion" element={<Login />} />
               <Route path="/inscription" element={<Register />} />
-              <Route path="/profil/:id" element={<Profile />} />
-              <Route path="/profil/:id/editer" element={<EditProfile />} />
-              <Route path="/paramètres" element={<Parameters/>} />
-              <Route path="/enigme/1" element={<Enigma1 />} />
-              <Route path="/enigme/2" element={<Enigma2 />} />
+              <Route 
+                path="/" 
+                element={
+                  <ProtectedRoute>
+                    <Layout />
+                  </ProtectedRoute>
+                }
+                children= {[
+                  <Route key="admin" path="/admin" element={<Admin />} />,
+                  <Route key="profil" path="/profil/:id" element={<Profile />} />,
+                  <Route key="profil/editer" path="/profil/:id/editer" element={<EditProfile />} />,
+                  <Route key="paramètres" path="/paramètres" element={<Parameters/>} />,
+                  <Route key="enigme/1" path="/enigme/1" element={<Enigma1 />} />,
+                  <Route key="enigme/2" path="/enigme/2" element={<Enigma2 />} />
+                ]}
+              />
             </Routes>
         </main>
         <footer>

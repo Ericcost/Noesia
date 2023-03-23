@@ -8,7 +8,7 @@ import Sidebar from '../../components/Sidebar/Sidebar';
 import ButtonLink from '../../components/ButtonLink/ButtonLink'
 import Button from '../../components/Button/Button'
 
-import LoginImg from '../../assets/images/login.png';
+import LoginImg from '../../assets/images/login.webp';
 import './Login.scss'
 
 const Login = () => {
