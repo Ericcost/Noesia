@@ -17,7 +17,6 @@ import "./Home.scss";
 // Animations
 import { TypeAnimation } from 'react-type-animation';
 
-
 const Home = () => {
 
   // User
