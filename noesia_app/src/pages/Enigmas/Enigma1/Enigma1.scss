@@ -1,10 +1,13 @@
+@import 'src/styles/abstracts/variables';
+@import '../../../styles/abstracts/mixins.scss';
+
 .mast {
   position: relative;
   display: flex;
   align-items: center;
   width: 100vw;
   height: 100vh;
-  color: #fff;
+  color: $white;
   background-color: #111;
   margin: 0;
   font-family: "Cutive Mono", monospace;
@@ -18,13 +21,27 @@
   text-rendering: optimizeLegibility;
 
 
+  @include tablet {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
   .mast__left {
     padding: 5%;
+
+    @include tablet {
+      padding: 0;
+    }
   }
 
   .mast__right {
     padding: 5%;
     margin: -5rem;
+
+    @include tablet {
+      padding: 0;
+      margin: 2rem;
+    }
 
     .mast__title {
       font-family: "Cutive Mono", monospace;
