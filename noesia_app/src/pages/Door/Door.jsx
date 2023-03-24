@@ -25,6 +25,9 @@ export default function Door({ onUnlockSuccess, onAchievementTitle}) {
   const { data: userAchievements, refetch: refetchUserAchievements} = useFetchGet(`join_table_user_achievements?user_id=${current_user?.id}`, 'user_achievements');
   const { mutate: updateUser } = useFetchPatch(`users`, auth_token);
   
+  // History
+  const { mutate: postUserHistory } = useFetchPost(`histories`);
+
   // Achievements
   const { mutate: unlockDoorAchievement, isSuccess: unlockDoorAchievementSuccess } = useFetchPost(`join_table_user_achievements`);
   const { mutate: unlockPyramidAchievement, isSuccess: unlockPyramidAchievementSuccess } = useFetchPost(`join_table_user_achievements`);
@@ -62,6 +65,7 @@ export default function Door({ onUnlockSuccess, onAchievementTitle}) {
       setTimeout(() => {
         navigate("/découverte");
       }, 1000);
+      postUserHistory({user_id: current_user_id, enigma_id: 1, status: 1})
     } else {
       setInputValue("");
     }
