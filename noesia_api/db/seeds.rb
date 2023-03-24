@@ -31,3 +31,4 @@ end
 end
 
 Achievement.create!(title: 'La porte', description: "Vous avez réussi l'énigme de la porte !")
+Achievement.create!(title: 'La pyramide', description: "Vous avez trouve2 la pyramide !")
