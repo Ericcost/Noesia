@@ -51,12 +51,12 @@ All ideas are good to take, we will be delighted to read your feedback, do not h
 
 ### ✅ - Features
 
-- Access to a first enigma without registration
-- Registration / Login
-- Two enigmas (and many more to come!)
-- A system of levels, experience and characteristics that will serve you later in your adventure.
-- Full screen mode for total immersion
-- Achievements ! (and some hidden!)
+[x] - Access to a first enigma without registration
+[x] - Registration / Login
+[x] - Two enigmas (and many more to come!)
+[x] - A system of levels, experience and characteristics that will serve you later in your adventure.
+[x] - Full screen mode for total immersion
+[x] - Achievements ! (and some hidden!)
 
 🔜
 
