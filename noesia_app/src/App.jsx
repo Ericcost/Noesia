@@ -8,9 +8,6 @@ import { useState } from 'react';
 import Footer from "./components/Footer/Footer";
 import AchievementPopUp from './components/AchievementPopUp/AchievementPopUp';
 
-//SCSS
-import './styles/main.scss'
-
 //Pages
 import Home from "./pages/Home/Home";
 import Admin from './pages/Admin/Admin';
