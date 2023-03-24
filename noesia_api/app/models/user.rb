@@ -1,6 +1,5 @@
 class User < ApplicationRecord
-
-  after_create :welcome_send
+  # after_create :welcome_send
 
   validates :username, presence: true, uniqueness: true
   validates :karma, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }

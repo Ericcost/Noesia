@@ -7,6 +7,9 @@ import { useNavigate } from "react-router-dom";
 import Button from '../../components/Button/Button'
 import ButtonLink from '../../components/ButtonLink/ButtonLink'
 
+// Assets
+import ProfileImg from "../../assets/images/background.webp"
+
 // SCSS
 import './EditProfile.scss'
 
@@ -83,7 +86,7 @@ const EditProfile = () => {
           </form>
         </div>
         <div className="edit-side">
-          <img src="../../src/assets/images/background.jpg" />
+          <img src={ProfileImg} alt='Photo de profil' />
           <ButtonLink content="Retour au profil" path={`/profil/${current_user?.id}`}/>
         </div>
       </div>
