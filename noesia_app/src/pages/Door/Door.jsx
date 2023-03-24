@@ -65,7 +65,7 @@ export default function Door({ onUnlockSuccess, onAchievementTitle}) {
       setTimeout(() => {
         navigate("/découverte");
       }, 1000);
-      postUserHistory({user_id: current_user_id, enigma_id: 1, status: 1})
+      postUserHistory({user_id: current_user_id, enigma_id: 7, status: 1})
     } else {
       setInputValue("");
     }
