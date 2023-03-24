@@ -4,11 +4,11 @@ import SpanizeLetters from "../../../components/SpanizeLetters/SpanizeLetters";
 import f11enigma from "../../../assets/images/f11enigma.png";
 import "./Enigma1.scss";
 
-const Enigme01 = () => {
+const Enigme01 = ({ onUnlockSuccess, onAchievementTitle }) => {
   return (
       <div className="mast">
         <div className="mast__left">
-          <SlidingPuzzle image={f11enigma} gridSize={4} />
+          <SlidingPuzzle image={f11enigma} gridSize={4} onUnlockSuccess={onUnlockSuccess} onAchievementTitle={onAchievementTitle}/>
         </div>
         <div className="mast__right">
           <h1 className="mast__title">

@@ -173,6 +173,7 @@ export default function Profile() {
               {userHistories && userHistories?.map(history => (
                 <div key={history.id} className='profile-right-card'>
                   <p>Énigme: {history.enigma_id}</p>
+                  <p>Status: {history.status}</p>
                   <p>Réalisé le: {history.created_at}</p>
                 </div>
               ))}
