@@ -25,8 +25,9 @@ export default function Door({ onUnlockSuccess, onAchievementTitle}) {
   const { data: userAchievements, refetch: refetchUserAchievements} = useFetchGet(`join_table_user_achievements?user_id=${current_user?.id}`, 'user_achievements');
   const { mutate: updateUser } = useFetchPatch(`users`, auth_token);
   
-  // Achivements
-  const { mutate: unlockAchievement } = useFetchPost(`join_table_user_achievements`);
+  // Achievements
+  const { mutate: unlockDoorAchievement, isSuccess: unlockDoorAchievementSuccess } = useFetchPost(`join_table_user_achievements`);
+  const { mutate: unlockPyramidAchievement, isSuccess: unlockPyramidAchievementSuccess } = useFetchPost(`join_table_user_achievements`);
 
   // Enigmas
   const [inputValue, setInputValue] = useState("");
@@ -53,7 +54,7 @@ export default function Door({ onUnlockSuccess, onAchievementTitle}) {
         updateUser({id: current_user_id, is_door_passed: true});
         refetchUserAchievements();
         if (userAchievements && !Object.values(userAchievements).some(achievement => achievement.achievement_id === 1)) {
-          unlockAchievement({user_id: current_user_id, achievement_id: 1})
+          unlockDoorAchievement({user_id: current_user_id, achievement_id: 1})
         }        
       } else {
         localStorage.setItem("is_door_passed", true);
@@ -77,28 +78,28 @@ export default function Door({ onUnlockSuccess, onAchievementTitle}) {
   // Door Achievement
 
   useEffect(() => {
-    if (unlockAchievementDoorSuccess) {
+    if (unlockDoorAchievementSuccess) {
       handleAchievementTitle('La porte');
       handleSuccessUnlock();
     }
-  }, [unlockAchievementDoorSuccess]);
+  }, [unlockDoorAchievementSuccess]);
 
   // Hidden Achievement
 
   const handleHiddenAchievementUnlock = () => {
     refetchUserAchievements();
     if (userAchievements && !Object.values(userAchievements).some(achievement => achievement.achievement_id === 2)) {
-      unlockAchievement({user_id: current_user_id, achievement_id: 2})
+      unlockPyramidAchievement({user_id: current_user_id, achievement_id: 2})
     }
   }
 
   useEffect(() => {
     refetchUserAchievements();
-    if (unlockAchievementHiddenSuccess) {
+    if (unlockPyramidAchievementSuccess) {
       handleAchievementTitle('La pyramide');
       handleSuccessUnlock();
     }
-  }, [unlockAchievementHiddenSuccess]);
+  }, [unlockPyramidAchievementSuccess]);
 
 
   return (
