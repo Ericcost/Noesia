@@ -217,6 +217,11 @@
           width: 60%;
           padding: 1.7rem;
 
+          p {
+            color: $yellow;
+            text-shadow: 0.2rem 0rem 0.2rem $black;
+          }
+
           @include mobile {
             padding: 0.5rem;
           }
@@ -275,12 +280,15 @@
       }
 
       .profile-right-cards {
-
         .profile-right-card {
           border: 0.15rem solid $white;
           margin: 1.5rem;
           padding: 1.5rem;
           border-radius: 1rem;
+          p {
+            color: $yellow;
+            text-shadow: 0.2rem 0rem 0.2rem $black;
+          }
         }
       }
     }
