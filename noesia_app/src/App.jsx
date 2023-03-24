@@ -59,7 +59,7 @@ function App() {
                     <Route key="profil" path="/profil/:id" element={<Profile />} />
                     <Route key="profil/editer" path="/profil/:id/editer" element={<EditProfile />} />
                     <Route key="paramètres" path="/paramètres" element={<Parameters/>} />
-                    <Route key="enigme/1" path="/enigme/1" element={<Enigma1 />} />
+                    <Route key="enigme/1" path="/enigme/1" element={<Enigma1 onUnlockSuccess={handleUnlockSuccess} onAchievementTitle={handleAchievementTitle} />} />
                     <Route key="enigme/2" path="/enigme/2" element={<Enigma2 />} />
                 </Route>
               </Routes>
