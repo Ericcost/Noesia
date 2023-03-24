@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useFetchGet, useFetchPatch } from '../../hooks/fetchData/useFetchData';
 import { useNavigate } from "react-router-dom";
+import ProfileImg from "../../assets/images/background.webp"
 import Button from '../../components/Button/Button'
 import ButtonLink from '../../components/ButtonLink/ButtonLink'
 
@@ -80,7 +81,7 @@ const EditProfile = () => {
           </form>
         </div>
         <div className="edit-side">
-          <img src="../../src/assets/images/background.jpg" />
+          <img src={ProfileImg} alt='Photo de profil' />
           <ButtonLink content="Retour au profil" path={`/profil/${current_user?.id}`}/>
         </div>
       </div>
