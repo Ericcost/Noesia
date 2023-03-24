@@ -1,7 +1,12 @@
-import './Admin.scss'
+// Hooks
 import { useState, useEffect } from 'react'
-import { useFetchGet, useFetchPost } from '../../hooks/fetchData/useFetchData'
+import { useFetchGet, useFetchPost, useFetchDelete, useFetchDeleteWithID } from '../../hooks/fetchData/useFetchData'
+
+// Components
 import Button from '../../components/Button/Button'
+
+// SCSS
+import './Admin.scss'
 
 const Admin = () => {
 
@@ -9,13 +14,15 @@ const Admin = () => {
   const { data: topics } = useFetchGet('topics', 'topics');
 
   // Enigmas
-  const { data: enigmas, isSuccess: isEnigmaSucess } = useFetchGet('enigmas', 'enigmas');
+  const { data: enigmas, refetch: refetchEnigmas } = useFetchGet('enigmas', 'enigmas');
   const { mutate: postEnigma } = useFetchPost('enigmas');
+  const { mutate: deleteEnigma } = useFetchDeleteWithID(`enigmas`);
 
   const [displayEnigmas, setDisplayEnigmas] = useState(false);
 
   const handleEnigmasDisplay = () => {
     setDisplayEnigmas(true)
+    setWorldSelected(1)
     setDisplayAchievements(false)
   };
 
@@ -42,6 +49,7 @@ const Admin = () => {
     postEnigma(formEnigmaData)
   }
 
+    // World in Enigmas
   const [worldSelected, setWorldSelected] = useState(0)
 
   const handleWorldSelectedChange = (e) => {
@@ -70,9 +78,15 @@ const Admin = () => {
     }
   }, [worldSelected, enigmas]);
 
+  const handleDeleteEnigma = (id) => {
+    deleteEnigma(id);
+    refetchEnigmas();
+  };
+
   // Achievement
-  const { data: achievements } = useFetchGet('achievements', 'achievements');
+  const { data: achievements, refetch: refetchAchievements } = useFetchGet('achievements', 'achievements');
   const { mutate: postAchievement } = useFetchPost('achievements');
+  const { mutate: deleteAchievement } = useFetchDeleteWithID(`achievements`);
 
   const [displayAchievements, setDisplayAchievements] = useState(false)
 
@@ -100,6 +114,11 @@ const Admin = () => {
     postAchievement(formAchievementData)
   }
 
+  const handleDeleteAchievement = (id) => {
+    deleteAchievement(id);
+    refetchAchievements();
+  };
+
   return (
     <div className='admin-wrapper'>
       <div className='admin-sidebar'>
@@ -123,6 +142,7 @@ const Admin = () => {
                 {filteredEnigmas.map((enigma, index) => { 
                   return <div key={index} className="admin-card">
                             <h3>{enigma.title}</h3>
+                            <Button onClick={() => handleDeleteEnigma(enigma.id)} content='Supprimer'></Button>
                         </div>
                 })}
               </div>
@@ -136,6 +156,7 @@ const Admin = () => {
                 {achievements.map((achievement, index) => { 
                   return <div className="admin-card" key={index}>
                             <h3>{achievement.title}</h3>
+                            <Button onClick={() => handleDeleteAchievement(achievement.id)} content='Supprimer'></Button>
                           </div>
                 })}
               </div>

@@ -1,4 +1,7 @@
-import React, { useEffect } from 'react'
+// Hooks
+import { useEffect } from 'react'
+
+// SCSS
 import './Cursor.scss'
 
 export default function Cursor() {

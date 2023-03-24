@@ -1,6 +1,11 @@
+// Hooks
 import { useState, useEffect } from "react";
-import "./Footer.scss";
+
+// React icons
 import { RxEnterFullScreen, RxExitFullScreen } from 'react-icons/rx';
+
+// SCSS
+import "./Footer.scss";
 
 export default function Footer() {
 

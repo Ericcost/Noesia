@@ -1,4 +1,4 @@
-import React from 'react';
+// SCSS
 import './Button.scss';
 
 export default function Button({content, onClick}) {

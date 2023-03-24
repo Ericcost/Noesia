@@ -1,8 +1,12 @@
+// React router
 import { BrowserRouter as Router, Routes, Route, Outlet, Navigate } from 'react-router-dom'
-import { useState, useEffect } from 'react';
 
-//SCSS
-import './styles/main.scss'
+// Hooks
+import { useState } from 'react';
+
+//Components
+import Footer from "./components/Footer/Footer";
+import AchievementPopUp from './components/AchievementPopUp/AchievementPopUp';
 
 //Pages
 import Home from "./pages/Home/Home";
@@ -14,12 +18,11 @@ import EditProfile from "./pages/EditProfile/EditProfile";
 import Door from "./pages/Door/Door";
 import DiscoverMap from "./pages/Maps/DiscoverMap/DiscoverMap";
 import Parameters from "./pages/Parameters/Parameters";
-import AchievementPopUp from './components/AchievementPopUp/AchievementPopUp';
 import Enigma1 from "./pages/Enigmas/Enigma1/Enigma1";
 import Enigma2 from "./pages/Enigmas/Enigma2/Enigma2";
 
-//Components
-import Footer from "./components/Footer/Footer";
+//SCSS
+import './styles/main.scss'
 
 //PrivateRoutes
 import PrivateRoutes from './utils/PrivateRoutes';

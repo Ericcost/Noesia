@@ -16,7 +16,6 @@ export function useFetchGet(endpoint, query, dataToSend) {
 }
 
 export function useFetchPost(endpoint) {
-  const queryClient = useQueryClient();
   const postData = async (dataToSend) => {
     const response = await axios.post(`${API_URL}/${endpoint}`, dataToSend, {
       headers: {
@@ -33,7 +32,6 @@ export function useFetchPost(endpoint) {
 }
 
 export function useFetchDelete(endpoint) {
-  const queryClient = useQueryClient();
   const deleteData = async (dataToSend) => {
     const response = await axios.delete(`${API_URL}/${endpoint}`, {
       headers: {
@@ -46,8 +44,16 @@ export function useFetchDelete(endpoint) {
   return useMutation(deleteData);
 }
 
+export function useFetchDeleteWithID(endpoint) {
+  const deleteData = async (id) => {
+    const response = await axios.delete(`${API_URL}/${endpoint}/${id}`);
+    return response.data;
+  };
+  
+  return useMutation(deleteData);
+}
+
 export function useFetchPut(endpoint, auth_token) {
-  const queryClient = useQueryClient();
   const putData = async (dataToSend) => {
     const response = await axios.put(`${API_URL}/${endpoint}`, dataToSend, {
       headers: {
@@ -62,7 +68,6 @@ export function useFetchPut(endpoint, auth_token) {
 }
 
 export function useFetchPatch(endpoint, auth_token) {
-  const queryClient = useQueryClient();
   const patchData = async (dataToSend) => {
     const response = await axios.patch(`${API_URL}/${endpoint}`, dataToSend, {
       headers: {

@@ -1,9 +1,11 @@
-import React from 'react';
-
-import ParametersBackground from "../../assets/images/maze.webp";
+// Components
 import AvailableSoon from "../../components/AvailableSoon/AvailableSoon";
 import ButtonLink from "../../components/ButtonLink/ButtonLink";
 
+// Assets
+import ParametersBackground from "../../assets/images/maze.webp";
+
+// SCSS
 import './Parameters.scss';
 
 export default function Parameters() {
@@ -42,4 +44,3 @@ export default function Parameters() {
     </div>
   )
 }
-

@@ -1,4 +1,7 @@
-import React, { useEffect, useRef } from "react";
+// Hooks
+import { useEffect, useRef } from "react";
+
+// SCSS
 import "./SpanizeLetters.scss";
 
 const SpanizeLetters = ({ children }) => {

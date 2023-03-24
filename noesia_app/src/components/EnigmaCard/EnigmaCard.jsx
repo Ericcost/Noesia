@@ -1,5 +1,7 @@
-import React from 'react';
+// React Router
 import { Link } from 'react-router-dom';
+
+// SCSS
 import './EnigmaCard.scss';
 
 import AvailableSoon from '../../components/AvailableSoon/AvailableSoon'

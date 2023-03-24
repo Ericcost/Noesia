@@ -1,34 +1,43 @@
-import React, { useState, useEffect } from "react";
-import { TypeAnimation } from 'react-type-animation';
+// React router
 import { Link } from "react-router-dom";
 
-import Button from "../../components/Button/Button";
-
+// Hooks
+import { useState, useEffect } from "react";
 import { useFetchGet, useFetchDelete } from "../../hooks/fetchData/useFetchData";
 
+// Components
+import Button from "../../components/Button/Button";
+
+// Assets
 import HomeBackground from '../../assets/images/background.webp';
 
+// SCSS
 import "./Home.scss";
+
+// Animations
+import { TypeAnimation } from 'react-type-animation';
 
 
 const Home = () => {
 
+  // User
   const auth_token = localStorage.getItem('Authorization_token');
-  const { isLoading, data, isError, error } = useFetchGet('member-data', 'user', auth_token);
-
-  const current_user = data?.user;
+  const { data: userData } = useFetchGet('member-data', 'user', auth_token);
+  const current_user = userData?.user;
   const current_user_passed_door = current_user?.is_door_passed
-
-  const { mutate: deleteUser } = useFetchDelete('users/sign_out');
   const logged = auth_token ? true : false;
 
-  const [story, setStory] = useState(false)
+  // Logout
+  const { mutate: deleteUser } = useFetchDelete('users/sign_out');
 
   const handleLogout = (e) => {
     localStorage.removeItem('Authorization_token');
     deleteUser(auth_token);
     navigate('/');
   }
+
+  // Story
+  const [story, setStory] = useState(false)
 
   useEffect(() => {
     setStory(true)
@@ -44,7 +53,7 @@ const Home = () => {
   //     item.classList.add("active");
   //     const home = document.querySelector(".home")
   //     if (home) {
-  //       home.setAttribute("data-active-index", index);
+  //       home.setAttribute("userDactive-index", index);
   //     }
   //   });
   //   item.addEventListener("mouseout", () => {

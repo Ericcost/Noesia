@@ -1,30 +1,40 @@
+// Hooks
 import { useState } from 'react';
+import { useFetchGet } from '../../hooks/fetchData/useFetchData';
 
+// Components
 import Button from '../../components/ButtonLink/ButtonLink';
 import Sidebar from '../../components/Sidebar/Sidebar';
 
+// Assets
 import ProfileImg from '../../assets/images/digicode.webp';
 import ProfileBackground from '../../assets/images/discover02.webp';
 
-import { useFetchGet } from '../../hooks/fetchData/useFetchData';
-
+// React icons
 import { RiSurgicalMaskLine } from 'react-icons/ri'
 import { BsGear } from 'react-icons/bs'
 import { GiSwordsPower, GiConcentrationOrb, GiChest } from 'react-icons/gi'
 import { FaTrophy, FaHandSpock } from 'react-icons/fa'
 import { SiAlchemy } from 'react-icons/si'
+
+// SCSS
 import './Profile.scss'
 
 export default function Profile() {
 
+  // User
   const auth_token = localStorage.getItem('Authorization_token');
   const { data: userData } = useFetchGet('member-data', 'user', auth_token);
-
   const current_user = userData?.user;
 
+    // User histories
   const { data: userHistories } = useFetchGet(`histories?user_id=${current_user?.id}`, 'user_histories');
-  const { data: achievements } = useFetchGet('achievements', 'achievements');
+
+    // User achievements
   const { data: userAchievements } = useFetchGet(`join_table_user_achievements?user_id=${current_user?.id}`, 'user_achievements');
+
+  // Achievements
+  const { data: achievements } = useFetchGet('achievements', 'achievements');
 
   let numberOfAchievements = 0;
   let numberOfUserAchievements = 0;
@@ -36,6 +46,8 @@ export default function Profile() {
   if (userAchievements) {
     numberOfUserAchievements = Object.values(userAchievements).length;
   }
+
+  // Circle Experience / Karma / Achievements
 
   const progressCircles = document.querySelectorAll('.progress');
 

@@ -1,21 +1,25 @@
+// Hooks
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
 import { useFetchPost } from "../../hooks/fetchData/useFetchData";
 
+// Components
 import Sidebar from '../../components/Sidebar/Sidebar';
 import ButtonLink from '../../components/ButtonLink/ButtonLink'
 import Button from '../../components/Button/Button'
 
+// Assets
 import RGPD from '../../assets/pdf/RGPD_Noesia.pdf';
 import RegisterImg from '../../assets/images/register.webp';
+
+// SCSS
 import './Register.scss'
 
 const Register = () => {
 
-  const { mutate: registerUser, isLoading, isSuccess, isError, error } = useFetchPost('users');
-
   const navigate = useNavigate();
+
+  const { mutate: registerUser, isLoading, isSuccess, isError, error } = useFetchPost('users');
 
   const localStorageDoorPassed = localStorage.getItem('is_door_passed');
 

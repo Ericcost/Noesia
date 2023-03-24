@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+// Hooks
+import { useState } from 'react';
 
+// React icons
 import {TiChevronLeftOutline, TiChevronRightOutline} from 'react-icons/ti'
 
+// SCSS
 import './Carousel.scss';
 
 export default function Carousel({children}) {

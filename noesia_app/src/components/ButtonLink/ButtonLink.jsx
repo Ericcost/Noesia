@@ -1,5 +1,7 @@
-import React from 'react'
+// React router
 import { Link } from 'react-router-dom'
+
+// SCSS
 import './ButtonLink.scss'
 
 export default function Button({content, path}) {

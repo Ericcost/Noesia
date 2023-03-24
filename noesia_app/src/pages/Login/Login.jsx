@@ -1,26 +1,24 @@
+// Hooks
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
-
-import { useFetchGet } from '../../hooks/fetchData/useFetchData';
 import { useFetchPost } from '../../hooks/fetchData/useFetchData';
 
+// Components
 import Sidebar from '../../components/Sidebar/Sidebar';
 import ButtonLink from '../../components/ButtonLink/ButtonLink'
 import Button from '../../components/Button/Button'
 
+// Assets
 import LoginImg from '../../assets/images/login.webp';
+
+// SCSS
 import './Login.scss'
 
 const Login = () => {
 
-  const auth_token = localStorage.getItem('Authorization_token');
-  const { isUserLoading, data, isUserError, userError } = useFetchGet('member-data', 'user', auth_token);
-  const current_user = data?.user;
-  const logged = auth_token ? true : false;
+  const navigate = useNavigate();
 
   const { mutate: logInUser, isLoading, isSuccess, isError, error } = useFetchPost('users/sign_in');
-
-  const navigate = useNavigate();
 
   const [formData, setFormData] = useState(
     {
@@ -44,7 +42,6 @@ const Login = () => {
         navigate("/");
       }
     })
-
   }
 
   return (

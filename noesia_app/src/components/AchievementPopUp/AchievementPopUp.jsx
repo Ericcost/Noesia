@@ -1,7 +1,11 @@
+// Hooks
 import { useEffect } from 'react';
-import './AchievementPopUp.scss';
 
+// React icons
 import { FaTrophy } from 'react-icons/fa';
+
+// SCSS
+import './AchievementPopUp.scss';
 
 
 function AchievementPopUp({ text, onClose }) {
