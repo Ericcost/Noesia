@@ -38,7 +38,6 @@ const SlidingPuzzle = ({ image, gridSize, onUnlockSuccess, onAchievementTitle })
   const [tiles, setTiles] = useState([]);
   const [puzzleSolved, setPuzzleSolved] = useState(false);
 
-  // Génère les tuiles initiales
   const generateInitialTiles = () => {
     const initialTiles = Array.from(
       { length: TILE_COUNT - 1 },
@@ -51,7 +50,6 @@ const SlidingPuzzle = ({ image, gridSize, onUnlockSuccess, onAchievementTitle })
     setTiles(shuffle(generateInitialTiles()));
   }, []);
 
-  // Mélange les tuiles
   const shuffle = (array) => {
     let currentIndex = array.length,
       temporaryValue,
