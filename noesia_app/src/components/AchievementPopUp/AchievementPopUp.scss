@@ -3,12 +3,12 @@
 .achievement-popup {
   position: fixed;
   display: flex;
-  top: 20px;
-  right: 20px;
-  background-color: white;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  top: 1.2rem;
+  right: 1.2rem;
+  background-color: $white;
+  border-radius: 0.3rem;
+  padding: 0.6rem;
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
   transition: opacity 0.3s ease-in-out;
   z-index: 10001;
 
