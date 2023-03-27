@@ -1,7 +1,7 @@
 import React from "react";
 import SlidingPuzzle from "../../../components/SlidingPuzzle/SlidingPuzzle";
 import SpanizeLetters from "../../../components/SpanizeLetters/SpanizeLetters";
-import f11enigma from "../../../assets/images/f11enigma.png";
+import f11enigma from "../../../assets/images/f11enigma.webp";
 import "./Enigma1.scss";
 
 const Enigme01 = ({ onUnlockSuccess, onAchievementTitle }) => {

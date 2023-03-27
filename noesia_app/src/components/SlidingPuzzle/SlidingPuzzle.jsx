@@ -22,7 +22,7 @@ const SlidingPuzzle = ({ image, gridSize, onUnlockSuccess, onAchievementTitle })
   const { mutate: unlockF11Achievement, isSuccess: unlockF11AchievementSuccess } = useFetchPost(`join_table_user_achievements`);
 
   const TILE_COUNT = gridSize * gridSize;
-  const BOARD_SIZE = 640;
+  const BOARD_SIZE = 480;
   const TILE_SIZE = BOARD_SIZE / gridSize;
 
   const generateSolvedTiles = () => {

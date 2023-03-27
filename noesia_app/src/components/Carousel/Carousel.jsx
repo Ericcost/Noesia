@@ -1,5 +1,5 @@
 // Hooks
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 // React icons
 import {TiChevronLeftOutline, TiChevronRightOutline} from 'react-icons/ti'

@@ -5,7 +5,8 @@
   height: 100%;
   margin: 0;
   padding: 0;
-  color: $white;
+  color: $yellow;
+  text-shadow: 0 0 0.5rem $black;
 
   .profile-wrapper {
     height: 100vh;
@@ -61,7 +62,7 @@
               display: flex;
               align-items: center;
               justify-content: center;
-              font-size: 3rem;
+              font-size: 2.5rem;
 
               @include mobile {
                 font-size: 1rem;
@@ -173,7 +174,7 @@
               font-weight: 300;
               
               &.percentage { 
-                font-size: 1.5em; 
+                font-size: 1.1em; 
 
                 @include mobile {
                   font-size: 1rem;

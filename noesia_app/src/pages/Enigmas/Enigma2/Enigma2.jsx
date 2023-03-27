@@ -1,13 +1,18 @@
 import React from 'react';
 
+//Components
 import Carousel from '../../../components/Carousel/Carousel';
 import CarouselCard from '../../../components/CarouselCard/CarouselCard';
 import Sun from '../../../components/Sun/Sun';
+import ButtonDoor from '../../../components/ButtonDoor/ButtonDoor';
+
+//Images
 import CardImg01 from '../../../assets/images/discover01.webp';
 import CardImg02 from '../../../assets/images/discover02.webp';
 import CardImg03 from '../../../assets/images/discover03.webp';
 import CardImg04 from '../../../assets/images/discover04.webp';
 
+//SCSS
 import './Enigma2.scss';
 
 export default function Enigma2() {
@@ -19,12 +24,21 @@ export default function Enigma2() {
     <>
       <div className='enigma2'>
         <div className='enigma2-top'>
-          <Sun fireCount={20} />
+          <div>
+            <Sun fireCount={20} />
+          </div>
         </div>
         <div className='enigma2-bottom'>
           <div className='enigma2-bottom-left'>
             <div className='buttons'>
-              Buttons
+              <ButtonDoor content='A'/>
+              <ButtonDoor content='B' />
+              <ButtonDoor content='C' />
+              <ButtonDoor content='D' />
+              <ButtonDoor content='E' />
+              <ButtonDoor content='F' />
+              <ButtonDoor content='G' />
+              <ButtonDoor content='H' />
             </div>
           </div>
           <div className='enigma2-bottom-right'>
